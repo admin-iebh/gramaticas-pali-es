@@ -33,13 +33,15 @@ concordancias con Padarūpasiddhi y Saddanīti-Suttamālā están en
 ## Publicación
 
 El sitio se sirve en <https://gramaticas.buddha-dhamma.net> desde Cloudflare
-Pages, conectado a este repositorio. Cada `git push` a `main` publica.
+Workers (assets estáticos), conectado a este repositorio. Cada `git push` a
+`main` publica.
 
-| Ajuste de Cloudflare Pages | Valor  |
-| -------------------------- | ------ |
-| Framework preset           | None   |
-| Build command              | (vacío) |
-| Build output directory     | `site` |
+La configuración está en `wrangler.jsonc`: se publica únicamente `./site`.
+El markdown de `kaccayana/` y los documentos de `comun/` quedan en el
+repositorio pero no se sirven.
+
+Sin paso de compilación: los HTML son estáticos y no hay dependencias que
+instalar.
 
 Rutas: `/kaccayana/` índice de la obra, `/kaccayana/sandhi/` capítulo 1.
 Los estilos y la lógica compartidos están en `site/assets/`; cada capítulo

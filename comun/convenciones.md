@@ -35,7 +35,7 @@ Documento normativo. Toda decisión que se repita va aquí.
 
 ## 3 bis. Sitio publicado
 
-- `site/` es lo único que Cloudflare Pages publica (output directory: `site`).
+- `site/` es lo único que se publica; ver `wrangler.jsonc` en la raíz.
 - El HTML de `site/` es salida; la fuente es el markdown de `kaccayana/`.
 - Dominio: `gramaticas.buddha-dhamma.net`. Un solo sitio, obras y capítulos
   en rutas: `/kaccayana/sandhi/`, `/kaccayana/nama/`, `/recursos/`.
