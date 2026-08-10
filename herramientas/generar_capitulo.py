@@ -1,0 +1,617 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Genera el HTML de un capítulo a partir de su markdown.
+
+    python3 herramientas/generar_capitulo.py kaccayana/01-sandhi-kappa.md
+
+La fuente es el markdown; el HTML es salida y no debe editarse a mano.
+Los estilos y la lógica son compartidos (site/assets/); este script sólo
+produce la estructura del capítulo.
+"""
+
+import json
+import os
+import re
+import sys
+import unicodedata
+
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# ── Metadatos de cada capítulo ──────────────────────────────────────────
+# Lo único que hay que añadir al empezar un capítulo nuevo.
+CAPITULOS = {
+    "01-sandhi-kappa": {
+        "slug": "sandhi",
+        "obra": "Kaccāyana-Byākaraṇaṃ",
+        "obra_sub": "Gramática de Kaccāyana",
+        "obra_slug": "kaccayana",
+        "num": 1,
+        "titulo_pali": "1-Sandhi-Kappa",
+        "titulo_es": "1-Capítulo de Sandhi",
+        "anterior": None,
+        "siguiente": "2-Nāma-Kappa",
+    },
+    "02-nama-kappa": {
+        "slug": "nama",
+        "obra": "Kaccāyana-Byākaraṇaṃ",
+        "obra_sub": "Gramática de Kaccāyana",
+        "obra_slug": "kaccayana",
+        "num": 2,
+        "titulo_pali": "2-Nāma-Kappa",
+        "titulo_es": "2-Capítulo del Nombre",
+        "anterior": "1-Sandhi-Kappa",
+        "siguiente": "3-Kāraka-Kappa",
+    },
+}
+
+KANDAS_PALI = ["Paṭhama-Kaṇḍa", "Dutiya-Kaṇḍa", "Tatiya-Kaṇḍa",
+               "Catuttha-Kaṇḍa", "Pañcama-Kaṇḍa", "Chaṭṭha-Kaṇḍa",
+               "Sattama-Kaṇḍa", "Aṭṭhama-Kaṇḍa"]
+KANDAS_ES = ["Primera sección", "Segunda sección", "Tercera sección",
+             "Cuarta sección", "Quinta sección", "Sexta sección",
+             "Séptima sección", "Octava sección"]
+
+RE_SUTTA = re.compile(r'^\*\*(\d+)\\?\.\s*(\d+)\\?\.\s*(.+?)\*\*\s*(.*)$')
+RE_KANDA = re.compile(r'^\*\*([A-ZĀĪŪṂṆṬḌÑṄḶ]+-KAṆḌA)\*\*')
+RE_FN_DEF = re.compile(r'^\[\^(\d+)\]:\s*(.*)$')
+
+
+# ── Utilidades de texto ─────────────────────────────────────────────────
+
+def desescapar(t):
+    """El markdown viene de una exportación con escapes tipo \\[ \\+ \\."""
+    return re.sub(r'\\([\[\]\+\.\(\)\*\-])', r'\1', t)
+
+
+def escapar_html(t):
+    return (t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+# Abreviaturas de otras obras: "Rū. §49", "Sad. §139", "Bā. §41" remiten a
+# Rūpasiddhi, Saddanīti y Bālāvatāra, no a un sutta de este capítulo.
+RE_OTRA_OBRA = re.compile(r'[A-ZĀĪŪÑṄ][a-zāīūṃṇṭḍñṅḷ]{0,4}\.\s*$')
+
+SUTTAS_VALIDOS = set()
+NO_ENLAZADOS = []
+
+
+def enlazar_suttas(t):
+    """§N → enlace al ancla del sutta, sólo si es un sutta de este capítulo."""
+    def rep(m):
+        n = int(m.group(1))
+        previo = t[max(0, m.start() - 8):m.start()]
+        if RE_OTRA_OBRA.search(previo) or (SUTTAS_VALIDOS and n not in SUTTAS_VALIDOS):
+            NO_ENLAZADOS.append((n, previo.strip()))
+            return m.group(0)
+        return ('<a class="sutta-xref" href="#s{0}" onclick="jumpOpen(\'s{0}\')" '
+                'title="Ir al sutta §{0}">§{0}</a>').format(n)
+    return re.sub(r'§(\d+)', rep, t)
+
+
+def marcar_notas(t, notas):
+    """[^n] → superíndice con tooltip que contiene el texto de la nota."""
+    def rep(m):
+        n = m.group(1)
+        cuerpo = notas.get(n, "")
+        return ('<span class="fn-tip"><span class="fn-sup">{0}</span>'
+                '<span class="fn-tip-box">{1}</span></span>').format(n, cuerpo)
+    return re.sub(r'\[\^(\d+)\]', rep, t)
+
+
+def enfasis(t):
+    t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+    t = re.sub(r'(?<!\*)\*(?!\s)([^*]+?)(?<!\s)\*(?!\*)', r'<i>\1</i>', t)
+    return t
+
+
+def glosas_emergentes(t):
+    """{término|glosa} → término con glosa emergente al pasar el ratón."""
+    return re.sub(
+        r'\{([^|{}]+)\|([^{}]+)\}',
+        lambda m: ('<span class="tip-wrap"><span class="tip-term">{0}</span>'
+                   '<span class="tip-box">{1}</span></span>').format(
+                       m.group(1), m.group(2)),
+        t)
+
+
+def inline(t, notas):
+    """Cadena de transformaciones para texto corrido."""
+    t = escapar_html(desescapar(t))
+    t = enfasis(t)
+    t = glosas_emergentes(t)
+    t = marcar_notas(t, notas)
+    t = enlazar_suttas(t)
+    return t
+
+
+# ── Lectura del markdown ────────────────────────────────────────────────
+
+def leer_notas(lineas):
+    notas, orden = {}, []
+    for l in lineas:
+        m = RE_FN_DEF.match(l)
+        if m:
+            notas[m.group(1)] = m.group(2).strip()
+            orden.append(m.group(1))
+    return notas, orden
+
+
+RE_CIERRE_PALI = re.compile(r'^\*\*(Iti\s+.+?kaṇḍo)\.?\*\*$')
+RE_CIERRE_ES = re.compile(r'^\*\*(Así termina la .+?)\.?\*\*$')
+
+
+def separar_cierre(cuerpo):
+    """Aparta la fórmula de cierre de kaṇḍa del cuerpo del último sutta.
+
+    En el markdown la fórmula va en un bloque propio detrás del último sutta
+    de la sección; en el HTML es un elemento aparte, no parte del sutta.
+    """
+    pali = es = None
+    limpio = []
+    for l in cuerpo:
+        t = l.strip()
+        mp, me = RE_CIERRE_PALI.match(t), RE_CIERRE_ES.match(t)
+        if mp:
+            pali = mp.group(1); continue
+        if me:
+            es = me.group(1); continue
+        limpio.append(l)
+    if pali or es:
+        # quitar el separador --- que quedaba justo antes de la fórmula
+        while limpio and limpio[-1].strip() in ("", "---"):
+            limpio.pop()
+        return limpio, {"pali": pali, "es": es}
+    return cuerpo, None
+
+
+def parsear(path):
+    txt = open(path, encoding="utf-8").read()
+    lineas = txt.split("\n")
+
+    notas_crudas, _ = leer_notas(lineas)
+    # el cuerpo de la nota también puede llevar §N y énfasis
+    notas = {k: inline(v, {}) for k, v in notas_crudas.items()}
+
+    fin_cuerpo = next((i for i, l in enumerate(lineas) if RE_FN_DEF.match(l)),
+                      len(lineas))
+
+    suttas, kanda_actual = [], 0
+    versos = []
+    i = 0
+    while i < fin_cuerpo:
+        l = lineas[i]
+        if RE_KANDA.match(l):
+            kanda_actual += 1
+            i += 1
+            continue
+        m = RE_SUTTA.match(l)
+        if m:
+            n, rup, pali, resto = int(m.group(1)), int(m.group(2)), m.group(3), m.group(4)
+            # (Saddanīti) al final del texto pāḷi
+            sadd = None
+            ms = re.search(r'\(([\d,\s\-–]+)\)\s*\\?\.?\s*$', pali)
+            if ms:
+                sadd = [x for x in re.split(r'[,\s]+', ms.group(1)) if x]
+                pali = pali[:ms.start()].strip()
+            pali = desescapar(pali).rstrip(". ").strip()
+            # desglose [A + B, n]
+            desglose, voces = None, None
+            md = re.search(r'\\?\[(.+?),\s*(\d+)\\?\]', resto)
+            if md:
+                desglose = desescapar(md.group(1)).strip()
+                voces = int(md.group(2))
+            # cuerpo hasta el siguiente sutta o kaṇḍa
+            j = i + 1
+            while j < fin_cuerpo and not RE_SUTTA.match(lineas[j]) \
+                    and not RE_KANDA.match(lineas[j]):
+                j += 1
+            cuerpo_s, cierre = separar_cierre(lineas[i + 1:j])
+            suttas.append({
+                "n": n, "rup": rup, "sadd": sadd, "pali": pali,
+                "desglose": desglose, "voces": voces,
+                "kanda": max(kanda_actual, 1),
+                "cuerpo": cuerpo_s, "cierre": cierre,
+            })
+            i = j
+            continue
+        if not suttas and re.match(r'^\s*\d+\)\s', l):
+            # Verso introductorio: las líneas pāḷi llevan salto forzado
+            # (dos espacios al final); la traducción española, no.
+            pali, trad = [re.sub(r'^\s*\d+\)\s*', '', l).rstrip()], []
+            k = i + 1
+            while k < fin_cuerpo and not re.match(r'^\s*\d+\)\s', lineas[k]) \
+                    and not RE_SUTTA.match(lineas[k]) and lineas[k].strip():
+                if lineas[k].endswith("  ") and not trad:
+                    pali.append(lineas[k].strip())
+                else:
+                    trad.append(lineas[k].strip())
+                k += 1
+            versos.append({"pali": pali, "trad": " ".join(trad)})
+            i = k
+            continue
+        i += 1
+
+    return {"suttas": suttas, "notas": notas, "versos": versos,
+            "kandas": kanda_actual}
+
+
+def partir_bloques(cuerpo):
+    """Divide el cuerpo de un sutta por los separadores ---."""
+    bloques, actual = [], []
+    for l in cuerpo:
+        if l.strip() == "---":
+            bloques.append(actual)
+            actual = []
+        else:
+            actual.append(l)
+    bloques.append(actual)
+    return [b for b in bloques if any(x.strip() for x in b)]
+
+
+# ── Renderizado de bloques ──────────────────────────────────────────────
+
+def parrafos(lineas, notas, clase="rest-para"):
+    """Agrupa líneas en párrafos, listas numeradas y títulos en negrita."""
+    out, buf, lista = [], [], []
+
+    def volcar_buf():
+        if buf:
+            out.append('<p class="{0}">{1}</p>'.format(
+                clase, inline(" ".join(buf).strip(), notas)))
+            buf.clear()
+
+    def volcar_lista():
+        if lista:
+            items = "".join("<li>{0}</li>".format(inline(x, notas)) for x in lista)
+            out.append('<ol class="seq-list">{0}</ol>'.format(items))
+            lista.clear()
+
+    for l in lineas:
+        t = l.strip()
+        if not t:
+            volcar_buf(); volcar_lista(); continue
+        mi = re.match(r'^\d+\.\s+(.*)$', t)
+        if mi:
+            volcar_buf(); lista.append(mi.group(1)); continue
+        volcar_lista()
+        mt = re.match(r'^\*\*(.+?)\*\*$', t)
+        if mt:
+            volcar_buf()
+            out.append('<div class="formation-title"><strong>{0}</strong></div>'
+                       .format(inline(mt.group(1), notas)))
+            continue
+        me = re.match(r'^(Secuencia|Ejemplos?[^:]*|Contraejemplos?[^:]*):\s*$', t)
+        if me:
+            volcar_buf()
+            out.append('<div class="section-label">{0}</div>'
+                       .format(inline(desescapar(me.group(0).rstrip(":")), notas)))
+            continue
+        buf.append(t)
+    volcar_buf(); volcar_lista()
+    return "".join(out)
+
+
+def render_sutta(s, notas):
+    n = s["n"]
+    sid = "s{0}".format(n)
+    bloques = partir_bloques(s["cuerpo"])
+
+    pali_html = ""
+    if bloques:
+        pali_html = '<div class="pali-block">{0}</div>'.format(
+            inline(" ".join(x.strip() for x in bloques[0] if x.strip()), notas))
+
+    gloss_html = vutti_html = ""
+    if len(bloques) > 1:
+        lineas_es = [x.strip() for x in bloques[1] if x.strip()]
+        if lineas_es:
+            gloss_html = '<div class="gloss">{0}</div>'.format(
+                inline(lineas_es[0], notas))
+            for extra in lineas_es[1:]:
+                vutti_html += '<div class="vutti">{0}</div>'.format(
+                    inline(extra, notas))
+
+    resto_html = ""
+    if len(bloques) > 2:
+        cuerpo = "".join(parrafos(b, notas) for b in bloques[2:])
+        resto_html = (
+            '<hr class="divider"/>'
+            '<button class="collapsible-btn" data-type="rest" '
+            'onclick="toggleSeq(\'{0}seq\', this)">'
+            '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+            '<path d="M4 6h12M4 10h8M4 14h10"></path></svg>\n'
+            '        Mostrar más (formación, etc.)\n      </button>\n'
+            '<div class="collapsible-content" id="{0}seq">'
+            '<div class="rest-content">{1}</div></div>\n'
+        ).format(sid, cuerpo)
+
+    # notas al pie usadas en este sutta
+    usadas = []
+    for l in s["cuerpo"]:
+        for m in re.finditer(r'\[\^(\d+)\]', l):
+            if m.group(1) not in usadas:
+                usadas.append(m.group(1))
+    notas_html = ""
+    if usadas:
+        items = "".join(
+            '<div class="fn-item"><span class="fn-num">{0}</span>'
+            '<span class="fn-text">{1}</span></div>'.format(k, notas.get(k, ""))
+            for k in usadas)
+        notas_html = (
+            '<hr class="divider"/>'
+            '<button class="collapsible-btn" data-type="fn" '
+            'onclick="toggleSeq(\'{0}fn\', this)">'
+            '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+            '<path d="M4 6h12M4 10h8M4 14h10"></path></svg>\n'
+            '        Ver notas ({1})\n      </button>\n'
+            '<div class="collapsible-content" id="{0}fn">'
+            '<div class="fn-block">{2}</div></div>\n'
+        ).format(sid, len(usadas), items)
+
+    desglose_html = ""
+    if s["desglose"]:
+        voces = "{0} {1}".format(s["voces"], "voz" if s["voces"] == 1 else "voces")
+        desglose_html = '<div class="sutta-breakdown">[{0} = {1}]</div>'.format(
+            escapar_html(s["desglose"]), voces)
+
+    ref = ('<span class="sutta-ref">'
+           '<span class="ref-tip"><span class="ref-tip-term">{0}</span>'
+           '<span class="ref-tip-box">Kaccāyana Sutta</span></span>. '
+           '<span class="ref-tip"><span class="ref-tip-term">{1}</span>'
+           '<span class="ref-tip-box">Rūpasiddhi Sutta</span></span>.</span>'
+           ).format(n, s["rup"])
+
+    sadd_html = ""
+    if s["sadd"]:
+        sadd_html = (' <span class="sutta-ref-num"><span class="ref-tip">'
+                     '<span class="ref-tip-term">({0})</span>'
+                     '<span class="ref-tip-box">Saddanīti-Suttamālā Sutta</span>'
+                     '</span></span>').format(", ".join(s["sadd"]))
+
+    return (
+        '<div class="sutta-card" id="{sid}">\n'
+        '<div class="sutta-header" onclick="toggleCard(\'{sid}\')" role="button" tabindex="0">\n'
+        '<div class="sutta-meta">\n'
+        '<div class="sutta-ref-line">{ref}<span class="sutta-pali-title">{pali}{sadd}</span></div>\n'
+        '{desglose}\n'
+        '</div>\n'
+        '<svg class="chevron" fill="none" stroke="currentColor" stroke-width="1.5" '
+        'viewbox="0 0 20 20"><path d="M5 7.5l5 5 5-5"></path></svg>\n'
+        '</div>\n'
+        '<div class="sutta-body">\n{palib}{gloss}{vutti}{resto}{notas}'
+        '<div class="sutta-footer">\n'
+        '<span class="done-wrap" onclick="toggleDone(\'{sid}\')" title="Marcar como estudiado">\n'
+        '<span class="done-cb" id="cb-{sid}"></span>\n'
+        '<span class="done-label">Estudiado</span>\n</span>\n'
+        '<button class="share-btn" onclick="shareSutta(\'{sid}\')" title="Copiar enlace a este sutta">\n'
+        '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+        '<circle cx="15" cy="5" r="2"></circle><circle cx="5" cy="10" r="2"></circle>'
+        '<circle cx="15" cy="15" r="2"></circle><path d="M7 11l6 3M7 9l6-3"></path></svg>\n'
+        '          Enlace\n        </button>\n'
+        '<button class="copy-btn" onclick="copySutta(\'{sid}\')" title="Copiar sutta al portapapeles">Copiar §</button>\n'
+        '<button class="back-top-btn" onclick="window.scrollTo({{top:0,behavior:\'smooth\'}})" title="Volver al inicio">\n'
+        '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+        '<path d="M10 15V5M5 10l5-5 5 5"></path></svg>\n'
+        '          Inicio ↑\n        </button>\n'
+        '</div>\n</div>\n</div>\n'
+    ).format(sid=sid, ref=ref, sadd=sadd_html, pali=escapar_html(s["pali"]),
+             desglose=desglose_html, palib=pali_html, gloss=gloss_html,
+             vutti=vutti_html, resto=resto_html, notas=notas_html)
+
+
+PIE_TARJETA = (
+    '<div class="sutta-footer">\n'
+    '<span class="done-wrap" onclick="toggleDone(\'{sid}\')" title="Marcar como estudiado">\n'
+    '<span class="done-cb" id="cb-{sid}"></span>\n'
+    '<span class="done-label">Estudiado</span>\n</span>\n'
+    '<button class="share-btn" onclick="shareSutta(\'{sid}\')" title="Copiar enlace a este sutta">\n'
+    '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+    '<circle cx="15" cy="5" r="2"></circle><circle cx="5" cy="10" r="2"></circle>'
+    '<circle cx="15" cy="15" r="2"></circle><path d="M7 11l6 3M7 9l6-3"></path></svg>\n'
+    '          Enlace\n        </button>\n'
+    '<button class="copy-btn" onclick="copySutta(\'{sid}\')" title="Copiar sutta al portapapeles">Copiar §</button>\n'
+    '<button class="back-top-btn" onclick="window.scrollTo({{top:0,behavior:\'smooth\'}})" title="Volver al inicio">\n'
+    '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20">'
+    '<path d="M10 15V5M5 10l5-5 5 5"></path></svg>\n'
+    '          Inicio ↑\n        </button>\n'
+    '</div>\n')
+
+
+def render_intro(versos, notas):
+    bloques = []
+    for k, v in enumerate(versos, start=1):
+        pali = "<br/>".join(inline(x, notas) for x in v["pali"])
+        bloques.append(
+            '<div class="intro-verse"><div class="intro-num">{0}</div>'
+            '<div class="intro-pali">{1}</div>'
+            '<div class="intro-trans">{2}</div></div>'.format(
+                k, pali, inline(v["trad"], notas)))
+    return (
+        '<div class="sutta-card" id="intro">'
+        '<div class="sutta-header" onclick="toggleCard(\'intro\')" role="button" tabindex="0">'
+        '<div class="sutta-meta"><div class="sutta-ref-line">'
+        '<span class="sutta-pali-title">Versos introductorios</span></div></div>'
+        '<svg class="chevron" fill="none" stroke="currentColor" stroke-width="1.5" '
+        'viewbox="0 0 20 20"><path d="M5 7.5l5 5 5-5"></path></svg></div>'
+        '<div class="sutta-body"><div class="intro-block">{0}</div>\n{1}</div>\n</div>\n'
+    ).format("".join(bloques), PIE_TARJETA.format(sid="intro"))
+
+
+def render_toc(suttas, meta):
+    partes = ['<p class="toc-title">{0}</p>'.format(meta["titulo_pali"])]
+    kanda = None
+    for s in suttas:
+        if s["kanda"] != kanda:
+            kanda = s["kanda"]
+            partes.append('<p class="toc-kanda">{0}</p>'.format(
+                KANDAS_PALI[kanda - 1]))
+        titulo = s["pali"]
+        corto = titulo if len(titulo) <= 26 else titulo[:24].rstrip() + "…"
+        partes.append(
+            '<a class="toc-item" id="toc-s{0}" onclick="jumpTo(\'s{0}\')">§{0} {1}</a>'
+            .format(s["n"], escapar_html(corto)))
+    return "".join(partes)
+
+
+def render(cap, meta, notas):
+    suttas = cap["suttas"]
+    total = len(suttas)
+    nk = max(s["kanda"] for s in suttas)
+
+    cuerpo = []
+    if cap.get("versos"):
+        cuerpo.append(render_intro(cap["versos"], notas))
+    kanda = None
+    for s in suttas:
+        if s["kanda"] != kanda:
+            if kanda is not None:
+                cuerpo.append('</div>\n')
+            kanda = s["kanda"]
+            cuerpo.append('<div class="kanda-section">\n')
+            cuerpo.append(
+                '<div class="kanda-heading">{0}<span class="kanda-es">· {1}</span></div>\n'
+                .format(KANDAS_PALI[kanda - 1], KANDAS_ES[kanda - 1]))
+        cuerpo.append(render_sutta(s, notas))
+        if s.get("cierre"):
+            cuerpo.append(cierre_kanda(s["cierre"]))
+    cuerpo.append('</div>\n')
+
+    pastillas = "".join(
+        '<span class="nav-tip-wrap"><button class="nav-btn" onclick="jumpOpen(\'s{0}\')">'
+        '§{0}</button><span class="nav-tip-box">{1}. {2}. {3}</span></span>'
+        .format(s["n"], s["n"], s["rup"], escapar_html(s["pali"]))
+        for s in suttas)
+
+    return PLANTILLA.format(
+        obra=meta["obra"], obra_sub=meta["obra_sub"],
+        titulo_pali=meta["titulo_pali"], titulo_es=meta["titulo_es"],
+        total=total, nk=nk,
+        toc=render_toc(suttas, meta),
+        pastillas=pastillas,
+        cuerpo="".join(cuerpo),
+        done_key="{0}_{1}_done".format(meta["obra_slug"], meta["slug"]),
+        cap_id="{0}-{1}".format(meta["obra_slug"], meta["slug"]),
+        epub="{0}-{1}.epub".format(meta["obra"].split("-")[0], meta["titulo_pali"]),
+    )
+
+
+def cierre_kanda(c):
+    """La fórmula viene literal del markdown; no se sintetiza."""
+    partes = ['<div class="kanda-end">']
+    if c.get("pali"):
+        partes.append('<div class="kanda-end-pali">{0}</div>'.format(
+            escapar_html(desescapar(c["pali"]))))
+    if c.get("es"):
+        partes.append('<div class="kanda-end-es">{0}</div>'.format(
+            escapar_html(desescapar(c["es"]))))
+    partes.append('</div>\n')
+    return "".join(partes)
+
+
+PLANTILLA = '''<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{obra} · {titulo_pali}</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/pali.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="pbar-wrap"><div id="pbar"></div></div>
+<div id="pbadge"></div>
+<button aria-label="Alternar modo oscuro" id="dark-btn" onclick="toggleDark()" title="Modo oscuro/claro">🌓</button>
+<nav aria-label="Tabla de contenidos" id="toc">
+{toc}
+</nav>
+<div id="main">
+<div id="inner">
+<div class="page-hdr">
+<a class="idx-back" href="../">← {obra}</a>
+<div class="hdr-grammar">{obra}</div>
+<div class="hdr-sub">{obra_sub}</div>
+<div class="hdr-chapter">{titulo_pali} · {titulo_es}</div>
+<div class="hdr-meta">Edición bilingüe Pāḷi–Español · {total} suttas · {nk} secciones</div>
+</div>
+<div class="search-wrap">
+<input class="search-input" id="search-box" oninput="doSearch(this.value)" placeholder="Buscar sutta (pāḷi o español)…" type="search"/>
+<svg class="search-icon" fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20" width="14"><circle cx="8" cy="8" r="5"></circle><path d="M13 13l4 4"></path></svg>
+<div id="search-count"></div>
+</div>
+<div class="controls">
+<button class="ctrl-btn" onclick="window.print()">Imprimir / PDF</button>
+<div class="ctrl-sep"></div>
+<button class="ctrl-btn" onclick="expandAll()">Expandir todo</button>
+<button class="ctrl-btn" onclick="collapseAll()">Colapsar todo</button>
+<div class="ctrl-sep"></div>
+<button class="ctrl-btn" onclick="changeFont(-1)" title="Reducir texto">A−</button>
+<span id="font-lbl">100%</span>
+<button class="ctrl-btn" onclick="changeFont(1)" title="Aumentar texto">A+</button>
+<span class="done-count" id="done-count" title="Suttas estudiados">0 / {total} estudiados</span>
+<button class="epub-btn" onclick="exportEpub()">EPUB</button>
+</div>
+<div class="nav-pills"><span class="nav-pill-label">Ir a:</span>{pastillas}</div>
+{cuerpo}
+</div>
+</div>
+<script>
+window.PALI_CAPITULO = {{
+  id:            '{cap_id}',
+  doneKey:       '{done_key}',
+  obra:          '{obra}',
+  obraSubtitulo: '{obra_sub}',
+  capituloPali:  '{titulo_pali}',
+  capituloEs:    '{titulo_es}',
+  epubNombre:    '{epub}'
+}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="../../assets/pali.js"></script>
+</body>
+</html>
+'''
+
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__)
+        return 1
+    ruta = sys.argv[1]
+    clave = os.path.splitext(os.path.basename(ruta))[0]
+    if clave not in CAPITULOS:
+        print("No hay metadatos para '{0}'. Añádelos en CAPITULOS.".format(clave))
+        return 1
+    meta = CAPITULOS[clave]
+
+    ruta_abs = ruta if os.path.isabs(ruta) else os.path.join(RAIZ, ruta)
+    # primera pasada: saber qué suttas existen antes de enlazar referencias
+    SUTTAS_VALIDOS.update(
+        int(m.group(1)) for m in
+        (RE_SUTTA.match(l) for l in open(ruta_abs, encoding="utf-8"))
+        if m)
+    cap = parsear(ruta_abs)
+    html = render(cap, meta, cap["notas"])
+
+    destino = os.path.join(RAIZ, "site", meta["obra_slug"], meta["slug"], "index.html")
+    os.makedirs(os.path.dirname(destino), exist_ok=True)
+    with open(destino, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print("{0} suttas · {1} secciones · {2} notas → {3}".format(
+        len(cap["suttas"]), max(s["kanda"] for s in cap["suttas"]),
+        len(cap["notas"]), os.path.relpath(destino, RAIZ)))
+
+    if NO_ENLAZADOS:
+        vistos = sorted({(n, p) for n, p in NO_ENLAZADOS})
+        print("\nReferencias §N dejadas sin enlazar "
+              "(remiten a otra obra o a un sutta de otro capítulo):")
+        for n, p in vistos:
+            print("   §{0}  tras «…{1}»".format(n, p[-24:]))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
