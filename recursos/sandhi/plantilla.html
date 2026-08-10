@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandhi · Combinación eufónica en pāḷi</title>
+<meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ola:#E7E3D6;        /* hoja de palma */
+  --ola-2:#F0EDE4;
+  --ink:#171612;        /* tinta de humo */
+  --soot:#4E4839;
+  --hair:#BFB7A0;
+  --haritala:#5C4008;   /* oropimente: corrección */
+  --hover:rgba(255,255,255,.55);
+  --active:rgba(255,255,255,.75);
+  --hl:rgba(92,64,8,.16);
+  --hl-ce:rgba(126,46,35,.14);
+  --chip-k:rgba(39,65,79,.10);
+  --chip-c:rgba(92,64,8,.14);
+  --nila:#27414F;       /* índigo: sección */
+  --rakta:#7E2E23;      /* bermellón: contraejemplo */
+  --shadow:rgba(0,0,0,.05);
+  --serif:"Gentium Book Plus",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+html[data-theme=dark]{
+  --ola:#1A1917; --ola-2:#232220; --ink:#F4F1E8; --soot:#BDB5A2; --hair:#494438;
+  --haritala:#EFC14E; --nila:#B6D8EE; --rakta:#F09A88; --shadow:rgba(0,0,0,.45);
+  --hover:rgba(255,255,255,.055); --active:rgba(255,255,255,.085);
+  --hl:rgba(239,193,78,.20); --hl-ce:rgba(240,154,136,.18);
+  --chip-k:rgba(182,216,238,.13); --chip-c:rgba(239,193,78,.15);
+}
+html[data-theme=dark] body{background-image:none}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ola);color:var(--ink);
+  font-family:var(--serif);font-size:17px;line-height:1.55;
+  background-image:radial-gradient(circle at 12% 8%,rgba(255,255,255,.55),transparent 55%);
+}
+.wrap{max-width:informe;}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+
+/* ---------- barra lateral ---------- */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:238px;overflow-y:auto;z-index:60;
+  background:var(--ola-2);border-right:1px solid var(--hair);padding:20px 0 48px}
+.sidebar h3{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--haritala);margin:20px 18px 6px}
+.sidebar h3:first-of-type{margin-top:6px}
+.sb-brand{padding:0 18px 14px;border-bottom:1px solid var(--hair);margin-bottom:6px}
+.sb-brand b{display:block;font-size:19px;letter-spacing:-.01em;margin-bottom:3px}
+.sb-brand .lbl{font-size:8.5px;letter-spacing:.1em;line-height:1.5}
+.sidebar a{display:block;padding:3px 18px;color:var(--ink);text-decoration:none;font-size:14px;
+  border-left:2px solid transparent}
+.sidebar a:hover{background:var(--ola);color:var(--nila)}
+.sidebar a.on{border-left-color:var(--haritala);color:var(--haritala);background:var(--ola)}
+.sidebar a b{font-family:var(--mono);font-size:11px;color:var(--soot);margin-right:6px}
+.sidebar a:hover b,.sidebar a.on b{color:inherit}
+.sb-close{display:none}
+#burger{display:none}
+body{padding-left:238px}
+.scrim{display:none}
+
+/* ---------- eyebrow / labels ---------- */
+.lbl{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
+     text-transform:uppercase;color:var(--soot)}
+
+/* ---------- header ---------- */
+header{padding:52px 0 26px;border-bottom:1px solid var(--hair)}
+.mast{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-end;justify-content:space-between}
+h1{font-size:clamp(46px,9vw,74px);line-height:.92;margin:0;font-weight:700;letter-spacing:-.02em}
+h1 .dia{color:var(--haritala)}
+.tag{margin:10px 0 0;max-width:34ch;color:var(--soot);font-size:16.5px}
+.version-badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;cursor:help;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.05em;
+  color:var(--nila);background:var(--ola-2);border:1px solid var(--nila);
+  border-radius:999px;padding:4px 10px}
+.version-badge time{opacity:.8;font-variant-numeric:tabular-nums}
+.version-foot{margin-top:10px;font-size:13px;color:var(--soot)}
+.hero{font-family:var(--mono);font-size:12.5px;line-height:1.95;text-align:right;
+      border-right:2px solid var(--haritala);padding-right:14px;white-space:nowrap}
+.hero div{opacity:0}
+.hero div.on{opacity:1;transition:opacity .5s ease}
+.hero b{font-weight:700;color:var(--haritala)}
+.hero .lad,.hero>div>div{border:0;padding:0}
+.hero .ref{color:var(--soot);font-size:10.5px}
+.hero div{display:flex;gap:9px;justify-content:flex-end;align-items:baseline}
+
+/* ---------- controls ---------- */
+.bar{position:sticky;top:0;z-index:20;background:var(--ola);
+     border-bottom:1px solid var(--hair);padding:12px 0;margin-bottom:6px}
+.bar .wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+input[type=search]{
+  flex:1 1 240px;min-width:0;font-family:var(--serif);font-size:16px;color:var(--ink);
+  background:var(--ola-2);border:1px solid var(--hair);border-radius:2px;padding:9px 12px}
+input[type=search]:focus{outline:2px solid var(--nila);outline-offset:1px}
+.tabs{display:flex;gap:0;border:1px solid var(--hair);border-radius:2px;overflow:hidden}
+.tabs button{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:9px 13px;border:0;background:var(--ola-2);
+  color:var(--soot);cursor:pointer;border-right:1px solid var(--hair)}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-selected=true]{background:var(--nila);color:var(--ola-2)}
+.tabs button:focus-visible{outline:2px solid var(--haritala);outline-offset:-2px}
+.count{font-family:var(--mono);font-size:11px;color:var(--soot);white-space:nowrap}
+.icon-btn{font-family:var(--mono);font-size:13px;line-height:1;background:var(--ola-2);
+  color:var(--soot);border:1px solid var(--hair);border-radius:2px;padding:8px 10px;cursor:pointer;
+  align-items:center;justify-content:center}
+.icon-btn:hover{color:var(--ink);border-color:var(--soot)}
+.icon-btn:focus-visible{outline:2px solid var(--nila);outline-offset:1px}
+
+/* ---------- sections ---------- */
+.sec{margin:38px 0 8px;display:flex;align-items:baseline;gap:12px}
+.sec h2{font-size:20px;margin:0;font-weight:700;letter-spacing:.01em}
+.sec .rule{flex:1;height:1px;background:var(--hair)}
+
+/* ---------- cards ---------- */
+.card{border-top:1px solid var(--hair);padding:20px 0;display:grid;
+      grid-template-columns:60px 1fr;gap:20px;align-items:start}
+.card:last-child{border-bottom:1px solid var(--hair)}
+.num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--nila);
+     padding-top:3px;letter-spacing:.02em}
+.num em{display:block;font-style:normal;font-size:10px;color:var(--soot);font-weight:500;margin-top:3px}
+.title{font-size:18.5px;margin:0 0 6px;font-weight:400}
+.pali{font-style:italic;font-weight:700}
+.gloss{color:var(--soot);font-size:15.5px;margin:2px 0 0}
+.split{font-family:var(--mono);font-size:11.5px;color:var(--soot);margin-top:5px}
+
+/* ---------- concordance chips ---------- */
+.conc{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0 0}
+.chip{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;
+  padding:2.5px 7px;border:1px solid var(--hair);border-radius:2px;color:var(--soot);background:var(--ola-2)}
+.chip.k{border-color:var(--nila);color:var(--nila)}
+
+/* ---------- derivation ladder (signature) ---------- */
+.lad{margin:12px 0 0;font-family:var(--mono);font-size:13.5px;line-height:1.9;
+     border-left:2px solid var(--haritala);padding-left:13px}
+.lad.ce{border-left-color:var(--rakta)}
+.lad div{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.lad .s{white-space:pre-wrap;word-break:break-word}
+.lad b{font-weight:700;color:var(--haritala);background:var(--hl);
+       border-radius:2px;padding:0 1px}
+.lad.ce b{color:var(--rakta);background:var(--hl-ce)}
+.lad b.ws{background:none;box-shadow:inset 0 -2px 0 var(--haritala)}
+.lad.ce b.ws{box-shadow:inset 0 -2px 0 var(--rakta)}
+.lad .ref{font-size:11px;color:var(--soot);white-space:nowrap}
+a.xref,.lad .ref a{color:var(--nila);text-decoration:none;
+  border-bottom:1px dotted currentColor;font-weight:600}
+a.xref:hover,a.xref:focus-visible,.lad .ref a:hover,.lad .ref a:focus-visible{
+  color:var(--haritala)}
+
+/* ---------- forms index ---------- */
+.forms{border-top:1px solid var(--hair)}
+details.form{border-bottom:1px solid var(--hair)}
+details.form>summary{
+  list-style:none;cursor:pointer;padding:11px 2px;display:flex;gap:14px;
+  align-items:baseline;justify-content:space-between}
+details.form>summary::-webkit-details-marker{display:none}
+details.form>summary:hover{background:var(--hover)}
+details.form>summary:focus-visible{outline:2px solid var(--nila);outline-offset:-2px}
+.fname{font-weight:700;font-size:17.5px}
+.fname.ce{color:var(--rakta)}
+.fmeta{font-family:var(--mono);font-size:11px;color:var(--soot);letter-spacing:.05em;text-align:right}
+details.form[open]>summary{background:var(--active)}
+.fbody{padding:2px 2px 18px}
+
+/* ---------- concordance table ---------- */
+table{border-collapse:collapse;width:100%;margin-top:14px;font-size:15px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--hair);vertical-align:baseline}
+th{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;
+   text-transform:uppercase;color:var(--soot);border-bottom-color:var(--ink)}
+td.n{font-family:var(--mono);font-size:12.5px;white-space:nowrap;color:var(--nila)}
+td.n.q{color:var(--soot);font-weight:500}
+td.a{font-style:italic;font-weight:700}
+tbody tr:hover{background:var(--hover)}
+
+
+/* ---------- tooltip de aforismo ---------- */
+#tip{position:fixed;z-index:200;max-width:340px;pointer-events:none;opacity:0;
+  transform:translateY(3px);transition:opacity .12s ease,transform .12s ease;
+  background:var(--ola-2);border:1px solid var(--hair);border-radius:3px;
+  box-shadow:0 8px 26px var(--shadow);padding:11px 13px;font-size:15px;line-height:1.45}
+#tip.on{opacity:1;transform:none}
+#tip .th{display:flex;gap:7px;align-items:baseline;flex-wrap:wrap;margin-bottom:5px}
+#tip .tn{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--nila)}
+#tip .tc{font-family:var(--mono);font-size:10px;color:var(--soot)}
+#tip .tp{font-style:italic;font-weight:700;margin:0}
+#tip .te{margin:4px 0 0;color:var(--soot);font-size:14.5px}
+#tip .ts{font-family:var(--mono);font-size:10.5px;color:var(--soot);margin:6px 0 0}
+#tip .tk{font-family:var(--mono);font-size:10px;color:var(--haritala);margin:7px 0 0;
+  letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- volver ---------- */
+#volver{position:fixed;left:calc(238px + 22px);bottom:22px;z-index:150;display:none;
+  align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;background:var(--nila);color:var(--ola-2);
+  border:0;border-radius:999px;padding:10px 15px;cursor:pointer;box-shadow:0 6px 20px var(--shadow)}
+#volver.on{display:inline-flex}
+#volver:hover{filter:brightness(1.08)}
+@media (max-width:900px){#volver{left:22px}}
+
+/* ---------- empty + footer ---------- */
+.src{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;padding:2px 6px;border-radius:2px;white-space:nowrap}
+.src.kac{background:var(--chip-k);color:var(--nila)}
+.src.ce{background:var(--chip-c);color:var(--haritala)}
+.cita{font-family:var(--mono);font-size:11.5px;color:var(--soot)}
+.cita b{color:var(--nila);font-weight:600}
+.parcial{font-family:var(--mono);font-size:10px;color:var(--rakta);letter-spacing:.04em}
+.filtros{display:flex;gap:0;border:1px solid var(--hair);border-radius:2px;overflow:hidden}
+.filtros button{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;padding:8px 10px;border:0;background:var(--ola-2);color:var(--soot);
+  cursor:pointer;border-right:1px solid var(--hair)}
+.filtros[hidden]{display:none}
+.filtros button:last-child{border-right:0}
+.filtros button[aria-pressed=true]{background:var(--haritala);color:var(--ola-2)}
+.empty{padding:60px 0;text-align:center;color:var(--soot)}
+.empty p{margin:0 0 6px}
+footer{border-top:1px solid var(--hair);margin-top:54px;padding:26px 0 58px;
+       color:var(--soot);font-size:14px}
+footer a{color:var(--nila)}
+mark{background:var(--hl);color:inherit;border-radius:2px;
+  box-shadow:inset 0 -1px 0 var(--haritala)}
+
+@media (max-width:900px){
+  body{padding-left:0}
+  .sidebar{transform:translateX(-100%);transition:transform .22s ease;box-shadow:0 0 40px var(--shadow)}
+  .sidebar.open{transform:none}
+  .sb-close{display:block;position:absolute;top:12px;right:12px}
+  #burger{display:inline-flex}
+  .scrim.on{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .mast{gap:22px}
+  .hero{text-align:left;border-right:0;border-left:2px solid var(--haritala);
+        padding:0 0 0 12px;font-size:11px;overflow-x:auto;width:100%}
+  .hero div{justify-content:flex-start}
+  .bar .wrap{gap:9px}
+  .tabs{width:100%}
+  .tabs button{flex:1;padding:9px 6px;font-size:10px;letter-spacing:.05em}
+  .count{width:100%}
+  .card{grid-template-columns:1fr;gap:8px}
+  .num{padding-top:0}
+  .num em{display:inline;margin-left:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero div{opacity:1!important;transition:none!important}
+  *{animation:none!important}
+}
+.card.subregla{margin-left:clamp(0px,3vw,26px);background:transparent;box-shadow:none;border-left:2px solid var(--hair)}
+.card.subregla .num{opacity:.75}
+.volver-sitio{display:inline-block;font:400 12px/1 var(--mono);color:var(--soot);
+  text-decoration:none;margin-bottom:14px;opacity:.85}
+.volver-sitio:hover{color:var(--nila);opacity:1}
+@media print{
+  #sbnav,#sbclose,#burger,#theme,.tabs,.ws,#volver,.hero,input#q{display:none!important}
+  body{background:#fff;color:#000}
+  .card,.form{break-inside:avoid;box-shadow:none;border:.5px solid #ccc;margin-bottom:8px}
+  details.form{display:block}
+  details.form>div.fbody{display:block!important}
+  a{color:#000;text-decoration:none}
+  .lad{background:#fafafa}
+}
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sidebar" id="sidebar" aria-label="Índice">
+  <button class="icon-btn sb-close" id="sbclose" aria-label="Cerrar">✕</button>
+  <div class="sb-brand"><b>Sandhi</b><span class="lbl">Kaccāyana · Rūpasiddhi · Saddanīti</span></div>
+  <nav id="sbnav"></nav>
+</aside>
+
+<header>
+  <div class="wrap mast">
+    <div>
+      <a class="volver-sitio" href="../">← Recursos · Gramáticas Pāḷi</a>
+      <div class="lbl">Kaccāyana · Rūpasiddhi · Saddanīti</div>
+      <h1>Sandh<span class="dia">i</span></h1>
+      <p class="tag">Las reglas de combinación eufónica del pāḷi, con su derivación paso a paso.</p>
+      <span class="version-badge" id="vbadge"></span>
+    </div>
+    <div class="hero" id="hero" aria-hidden="true"></div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <input type="search" id="q" placeholder="Buscar regla, aforismo o forma — «tathupamam», «niggahita», «elide»…" aria-label="Buscar">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-reglas"   aria-selected="true"  data-v="reglas">Reglas</button>
+      <button role="tab" id="t-aforismos" aria-selected="false" data-v="aforismos">Aforismos</button>
+      <button role="tab" id="t-formas"   aria-selected="false" data-v="formas">Formas</button>
+      <button role="tab" id="t-conc"     aria-selected="false" data-v="conc">Concordancia</button>
+    </div>
+    <button class="icon-btn" id="burger" aria-label="Índice">☰</button>
+    <button class="icon-btn" id="theme" aria-label="Cambiar tema" title="Claro / oscuro">◐</button>
+    <span class="filtros" id="filtros" hidden>
+      <button data-src="all" aria-pressed="true">Todas</button>
+      <button data-src="kac" aria-pressed="false">Kaccāyana</button>
+      <button data-src="ce"  aria-pressed="false">Comb. eufónica</button>
+    </span>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main class="wrap" id="out"></main>
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+<button id="volver" class="" aria-label="Volver"></button>
+
+<footer class="wrap">
+  <p class="version-foot" id="vfoot"></p>
+  <p><strong>Fuentes.</strong> Las formas marcadas <span class="src ce">C. eufónica</span> proceden de las <em>Reglas de combinación eufónica</em> de Bhikkhu Nandisena, con su referencia canónica; su secuencia de formación ha sido generada y comprobada contra la forma atestiguada. Las marcadas <span class="src kac">Kaccāyana</span> vienen con su derivación del propio Sandhi-kappa (51 aforismos, §1–§51), con la numeración concordante de Rūpasiddhi (RŪ) y Saddanīti Suttamālā (SAD). Las cuatro categorías y los enunciados en español siguen las <em>Reglas de combinación eufónica</em> preparadas por Bhikkhu Nandisena, Instituto de Estudios Buddhistas Hispano.</p>
+  <p><strong>Cómo leer una derivación.</strong> §10 separa la consonante de su vocal; §11 vuelve a unirlas. Entre esos dos pasos ocurre la operación propiamente dicha. «EM» es la forma de la edición moderna, con apóstrofo. En amarillo, lo que cambia en cada paso; en rojo, los contraejemplos, que muestran dónde la regla <em>no</em> se aplica.</p>
+</footer>
+
+<script>
+const DATA = /*__DATOS__*/{}/*__FIN__*/;
+
+/* ---------- utilities ---------- */
+const FOLD = {'ā':'a','ī':'i','ū':'u','ṃ':'m','ṁ':'m','ñ':'n','ṭ':'t','ḍ':'d','ṇ':'n',
+              'ḷ':'l','ṅ':'n','ṣ':'s','ś':'s','é':'e','á':'a','í':'i','ó':'o','ú':'u'};
+function fold(s){
+  return (s||'').toLowerCase()
+    .replace(/[āīūṃṁñṭḍṇḷṅṣśéáíóú]/g, c => FOLD[c])
+    .replace(/[’'‘"“”\.,;:()\[\]§+=]/g,'')
+    .replace(/\s+/g,' ').trim();
+}
+const esc = s => (s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* split "saddh ā idha (§10)" -> {text, ref} */
+function parseStep(raw){
+  const m = /^(.*?)\s*\(([^()]*)\)\s*\.?$/.exec(raw.trim());
+  return m ? {text:m[1].trim(), ref:m[2].trim()} : {text:raw.trim().replace(/\.$/,''), ref:''};
+}
+/* common prefix / suffix so we can highlight only what changed */
+function delta(a,b){
+  let i=0; while(i<a.length && i<b.length && a[i]===b[i]) i++;
+  let j=0; while(j < a.length-i && j < b.length-i && a[a.length-1-j]===b[b.length-1-j]) j++;
+  return [i, b.length-j];
+}
+function refHTML(ref){
+  if(!ref) return '';
+  return '· ' + esc(ref).replace(/§(\d+)/g, (m,n) =>
+    (+n>=1 && +n<=51) ? `<a class="xref" href="#s${n}" data-goto="${n}" title="Ver aforismo §${n}">§${n}</a>` : m);
+}
+function ladder(steps, isCE){
+  let out = `<div class="lad${isCE?' ce':''}">`;
+  let prevText = null;
+  steps.forEach(raw => {
+    const {text, ref} = parseStep(raw);
+    let body;
+    if(prevText === null || text === prevText){ body = esc(text); }
+    else {
+      const [i,k] = delta(prevText, text);
+      const mid = text.slice(i,k);
+      const cls = mid.trim() === '' ? ' class="ws"' : '';
+      body = esc(text.slice(0,i)) + (k>i ? `<b${cls}>`+esc(mid)+'</b>' : '') + esc(text.slice(Math.max(i,k)));
+    }
+    out += `<div><span class="s">${body}</span><span class="ref">${refHTML(ref)}</span></div>`;
+    prevText = text;
+  });
+  return out + '</div>';
+}
+/* ---------- indices ---------- */
+const SUTTA = {}; DATA.suttas.forEach(s => SUTTA[s.kac] = s);
+const FORMS = [];
+DATA.suttas.forEach(s => s.ex.forEach(e => FORMS.push({...e, kac:s.kac, src:'kac'})));
+(DATA.ce || []).forEach(e => FORMS.push({...e, src:'ce', ce:false}));
+FORMS.sort((a,b) => fold(a.f).localeCompare(fold(b.f),'es'));
+
+DATA.rules.forEach(r => r.hay = fold([r.rule, r.ex, r.secName, 'KAC '+r.kac.join(' ')].join(' ')));
+DATA.suttas.forEach(s => s.hay = fold([s.pali, s.es, s.gloss, s.split, 'kac '+s.kac,
+  'ru '+s.ru, 'sad '+(s.sad||''), s.ex.map(e=>e.f+' '+e.s.join(' ')).join(' ')].join(' ')));
+FORMS.forEach(f => f.hay = fold([f.f, f.comp||'', f.ref||'', f.title||'',
+  f.secName||'', f.s.join(' ')].join(' ')));
+
+/* ---------- render ---------- */
+const out = document.getElementById('out'), cnt = document.getElementById('count');
+let view = 'reglas', q = '', src = 'all';
+
+function hi(text){
+  if(!q) return esc(text);
+  const f = fold(text), needle = fold(q), at = f.indexOf(needle);
+  if(at < 0 || !needle) return esc(text);
+  // map folded index back to original (fold is 1:1 on letters, but strips punctuation)
+  let oi = 0, fi = 0;
+  const idx = [];
+  while(oi < text.length){
+    const folded = fold(text[oi]);
+    if(folded.length){ idx[fi] = oi; fi += folded.length; }
+    oi++;
+  }
+  const a = idx[at] ?? 0, b = idx[at + needle.length] ?? text.length;
+  return esc(text.slice(0,a)) + '<mark>' + esc(text.slice(a,b)) + '</mark>' + esc(text.slice(b));
+}
+
+function conc(s){
+  return `<div class="conc"><span class="chip k">KAC §${s.kac}</span>`
+       + `<span class="chip">RŪ §${s.ru}</span>`
+       + (s.sad ? `<span class="chip">SAD §${s.sad}</span>` : '')
+       + `</div>`;
+}
+
+function renderReglas(rules){
+  let html = '', last = '';
+  rules.forEach(r => {
+    if(r.sec !== last){
+      last = r.sec;
+      html += `<div class="sec"><h2>${esc(r.secName)}</h2><span class="lbl">${esc(r.secSub)}</span><span class="rule"></span></div>`;
+    }
+    const s = r.kac.length ? SUTTA[r.kac[0]] : null;
+    const ex = s ? (s.ex.find(e => !e.ce) || s.ex[0]) : null;
+    // Las formas de la propia regla, por si el aforismo no trae derivación.
+    const propias = (DATA.ce || []).filter(c => c.sec === r.sec && String(c.rule) === String(r.n) && c.full);
+    const alt = (!ex && propias.length) ? propias[0] : null;
+    let cabecera;
+    if(s)              cabecera = `<p class="gloss"><span class="pali">${esc(s.pali)}</span> <span class="lbl">· RŪ §${s.ru}${s.sad?` · SAD §${s.sad}`:''}</span></p>`;
+    else if(r.kac.length) cabecera = `<p class="gloss lbl">KAC §${r.kac.join(' · §')} — fuera del Sandhi-kappa${r.ru.length?` · RŪ §${r.ru.join(' · §')}`:''}</p>`;
+    else if(r.sub)     cabecera = '';
+    else               cabecera = `<p class="gloss lbl">Sin aforismo correspondiente en el Sandhi-kappa</p>`;
+    let cuerpo;
+    if(ex)        cuerpo = `<p class="lbl" style="margin:13px 0 0">Ejemplo · ${esc(ex.f)}</p>` + ladder(ex.s, false);
+    else if(alt)  cuerpo = `<p class="lbl" style="margin:13px 0 0">Ejemplo · ${esc(alt.f)}</p>` + ladder(alt.s, false);
+    else if(r.ex) cuerpo = `<div class="lad"><div><span class="s">${esc(r.ex)}</span></div></div>`;
+    else if(propias.length === 0 && !r.sub)
+                  cuerpo = `<p class="lbl" style="margin:13px 0 0">Los ejemplos van en las subreglas siguientes</p>`;
+    else          cuerpo = '';
+    html += `<article class="card${r.sub ? ' subregla' : ''}">
+      <div class="num">${r.n}${r.kac.length ? `<em>KAC §${r.kac.join(' · §')}</em>` : ''}</div>
+      <div>
+        <p class="title">${hi(r.rule)}</p>
+        ${cabecera}
+        ${cuerpo}
+      </div></article>`;
+  });
+  return html;
+}
+
+function renderAforismos(list){
+  let html = '';
+  list.forEach(s => {
+    html += `<article class="card" id="s${s.kac}">
+      <div class="num">§${s.kac}<em>RŪ §${s.ru}${s.sad?` · SAD §${s.sad}`:''}</em></div>
+      <div>
+        <p class="title"><span class="pali">${hi(s.pali)}</span></p>
+        <p class="gloss">${hi(s.es)}</p>
+        ${s.gloss && s.gloss !== s.es ? `<p class="gloss">${hi(s.gloss)}</p>` : ''}
+        <p class="split">[ ${esc(s.split)} ]</p>
+        ${s.ex.slice(0,3).map(e =>
+            `<p class="lbl" style="margin:14px 0 0">${e.ce?'Contraejemplo':'Ejemplo'} · ${esc(e.f)}</p>`
+          + ladder(e.s, e.ce)).join('')}
+        ${s.ex.length > 3 ? `<p class="lbl" style="margin-top:12px">+ ${s.ex.length-3} derivaciones más en «Formas»</p>` : ''}
+      </div></article>`;
+  });
+  return html;
+}
+
+function renderFormas(list){
+  let html = '<div class="forms">';
+  list.forEach(f => {
+    const isKac = f.src === 'kac';
+    const s = isKac ? SUTTA[f.kac] : null;
+    const meta = isKac
+      ? `${f.ce ? 'contraejemplo · ' : ''}KAC §${f.kac}`
+      : `${f.secName.split('-')[0]} ${f.rule}${f.kac ? ' · KAC §' + f.kac : ''}`;
+    const head = isKac
+      ? `<p class="gloss" style="margin:0 0 2px"><span class="pali">${esc(s.pali)}</span> — ${esc(s.es)}</p>`
+      : `<p class="gloss" style="margin:0 0 2px">${esc(f.title)}</p>
+         <p class="cita">Componentes: ${esc(f.comp)} · Referencia: <b>${esc(f.ref)}</b>${
+            f.op ? ' · ' + esc(f.op) : ''}</p>`;
+    html += `<details class="form"${q && list.length<12 ? ' open':''}>
+      <summary>
+        <span class="fname${f.ce?' ce':''}">${hi(f.f)}</span>
+        <span class="fmeta"><span class="src ${f.src}">${isKac?'Kaccāyana':'C. eufónica'}</span> ${esc(meta)}</span>
+      </summary>
+      <div class="fbody">
+        ${head}
+        ${ladder(f.s, f.ce)}
+        ${(!isKac && !f.full) ? '<p class="parcial">Sin secuencia verificada — sólo componentes y resultado.</p>' : ''}
+      </div></details>`;
+  });
+  return html + '</div>';
+}
+
+function renderConc(list){
+  const rows = list.map(s => {
+    const rs = DATA.rules.filter(r => r.kac.includes(s.kac))
+                 .map(r => `${r.secName.split('-')[0].toLowerCase()} ${r.n}`).join(', ');
+    const ce = (DATA.ce || []).filter(e => e.kac === s.kac).length;
+    return `<tr><td class="n"><a class="xref" href="#s${s.kac}" data-goto="${s.kac}">§${s.kac}</a></td>
+      <td class="n q">${s.ru}</td><td class="n q">${s.sad || '—'}</td>
+      <td class="a">${hi(s.pali)}</td><td>${hi(s.es)}</td>
+      <td class="n q">${rs || '—'}</td><td class="n q">${
+        (s.ex.length + ce) ? (s.ex.length + (ce ? ' + ' + ce : '')) : '—'}</td></tr>`;
+  }).join('');
+  return `<div class="sec"><h2>Concordancia</h2><span class="lbl">Kaccāyana · Rūpasiddhi · Saddanīti · Tablas · Formas</span><span class="rule"></span></div>
+    <table><thead><tr><th>KAC</th><th>RŪ</th><th>SAD</th><th>Aforismo</th><th>Enunciado</th><th>Tabla</th><th>Formas</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+}
+
+function render(){
+  const n = fold(q);
+  let html, total;
+  if(view === 'reglas'){
+    const list = DATA.rules.filter(r => !n || r.hay.includes(n));
+    total = list.length; html = list.length ? renderReglas(list) : '';
+    cnt.textContent = `${total} / ${DATA.rules.length} reglas`;
+  } else if(view === 'aforismos'){
+    const list = DATA.suttas.filter(s => !n || s.hay.includes(n));
+    total = list.length; html = list.length ? renderAforismos(list) : '';
+    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos`;
+  } else if(view === 'formas'){
+    const list = FORMS.filter(f => (src === 'all' || f.src === src) && (!n || f.hay.includes(n)));
+    total = list.length; html = list.length ? renderFormas(list) : '';
+    const universe = src === 'all' ? FORMS.length : FORMS.filter(f=>f.src===src).length;
+    cnt.textContent = `${total} / ${universe} formas`;
+  } else {
+    const list = DATA.suttas.filter(s => !n || s.hay.includes(n));
+    total = list.length; html = list.length ? renderConc(list) : '';
+    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos`;
+  }
+  document.getElementById('filtros').hidden = (view !== 'formas');
+  out.innerHTML = html || `<div class="empty"><p>Sin resultados para «${esc(q)}».</p>
+    <p class="lbl">Los diacríticos son opcionales: «tathupamam» encuentra «tathūpamaṃ».</p></div>`;
+}
+
+/* ---------- events ---------- */
+document.querySelectorAll('#filtros button').forEach(b => {
+  b.addEventListener('click', () => {
+    src = b.dataset.src;
+    document.querySelectorAll('#filtros button')
+      .forEach(x => x.setAttribute('aria-pressed', x === b));
+    render();
+  });
+});
+document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
+document.querySelectorAll('.tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    view = b.dataset.v;
+    document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+    volver.classList.remove('on'); marca = null;
+    render(); window.scrollTo({top:0, behavior:'instant'});
+  });
+});
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-goto]');
+  if(!a) return;
+  e.preventDefault();
+  hideTip();
+  if(view !== 'aforismos') marcar();
+  view = 'aforismos'; q = ''; document.getElementById('q').value = '';
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', x.dataset.v === 'aforismos'));
+  render();
+  const el = document.getElementById('s' + a.dataset.goto);
+  if(el) el.scrollIntoView({block:'center', behavior:'smooth'});
+});
+
+/* ---------- hero: one derivation, revealed ---------- */
+(function(){
+  const steps = ['yassa indriyāni','yass a indriyāni (§10)','yass indriyāni (§12)',
+                 'yassindriyāni (§11)','yass’ indriyāni (EM)'];
+  const el = document.getElementById('hero');
+  el.innerHTML = ladder(steps,false).replace(/^<div class="lad">/,'').replace(/<\/div>$/,'')
+    ;
+  const rows = el.querySelectorAll(':scope > div');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  rows.forEach((r,i) => reduce ? r.classList.add('on') : setTimeout(() => r.classList.add('on'), 260 + i*220));
+})();
+
+
+/* ---------- tooltip de aforismo ---------- */
+const tip = document.getElementById('tip');
+let tipT = null;
+
+function tipHTML(n){
+  const s = SUTTA[n];
+  if(!s) return '';
+  const nEx = s.ex.length + (DATA.ce || []).filter(e => e.kac === n).length;
+  return `<div class="th"><span class="tn">KAC §${s.kac}</span>
+      <span class="tc">RŪ §${s.ru}${s.sad ? ' · SAD §' + s.sad : ''}</span></div>
+    <p class="tp">${esc(s.pali)}</p>
+    <p class="te">${esc(s.es)}</p>
+    <p class="ts">[ ${esc(s.split)} ]</p>
+    ${nEx ? `<p class="tk">${nEx} forma${nEx>1?'s':''} derivada${nEx>1?'s':''} · clic para abrir</p>`
+          : '<p class="tk">clic para abrir el aforismo</p>'}`;
+}
+
+function placeTip(el){
+  const r = el.getBoundingClientRect();
+  tip.style.visibility = 'hidden'; tip.classList.add('on');
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = r.left, y = r.bottom + 8;
+  if(x + w > innerWidth - 12) x = innerWidth - w - 12;
+  if(x < 12) x = 12;
+  if(y + h > innerHeight - 12) y = r.top - h - 8;
+  if(y < 8) y = 8;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  tip.style.visibility = '';
+}
+
+function showTip(el){
+  const n = +el.dataset.goto;
+  if(!SUTTA[n]) return;
+  tip.innerHTML = tipHTML(n);
+  tip.setAttribute('aria-hidden','false');
+  placeTip(el);
+}
+function hideTip(){
+  clearTimeout(tipT);
+  tip.classList.remove('on');
+  tip.setAttribute('aria-hidden','true');
+}
+function bindTip(e, el){
+  clearTimeout(tipT);
+  tipT = setTimeout(() => showTip(el), 110);
+}
+document.addEventListener('mouseover', e => {
+  const a = e.target.closest('a.xref[data-goto]');
+  if(a) bindTip(e, a);
+});
+document.addEventListener('mouseout', e => {
+  if(e.target.closest('a.xref[data-goto]')) hideTip();
+});
+document.addEventListener('focusin', e => {
+  const a = e.target.closest('a.xref[data-goto]');
+  if(a) showTip(a);
+});
+document.addEventListener('focusout', e => {
+  if(e.target.closest('a.xref[data-goto]')) hideTip();
+});
+addEventListener('scroll', hideTip, {passive:true});
+addEventListener('keydown', e => { if(e.key === 'Escape') hideTip(); });
+
+/* ---------- volver al punto de partida ---------- */
+const volver = document.getElementById('volver');
+let marca = null;
+const NOMBRE = {reglas:'Reglas', aforismos:'Aforismos', formas:'Formas', conc:'Concordancia'};
+function marcar(){
+  marca = {view, q, y: scrollY, src};
+  volver.textContent = '\u2190 Volver a ' + NOMBRE[view];
+  volver.classList.add('on');
+}
+volver.addEventListener('click', () => {
+  const m = marca;                       // capturar antes de limpiar
+  if(!m) return;
+  setTab(m.view); q = m.q; src = m.src;
+  document.getElementById('q').value = q;
+  document.querySelectorAll('#filtros button')
+    .forEach(x => x.setAttribute('aria-pressed', x.dataset.src === src));
+  render();
+  requestAnimationFrame(() => requestAnimationFrame(
+    () => scrollTo({top: m.y, behavior:'instant'})));
+  volver.classList.remove('on'); marca = null;
+});
+
+/* ---------- versión ---------- */
+const VERSION = '1.0', VERSION_DATE = '2026-08-10';
+const VERSION_NOTE = 'Añadidas las 261 formas de «Combinación eufónica» con su secuencia de formación.';
+(function(){
+  const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+           'septiembre','octubre','noviembre','diciembre'];
+  const [y,m,d] = VERSION_DATE.split('-').map(Number);
+  const largo = `${d} de ${M[m-1]} de ${y}`;
+  const tip = `Versión ${VERSION} · ${largo} · ${VERSION_NOTE}`;
+  const b = document.getElementById('vbadge');
+  b.title = tip; b.setAttribute('aria-label', tip);
+  b.innerHTML = `v${VERSION}<time datetime="${VERSION_DATE}">${VERSION_DATE}</time>`;
+  document.getElementById('vfoot').innerHTML =
+    `<strong>Versión ${VERSION}</strong> — <time datetime="${VERSION_DATE}">${largo}</time>. ${esc(VERSION_NOTE)}`;
+})();
+
+/* ---------- tema ---------- */
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+const root = document.documentElement;
+// La preferencia de tema se comparte con el resto del sitio (clave pali_dark)
+const saved = store.get('pali_dark') === '1' ? 'dark'
+            : (store.get('pali_dark') === '0' ? 'light' : store.get('sandhi-theme'));
+if(saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches))
+  root.dataset.theme = 'dark';
+document.getElementById('theme').onclick = () => {
+  root.dataset.theme = root.dataset.theme === 'dark' ? '' : 'dark';
+  store.set('pali_dark', root.dataset.theme === 'dark' ? '1' : '0');
+};
+
+/* ---------- barra lateral ---------- */
+const KANDA = [[1,11,'Paṭhama-kaṇḍa'],[12,22,'Dutiya-kaṇḍa'],[23,29,'Tatiya-kaṇḍa'],
+               [30,41,'Catuttha-kaṇḍa'],[42,51,'Pañcama-kaṇḍa']];
+const CATS = [['sara','Sara-sandhi'],['byanjana','Byañjana-sandhi'],
+              ['niggahita','Niggahīta-sandhi'],['pakati','Pakati-sandhi']];
+(function(){
+  let h = '<h3>Reglas</h3>';
+  CATS.forEach(([id,name]) => {
+    const n = DATA.rules.filter(r => r.sec === id).length;
+    h += `<a href="#" data-go="rule:${id}"><b>${n}</b>${name}</a>`;
+  });
+  KANDA.forEach(([a,b,name]) => {
+    h += `<h3>${name} · §${a}–§${b}</h3>`;
+    DATA.suttas.filter(s => s.kac >= a && s.kac <= b).forEach(s => {
+      h += `<a href="#s${s.kac}" data-go="sutta:${s.kac}"><b>§${s.kac}</b>${esc(s.pali)}</a>`;
+    });
+  });
+  document.getElementById('sbnav').innerHTML = h;
+})();
+
+const sidebar = document.getElementById('sidebar'), scrim = document.getElementById('scrim');
+const closeSb = () => { sidebar.classList.remove('open'); scrim.classList.remove('on'); };
+document.getElementById('burger').onclick = () => {
+  sidebar.classList.toggle('open'); scrim.classList.toggle('on');
+};
+document.getElementById('sbclose').onclick = closeSb;
+scrim.onclick = closeSb;
+addEventListener('keydown', e => { if(e.key === 'Escape') closeSb(); });
+
+function setTab(v){
+  view = v;
+  document.querySelectorAll('.tabs button')
+    .forEach(x => x.setAttribute('aria-selected', x.dataset.v === v));
+}
+document.getElementById('sbnav').addEventListener('click', e => {
+  const a = e.target.closest('a[data-go]');
+  if(!a) return;
+  e.preventDefault();
+  document.querySelectorAll('#sbnav a').forEach(x => x.classList.remove('on'));
+  a.classList.add('on');
+  const [kind, id] = a.dataset.go.split(':');
+  q = ''; document.getElementById('q').value = '';
+  if(kind === 'rule'){
+    setTab('reglas'); render();
+    const h = [...document.querySelectorAll('.sec h2')]
+      .find(x => x.textContent.toLowerCase().startsWith(id.slice(0,4)));
+    (h ? h.closest('.sec') : document.body).scrollIntoView({block:'start', behavior:'smooth'});
+  } else {
+    setTab('aforismos'); render();
+    const el = document.getElementById('s' + id);
+    if(el) el.scrollIntoView({block:'center', behavior:'smooth'});
+  }
+  if(innerWidth <= 900) closeSb();
+});
+
+render();
+</script>
+</body>
+</html>
