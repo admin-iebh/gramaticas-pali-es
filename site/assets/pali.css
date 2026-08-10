@@ -1,0 +1,645 @@
+/* Estilos compartidos — Gramáticas Pāḷi en español
+   Extraído de 1-Sandhi-Kappa v1.1. Editar aquí afecta a todos los capítulos. */
+
+/* ── Reset & variables ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:            #FAFAF8;
+  --bg2:           #F3F2EE;
+  --bg3:           #ECEAE4;
+  --text:          #1A1917;
+  --text2:         #4A4845;
+  --text3:         #8C8A85;
+  --border:        rgba(28,26,22,.11);
+  --border2:       rgba(28,26,22,.20);
+  --accent:        #534AB7;
+  --accent-bg:     #EEEDFE;
+  --accent-mid:    #7F77DD;
+  --green:         #3B6D11;
+  --green-bg:      #EAF3DE;
+  --serif:         'Noto Serif', Georgia, serif;
+  --sans:          'Inter', system-ui, sans-serif;
+  --mono:          'JetBrains Mono', monospace;
+  --r:             8px;
+  --rl:            12px;
+  --toc-w:         240px;
+}
+body.dark {
+  --bg: #18181A; --bg2: #222224; --bg3: #2C2C2F;
+  --text: #EEECEA; --text2: #B8B6B0; --text3: #8A8880;
+  --border: rgba(255,255,255,.09); --border2: rgba(255,255,255,.17);
+  --accent-bg: #26224A;
+}
+
+/* ── Progress bar ────────────────────────────────────────────────── */
+#pbar-wrap {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px;
+  z-index: 2000; pointer-events: none;
+}
+#pbar { height: 100%; width: 0; background: var(--accent-mid); transition: width .4s; }
+#pbadge {
+  position: fixed; top: 10px; right: 60px;
+  background: var(--bg); border: .5px solid var(--border2);
+  border-radius: 100px; padding: 2px 9px;
+  font: 10px/1 var(--mono); color: var(--text3);
+  z-index: 2000;
+}
+
+/* ── Dark mode button ────────────────────────────────────────────── */
+#dark-btn {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--bg); border: .5px solid var(--border2);
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  font-size: 18px; cursor: pointer; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── TOC sidebar ─────────────────────────────────────────────────── */
+#toc {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: var(--toc-w); overflow-y: auto;
+  background: var(--bg); border-right: .5px solid var(--border);
+  padding: 1.5rem 1rem 2rem 1.25rem;
+  font-family: var(--serif);
+  scrollbar-width: thin;
+  display: none;
+}
+@media (min-width: 1100px) {
+  #toc { display: block; }
+  #main { margin-left: var(--toc-w); }
+}
+.toc-title {
+  font-size: 13px; font-weight: 500;
+  color: var(--accent); letter-spacing: .02em;
+  margin-bottom: 1.25rem; padding-bottom: .75rem;
+  border-bottom: .5px solid var(--border);
+}
+.toc-kanda {
+  font-size: 11px; font-weight: 500; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--text3);
+  margin: 1rem 0 .35rem; padding-bottom: .25rem;
+  border-bottom: .5px solid var(--border);
+}
+.toc-item {
+  display: block; padding: 3px 6px; border-radius: 5px;
+  font-size: 12.5px; color: var(--text2); text-decoration: none;
+  cursor: pointer; line-height: 1.55; transition: background .1s, color .1s;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.toc-item:hover { background: var(--bg2); color: var(--text); }
+.toc-item.active { background: var(--accent-bg); color: var(--accent); font-weight: 500; }
+
+/* ── Main layout ─────────────────────────────────────────────────── */
+#main {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+}
+#inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* ── Page header ─────────────────────────────────────────────────── */
+.page-hdr { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: .5px solid var(--border); }
+.hdr-grammar { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--accent); margin-bottom: 4px; }
+.hdr-sub { font-size: 14px; color: var(--text2); margin-bottom: 1rem; }
+.hdr-chapter { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.hdr-meta { font-size: 12px; color: var(--text3); }
+
+/* ── Controls bar ────────────────────────────────────────────────── */
+.controls {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 6px; margin: 1rem 0;
+}
+.ctrl-btn {
+  background: none; border: .5px solid var(--border2);
+  border-radius: var(--r); padding: 5px 12px;
+  font: 12px/1 var(--sans); color: var(--text2);
+  cursor: pointer; transition: background .12s;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.ctrl-btn:hover { background: var(--bg2); color: var(--text); }
+.ctrl-sep { width: .5px; height: 18px; background: var(--border2); margin: 0 2px; }
+#font-lbl { font: 10px/1 var(--mono); color: var(--text3); min-width: 32px; text-align: center; }
+#open-count { font: 10px/1 var(--mono); color: var(--text3); margin-left: auto; }
+
+/* ── Search ──────────────────────────────────────────────────────── */
+.search-wrap { position: relative; margin-bottom: 1rem; }
+.search-input {
+  width: 100%; padding: 9px 36px 9px 13px;
+  border: .5px solid var(--border2); border-radius: var(--r);
+  font: 13px/1 var(--sans); background: var(--bg); color: var(--text);
+  outline: none; transition: border-color .15s, box-shadow .15s;
+}
+.search-input:focus { border-color: var(--accent-mid); box-shadow: 0 0 0 2px var(--accent-bg); }
+.search-icon { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; }
+#search-count { font: 11px/1 var(--mono); color: var(--text3); margin-top: 5px; }
+
+/* ── Nav pills ───────────────────────────────────────────────────── */
+.nav-pills {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-bottom: 1.25rem;
+}
+.nav-pill-label { font: 12px/1 var(--mono); color: var(--text3); align-self: center; margin-right: 4px; }
+
+/* ── Kanda section ───────────────────────────────────────────────── */
+.kanda-section { margin-bottom: .25rem; }
+.kanda-heading {
+  font: 11px/1 var(--mono); font-weight: 500; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text3);
+  margin: 2rem 0 .85rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.kanda-heading::after { content: ''; flex: 1; height: .5px; background: var(--border); }
+.kanda-es { font-weight: 400; }
+
+/* ── Kanda end ───────────────────────────────────────────────────── */
+.kanda-end {
+  text-align: center; margin: 2rem auto 1rem;
+  padding: 1.25rem 0 .5rem; border-top: .5px solid var(--border);
+  max-width: 480px;
+}
+.kanda-end-pali {
+  font: 400 14px/1.4 var(--serif); color: var(--text2);
+  letter-spacing: .02em; margin-bottom: 5px;
+}
+.kanda-end-es { font: 12.5px/1.4 var(--sans); color: var(--text2); letter-spacing: .01em; }
+
+/* ── Sutta card ──────────────────────────────────────────────────── */
+.sutta-card {
+  background: var(--bg); border: .5px solid var(--border);
+  border-radius: var(--rl); margin-bottom: .85rem;
+  transition: box-shadow .15s;
+}
+body.dark .sutta-card { background: var(--bg2); }
+.sutta-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.sutta-header {
+  padding: .85rem 1.1rem; cursor: pointer;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  background: var(--bg2); border-radius: var(--rl);
+  user-select: none; transition: background .12s;
+}
+.sutta-card.open .sutta-header { border-radius: var(--rl) var(--rl) 0 0; }
+.sutta-header:hover { background: var(--bg3); }
+.sutta-meta { flex: 1; }
+.sutta-ref-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.sutta-ref { font: 12px/1 var(--mono); color: var(--text3); flex-shrink: 0; }
+.sutta-pali-title { font: 16px/1.4 var(--serif); color: var(--text); }
+.sutta-ref-num { font: 12px/1 var(--mono); color: var(--text3); }
+.sutta-breakdown { font: 11px/1 var(--mono); color: var(--text3); margin-top: 4px; }
+.chevron { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--text3); transition: transform .2s; }
+.sutta-card.open .chevron { transform: rotate(180deg); }
+.sutta-body { display: none; padding: 1.1rem 1.25rem 1.25rem; border-top: .5px solid var(--border); }
+.sutta-card.open .sutta-body { display: block; }
+
+/* ── Pāḷi block ──────────────────────────────────────────────────── */
+.pali-block {
+  background: var(--bg2); border-left: 3px solid var(--border2);
+  border-radius: 0 var(--r) var(--r) 0; padding: .75rem 1rem;
+  margin-bottom: 1rem; font: 14px/1.9 var(--serif); color: var(--text2);
+}
+
+/* ── Translation ─────────────────────────────────────────────────── */
+.gloss {
+  font: 400 15px/1.5 var(--serif); color: var(--text);
+  padding: .55rem .9rem; border-left: 3px solid var(--accent-mid);
+  background: var(--accent-bg); border-radius: 0 var(--r) var(--r) 0;
+  margin-bottom: .5rem;
+}
+.vutti {
+  font: 400 14px/1.7 var(--serif); color: var(--text);
+  padding: .45rem .9rem; border-left: 3px solid var(--border2);
+  background: var(--bg2); border-radius: 0 var(--r) var(--r) 0;
+  margin-bottom: .4rem;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────── */
+hr.div { border: none; border-top: .5px solid var(--border); margin: .85rem 0; }
+
+/* ── Collapsible ─────────────────────────────────────────────────── */
+.collapsible-btn {
+  background: none; border: .5px solid var(--border);
+  border-radius: 100px; padding: 3px 10px;
+  font: 11px/1 var(--sans); color: var(--text3);
+  cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+  margin-bottom: .5rem; transition: background .12s, color .12s;
+}
+.collapsible-btn:hover { background: var(--bg3); color: var(--text2); border-color: var(--border2); }
+.collapsible-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
+.collapsible-content { display: none; background: var(--bg2); border-radius: var(--r); padding: .5rem .75rem; margin-bottom: .5rem; font-size: 13px; }
+.collapsible-content.open { display: block; }
+.section-label { font: 500 10px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: var(--text3); margin-bottom: .5rem; }
+.rest-content { font: 13px/1.8 var(--sans); color: var(--text2); }
+.rest-para { margin-bottom: .5rem; }
+.formation-title { font-weight: 500; margin-top: .5rem; }
+.seq-list { padding-left: 1.5rem; font: 12px/2 var(--mono); }
+.fn-block { font: 12px/1.7 var(--sans); }
+.fn-item { display: grid; grid-template-columns: 28px 1fr; gap: 0 8px; padding: .2rem 0; }
+.fn-num { font-weight: 500; color: var(--accent); text-align: right; }
+
+/* ── Footnote tooltips ───────────────────────────────────────────── */
+.fn-tip { position: relative; display: inline; }
+.fn-sup { font-size: 10px; color: var(--accent); vertical-align: super; line-height: 0; cursor: help; }
+.fn-tip-box {
+  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); background: var(--bg); color: var(--text);
+  border: .5px solid var(--border2); border-radius: var(--r);
+  padding: 8px 13px; font: 12.5px/1.6 var(--sans);
+  white-space: normal; min-width: 200px; max-width: 340px;
+  z-index: 100; box-shadow: 0 3px 12px rgba(0,0,0,.1);
+}
+.fn-tip:hover .fn-tip-box { display: block; }
+
+/* ── Tooltips (pāḷi terms) ───────────────────────────────────────── */
+.tip-wrap { position: relative; display: inline; }
+.tip-term { border-bottom: 1px dotted var(--accent-mid); cursor: help; }
+.tip-box {
+  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); background: var(--bg); color: var(--text);
+  border: .5px solid var(--border2); border-radius: var(--r);
+  padding: 7px 12px; font: 12.5px/1.5 var(--sans);
+  white-space: normal; min-width: 160px; max-width: 260px;
+  z-index: 100; box-shadow: 0 3px 12px rgba(0,0,0,.1);
+}
+.tip-wrap:hover .tip-box { display: block; }
+
+/* ── Ref tooltips ────────────────────────────────────────────────── */
+.ref-tip { position: relative; display: inline; }
+.ref-tip-term { border-bottom: 1px dotted var(--border2); cursor: help; font: 12px/1 var(--mono); color: var(--text3); }
+.ref-tip-box {
+  display: none; position: absolute; bottom: calc(100% + 6px); left: 50%;
+  transform: translateX(-50%); background: var(--bg); color: var(--text);
+  border: .5px solid var(--border2); border-radius: var(--r);
+  padding: 6px 10px; font: 12px/1.5 var(--sans);
+  white-space: normal; min-width: 140px; max-width: 240px;
+  z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.ref-tip:hover .ref-tip-box { display: block; }
+
+/* ── Nav tooltips ────────────────────────────────────────────────── */
+.nav-tip-wrap { position: relative; display: inline-block; }
+.nav-btn {
+  background: none; border: .5px solid var(--border2); border-radius: var(--r);
+  padding: 4px 10px; font: 12px/1 var(--mono); color: var(--text2);
+  cursor: pointer; transition: background .12s;
+}
+.nav-btn:hover { background: var(--bg2); color: var(--text); }
+.nav-tip-box {
+  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); background: var(--bg); color: var(--text);
+  border: .5px solid var(--border2); border-radius: var(--r);
+  padding: 10px 14px; font: 12.5px/1.6 var(--sans);
+  white-space: normal; min-width: 240px; max-width: 320px;
+  z-index: 100; box-shadow: 0 3px 14px rgba(0,0,0,.1);
+}
+.nav-tip-es { display: block; font-style: italic; color: var(--text2); margin-top: 4px; font-size: 11px; }
+.nav-tip-wrap:hover .nav-tip-box { display: block; }
+
+/* ── Sutta footer ────────────────────────────────────────────────── */
+.sutta-footer { display: flex; align-items: center; gap: 8px; margin-top: .75rem; border-top: .5px solid var(--border); padding-top: .75rem; }
+.copy-btn {
+  background: none; border: .5px solid var(--border); border-radius: var(--r);
+  padding: 3px 10px; font: 11px/1 var(--sans); color: var(--text3);
+  cursor: pointer; transition: all .15s; margin-left: auto;
+}
+.copy-btn:hover { background: var(--bg2); color: var(--text); border-color: var(--border2); }
+.copy-btn.copied { color: var(--green); border-color: var(--green-bg); background: var(--green-bg); }
+.back-top-btn {
+  background: none; border: .5px solid var(--border); border-radius: var(--r);
+  padding: 3px 10px; font: 11px/1 var(--sans); color: var(--text3);
+  cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all .15s;
+}
+.back-top-btn:hover { background: var(--bg2); color: var(--text); border-color: var(--border2); }
+
+/* ── Intro verses ────────────────────────────────────────────────── */
+.intro-block { padding: .25rem 0; }
+.intro-verse { display: grid; grid-template-columns: 24px 1fr; gap: 0 10px; margin-bottom: 1.25rem; }
+.intro-num { font: 11px/1 var(--mono); color: var(--text3); padding-top: 3px; }
+.intro-pali { font: 400 14px/1.9 var(--serif); color: var(--text2); grid-column: 2; }
+.intro-trans { font: 13.5px/1.8 var(--serif); color: var(--text); margin-top: 8px; grid-column: 2; }
+
+/* ── Search hidden ───────────────────────────────────────────────── */
+.search-hidden { display: none !important; }
+
+/* ── Sutta cross-refs ────────────────────────────────────────────── */
+.sutta-xref { color: var(--accent); text-decoration: none; font-weight: 500; }
+.sutta-xref:hover { text-decoration: underline; }
+
+/* ── Print ───────────────────────────────────────────────────────── */
+@media print {
+  #toc, #pbar-wrap, #pbadge, #dark-btn, .controls, .search-wrap,
+  .nav-pills, .back-top-btn, .copy-btn, .collapsible-btn { display: none !important; }
+  .sutta-card { break-inside: avoid; box-shadow: none; border: .5px solid #ccc; }
+  .sutta-body { display: block !important; }
+  .collapsible-content { display: block !important; }
+  .sutta-header { background: #f5f5f0 !important; border-radius: 0 !important; }
+  body { font-size: 11px; }
+  .pali-block { color: #444 !important; }
+}
+
+.chapter-end {
+  text-align: center;
+  margin: 2.5rem auto 1.5rem;
+  padding: 1.5rem 0 .75rem;
+  border-top: .5px solid var(--border);
+  max-width: 480px;
+}
+.chapter-end-pali {
+  font: 400 15px/1.4 var(--serif);
+  color: var(--text2);
+  margin-bottom: 6px;
+  letter-spacing: .02em;
+}
+.chapter-end-es {
+  font: 13px/1.4 var(--sans);
+  color: var(--text2);
+  letter-spacing: .01em;
+}
+
+
+.footer-box {
+  margin: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.footer-box-main,
+.footer-box-copy {
+  background: var(--bg2);
+  border: .5px solid var(--border);
+  border-radius: var(--r);
+  padding: .75rem 1rem;
+  font: 11.5px/1.65 var(--sans);
+  color: var(--text3);
+}
+.footer-box-main strong {
+  font-weight: 500;
+  color: var(--text2);
+}
+
+
+body.dark .tip-box,
+body.dark .nav-tip-box,
+body.dark .ref-tip-box,
+body.dark .fn-tip-box {
+  box-shadow: 0 3px 16px rgba(0,0,0,.4);
+  border-color: var(--border2);
+}
+
+
+/* ── Mobile layout ───────────────────────────────────────────────── */
+
+/* Touch devices: convert hover tooltips to click (handled via JS) */
+@media (hover: none) {
+  .tip-wrap .tip-box,
+  .nav-tip-wrap .nav-tip-box,
+  .ref-tip .ref-tip-box,
+  .fn-tip .fn-tip-box { display: none !important; }
+}
+
+/* Small screens: tighten padding */
+@media (max-width: 600px) {
+  #inner { padding: 1rem 1rem 4rem; }
+  .page-hdr { margin-bottom: 1rem; padding-bottom: 1rem; }
+  .hdr-grammar { font-size: 22px; }
+  .hdr-chapter { font-size: 15px; }
+  .sutta-header { padding: .7rem .85rem; }
+  .sutta-pali-title { font-size: 14px; }
+  .sutta-body { padding: .85rem 1rem 1rem; }
+  .pali-block { font-size: 13px; padding: .6rem .8rem; }
+  .gloss { font-size: 14px; padding: .5rem .75rem; }
+  .vutti { font-size: 13px; padding: .4rem .75rem; }
+  .controls { gap: 4px; }
+  .ctrl-btn { padding: 4px 9px; font-size: 11px; }
+  .nav-pills { gap: 3px; }
+  .nav-btn { padding: 3px 7px; font-size: 11px; }
+  #dark-btn { width: 32px; height: 32px; font-size: 15px; bottom: 1rem; right: 1rem; }
+  #pbadge { right: 46px; }
+  .kanda-end { margin: 1.5rem auto .75rem; }
+  .chapter-end { padding: 1rem 1.25rem; }
+  .footer-box { margin: 1.5rem 0 .75rem; }
+  .sutta-footer { flex-wrap: wrap; }
+  .copy-btn { margin-left: 0; }
+}
+
+/* Medium screens: adjust TOC threshold */
+@media (min-width: 600px) and (max-width: 1099px) {
+  #inner { padding: 1.5rem 1.25rem 5rem; }
+}
+
+/* Nav pills: allow wrapping on mobile */
+.nav-pills { flex-wrap: wrap; }
+
+/* Sutta breakdown: allow wrapping on narrow screens */
+.sutta-breakdown { white-space: normal; word-break: break-word; }
+
+/* Collapsible content: narrower on mobile */
+@media (max-width: 600px) {
+  .collapsible-content { padding: .4rem .6rem; }
+  .seq-list { padding-left: 1rem; }
+  .fn-item { grid-template-columns: 24px 1fr; }
+}
+
+/* Touch-friendly: larger tap targets for buttons */
+@media (max-width: 600px) {
+  .collapsible-btn { padding: 5px 12px; }
+  .sutta-header { min-height: 48px; }
+}
+
+/* Prevent horizontal scroll */
+html { overflow-x: hidden; }
+body, #main { overflow-x: hidden; }
+.nav-tip-box { max-width: min(280px, 80vw); white-space: normal; }
+.tip-box { max-width: min(200px, 70vw); white-space: normal; }
+.ref-tip-box { max-width: min(180px, 70vw); white-space: normal; }
+
+/* Long Pāḷi words in sequences: break if needed */
+.seq-list li, .rest-para { word-break: break-word; overflow-wrap: break-word; }
+
+
+/* Dark mode: kanda-end readable */
+body.dark .kanda-end { border-top-color: var(--border2); }
+body.dark .kanda-end-pali,
+body.dark .kanda-end-es { color: #C8C6C0; }
+
+/* Dark mode: footnote superscripts and sutta-xref brighter */
+body.dark .fn-sup { color: #A09AE4; }
+body.dark .sutta-xref { color: #A09AE4; }
+
+/* Dark mode: sutta numbers brighter */
+body.dark .sutta-ref,
+body.dark .sutta-ref-num { color: #D0CEC8; }
+body.dark .sutta-breakdown { color: #C0BEB8; }
+body.dark .kanda-heading { color: #C0BEB8; }
+
+
+@media print {
+  .gloss { background: #eeeefa !important; color: #000 !important; border-left-color: #7F77DD !important; }
+  .vutti { background: #f4f4f2 !important; color: #111 !important; border-left-color: #888 !important; }
+  .pali-block { background: #f7f7f5 !important; color: #333 !important; }
+  .sutta-ref, .sutta-ref-num, .sutta-breakdown { color: #555 !important; }
+  .sutta-pali-title { color: #000 !important; }
+  .kanda-end-pali, .kanda-end-es { color: #444 !important; }
+  .chapter-end-pali, .chapter-end-es { color: #333 !important; }
+  .intro-pali, .intro-trans { color: #222 !important; }
+}
+
+
+body.dark .chapter-end { border-top-color: var(--border2); }
+body.dark .chapter-end-pali,
+body.dark .chapter-end-es { color: #C8C6C0; }
+
+
+/* TOC: active item highlighted on scroll */
+.toc-item.scroll-active {
+  background: var(--bg3);
+  color: var(--text);
+  font-weight: 500;
+}
+.toc-item.toc-active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* Share button */
+.share-btn {
+  background: none; border: .5px solid var(--border);
+  border-radius: var(--r); padding: 3px 9px;
+  font: 11px/1 var(--sans); color: var(--text3);
+  cursor: pointer; transition: all .15s;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.share-btn:hover { background: var(--bg2); color: var(--text); border-color: var(--border2); }
+.share-btn.shared { color: var(--green); border-color: var(--green-bg); }
+.share-btn svg { width: 11px; height: 11px; }
+
+/* Completion checkbox */
+.done-wrap {
+  display: inline-flex; align-items: center; gap: 5px;
+  cursor: pointer; user-select: none;
+}
+.done-cb {
+  width: 16px; height: 16px; border: 1.5px solid var(--border2);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  transition: all .15s; flex-shrink: 0; background: var(--bg);
+}
+.done-cb.checked {
+  background: var(--green); border-color: var(--green);
+}
+.done-cb.checked::after {
+  content: "✓"; color: white; font-size: 10px; font-weight: 700;
+}
+.done-label {
+  font: 11px/1 var(--sans); color: var(--text3); transition: color .15s;
+}
+.done-wrap:hover .done-label { color: var(--text2); }
+.done-count {
+  font: 10px/1 var(--mono); color: var(--text3);
+  background: var(--bg2); border: .5px solid var(--border);
+  border-radius: 100px; padding: 2px 7px;
+}
+
+/* Chapter navigation */
+.chapter-nav {
+  display: flex; gap: .75rem; margin: 1.5rem 0;
+  padding: 1rem; background: var(--bg2);
+  border: .5px solid var(--border); border-radius: var(--rl);
+  align-items: center;
+}
+.chapter-nav-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: .5px solid var(--border2);
+  border-radius: var(--r); padding: 6px 12px;
+  font: 13px/1 var(--sans); color: var(--text2);
+  cursor: pointer; transition: all .15s; text-decoration: none;
+}
+.chapter-nav-btn:hover { background: var(--bg); color: var(--text); }
+.chapter-nav-btn.disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
+.chapter-nav-btn svg { width: 14px; height: 14px; }
+.chapter-nav-title {
+  font: 12px/1.4 var(--sans); color: var(--text3);
+  flex: 1; text-align: center;
+}
+.chapter-nav-label { font-size: 10px; display: block; color: var(--text3); margin-bottom: 2px; }
+
+/* EPUB export button */
+.epub-btn {
+  background: none; border: .5px solid var(--border2);
+  border-radius: var(--r); padding: 5px 12px;
+  font: 12px/1 var(--sans); color: var(--text2);
+  cursor: pointer; transition: background .12s;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.epub-btn:hover { background: var(--bg2); color: var(--text); }
+.epub-btn svg { width: 13px; height: 13px; }
+
+/* Progress stats */
+.stats-row {
+  display: flex; gap: .5rem; align-items: center;
+  font: 11px/1 var(--mono); color: var(--text3);
+  margin-bottom: .5rem;
+}
+
+
+.version-badge{font:600 11px/1 ui-monospace,'JetBrains Mono',monospace;letter-spacing:.05em;
+  color:var(--accent);background:var(--accent-bg);border:1px solid var(--accent-mid);
+  border-radius:999px;padding:5px 10px;cursor:help;white-space:nowrap;
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.version-badge:hover{filter:brightness(.94)}
+.version-badge time{font-variant-numeric:tabular-nums;opacity:.85}
+.hdr-meta .version-badge{margin-left:10px}
+.version-foot{margin-top:10px;font-size:12px;color:var(--text3)}
+@media print{.version-foot{display:block}.version-badge{display:none}}
+
+/* ── Páginas de índice ───────────────────────────────────────────── */
+.idx {
+  max-width: 46rem; margin: 0 auto; padding: 4rem 1.5rem 6rem;
+  font-family: var(--sans); color: var(--text);
+}
+.idx-eyebrow {
+  font: 500 11px/1 var(--mono); letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 1.1rem;
+}
+.idx h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: .5rem;
+}
+.idx .idx-sub { font-family: var(--serif); color: var(--text2); font-size: 1.05rem; margin-bottom: .35rem; }
+.idx .idx-lede { color: var(--text2); line-height: 1.65; margin: 1.4rem 0 0; }
+.idx h2 {
+  font: 500 11px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--text3); margin: 3rem 0 1rem;
+  padding-bottom: .6rem; border-bottom: .5px solid var(--border);
+}
+.idx-list { list-style: none; display: grid; gap: .6rem; }
+.idx-card {
+  display: block; padding: 1.1rem 1.25rem; text-decoration: none; color: inherit;
+  background: var(--bg2); border: .5px solid var(--border); border-radius: var(--rl);
+  transition: background .15s, border-color .15s, transform .15s;
+}
+a.idx-card:hover { background: var(--accent-bg); border-color: var(--accent-mid); transform: translateY(-1px); }
+.idx-card .t { font-family: var(--serif); font-size: 1.06rem; display: block; margin-bottom: .2rem; }
+.idx-card .d { font-size: .87rem; color: var(--text3); line-height: 1.5; }
+.idx-card.pend { opacity: .55; }
+.idx-badge {
+  float: right; font: 400 10px/1.7 var(--mono); padding: 0 .55rem;
+  border-radius: 100px; background: var(--green-bg); color: var(--green);
+}
+body.dark .idx-badge { background: #24331a; color: #a5d178; }
+.idx-badge.wip { background: var(--bg3); color: var(--text3); }
+.idx-foot {
+  margin-top: 4rem; padding-top: 1.4rem; border-top: .5px solid var(--border);
+  font-size: .82rem; color: var(--text3); line-height: 1.7;
+}
+.idx-foot a { color: var(--accent); }
+body.dark .idx-foot a { color: var(--accent-mid); }
+.idx-back { display: inline-block; font: 400 12px/1 var(--mono); color: var(--text3); text-decoration: none; margin-bottom: 2rem; }
+.idx-back:hover { color: var(--accent); }

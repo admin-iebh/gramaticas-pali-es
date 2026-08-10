@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gramáticas Pāḷi en español</title>
+<meta content="Traducciones al español de las gramáticas clásicas de la lengua pāḷi. Instituto de Estudios Budistas Hispano." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/pali.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="idx">
+
+<p class="idx-eyebrow">Instituto de Estudios Budistas Hispano</p>
+<h1>Gramáticas Pāḷi en español</h1>
+<p class="idx-sub">Traducciones de las gramáticas clásicas de la lengua pāḷi</p>
+<p class="idx-lede">
+  Traducciones al español de las gramáticas clásicas pāḷi, con glosario
+  terminológico común y concordancia entre las obras. Un término pāḷi se
+  traduce siempre igual en todas ellas.
+</p>
+
+<h2>Obras</h2>
+<ul class="idx-list">
+  <li>
+    <a class="idx-card" href="kaccayana/">
+      <span class="idx-badge">1 de 8 capítulos</span>
+      <span class="t">Kaccāyana-Byākaraṇaṃ</span>
+      <span class="d">Gramática de Kaccāyana. La más antigua de las gramáticas pāḷi.
+      Edición base: Bhikkhu U Nandisena (ITBMU).</span>
+    </a>
+  </li>
+  <li>
+    <div class="idx-card pend">
+      <span class="idx-badge wip">prevista</span>
+      <span class="t">Padarūpasiddhi</span>
+      <span class="d">De Buddhappiya. Reordena el material de Kaccāyana por temas.</span>
+    </div>
+  </li>
+  <li>
+    <div class="idx-card pend">
+      <span class="idx-badge wip">prevista</span>
+      <span class="t">Moggallāna-vyākaraṇa</span>
+      <span class="d">De Moggallāna Thera. Tradición gramatical independiente de Kaccāyana.</span>
+    </div>
+  </li>
+  <li>
+    <div class="idx-card pend">
+      <span class="idx-badge wip">prevista</span>
+      <span class="t">Saddanīti</span>
+      <span class="d">De Aggavaṃsa. La gramática pāḷi más extensa.</span>
+    </div>
+  </li>
+</ul>
+
+<div class="idx-foot">
+  Textos relacionados: corpus del Sexto Concilio en
+  <a href="https://buddha-dhamma.net">buddha-dhamma.net</a>.<br/>
+  Código y traducciones:
+  <a href="https://github.com/admin-iebh/gramaticas-pali-es">github.com/admin-iebh/gramaticas-pali-es</a>.
+</div>
+
+</main>
+
+<script>
+(function () {
+  var b = document.createElement('button');
+  b.id = 'dark-btn'; b.type = 'button';
+  b.setAttribute('aria-label', 'Modo oscuro');
+  b.textContent = '◐';
+  b.onclick = function () {
+    document.body.classList.toggle('dark');
+    try { localStorage.setItem('pali_dark', document.body.classList.contains('dark') ? '1' : '0'); } catch (e) {}
+  };
+  document.body.appendChild(b);
+  try { if (localStorage.getItem('pali_dark') === '1') document.body.classList.add('dark'); } catch (e) {}
+})();
+</script>
+</body>
+</html>

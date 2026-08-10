@@ -1,0 +1,532 @@
+{
+  "_nota": "Concordancia de numeración entre ediciones. La numeración normativa de este repositorio es 'kaccayana' (secuencial, citada como §N); es la que fija las anclas y las URL del sitio publicado.",
+  "edicion_base": "Kaccāyana-vyākaraṇa, ed. y trad. Bhikkhu U Nandisena (ITBMU)",
+  "formato_fuente": "**[Núm. Kaccāyana]. [Núm. Rūpasiddhi]. Texto del sutta ([Núm. Saddanīti-Suttamālā]).**",
+  "obras": {
+    "kaccayana": "numeración secuencial de Kaccāyana — normativa; fija las anclas #sN",
+    "rupasiddhi": "número correspondiente en Padarūpasiddhi",
+    "saddaniti_suttamala": "número correspondiente en Saddanīti-Suttamālā; no todos los suttas lo tienen"
+  },
+  "capitulos": {
+    "01-sandhi-kappa": {
+      "titulo": "Sandhi-Kappa",
+      "kandas": 5,
+      "suttas": [
+        {
+          "kaccayana": 1,
+          "kanda": 1,
+          "rupasiddhi": 1,
+          "saddaniti_suttamala": null,
+          "pali": "Attho akkharasaññāto",
+          "ancla": "s1"
+        },
+        {
+          "kaccayana": 2,
+          "kanda": 1,
+          "rupasiddhi": 2,
+          "saddaniti_suttamala": [
+            "1",
+            "2"
+          ],
+          "pali": "Akkharā p’ ādayo ekacattālīsaṃ",
+          "ancla": "s2"
+        },
+        {
+          "kaccayana": 3,
+          "kanda": 1,
+          "rupasiddhi": 3,
+          "saddaniti_suttamala": [
+            "3"
+          ],
+          "pali": "Tatth’ odantā sarā aṭṭha",
+          "ancla": "s3"
+        },
+        {
+          "kaccayana": 4,
+          "kanda": 1,
+          "rupasiddhi": 4,
+          "saddaniti_suttamala": [
+            "4"
+          ],
+          "pali": "Lahumattā tayo rassā",
+          "ancla": "s4"
+        },
+        {
+          "kaccayana": 5,
+          "kanda": 1,
+          "rupasiddhi": 5,
+          "saddaniti_suttamala": [
+            "5"
+          ],
+          "pali": "Aññe dīghā",
+          "ancla": "s5"
+        },
+        {
+          "kaccayana": 6,
+          "kanda": 1,
+          "rupasiddhi": 8,
+          "saddaniti_suttamala": [
+            "6"
+          ],
+          "pali": "Sesā byañjanā",
+          "ancla": "s6"
+        },
+        {
+          "kaccayana": 7,
+          "kanda": 1,
+          "rupasiddhi": 9,
+          "saddaniti_suttamala": [
+            "7"
+          ],
+          "pali": "Vaggā pañcapañcaso mantā",
+          "ancla": "s7"
+        },
+        {
+          "kaccayana": 8,
+          "kanda": 1,
+          "rupasiddhi": 10,
+          "saddaniti_suttamala": [
+            "8"
+          ],
+          "pali": "Aṃ iti niggahitaṃ",
+          "ancla": "s8"
+        },
+        {
+          "kaccayana": 9,
+          "kanda": 1,
+          "rupasiddhi": 11,
+          "saddaniti_suttamala": null,
+          "pali": "Parasamaññā payoge",
+          "ancla": "s9"
+        },
+        {
+          "kaccayana": 10,
+          "kanda": 1,
+          "rupasiddhi": 12,
+          "saddaniti_suttamala": [
+            "28"
+          ],
+          "pali": "Pubbam adhoṭhitam assaraṃ sarena viyojaye",
+          "ancla": "s10"
+        },
+        {
+          "kaccayana": 11,
+          "kanda": 1,
+          "rupasiddhi": 14,
+          "saddaniti_suttamala": [
+            "29"
+          ],
+          "pali": "Naye paraṃ yutte",
+          "ancla": "s11"
+        },
+        {
+          "kaccayana": 12,
+          "kanda": 2,
+          "rupasiddhi": 13,
+          "saddaniti_suttamala": [
+            "30"
+          ],
+          "pali": "Sarā sare lopaṃ",
+          "ancla": "s12"
+        },
+        {
+          "kaccayana": 13,
+          "kanda": 2,
+          "rupasiddhi": 15,
+          "saddaniti_suttamala": [
+            "31"
+          ],
+          "pali": "Vā paro asarūpā",
+          "ancla": "s13"
+        },
+        {
+          "kaccayana": 14,
+          "kanda": 2,
+          "rupasiddhi": 16,
+          "saddaniti_suttamala": [
+            "34"
+          ],
+          "pali": "Kvac’ āsavaṇṇaṃ lutte",
+          "ancla": "s14"
+        },
+        {
+          "kaccayana": 15,
+          "kanda": 2,
+          "rupasiddhi": 17,
+          "saddaniti_suttamala": [
+            "36"
+          ],
+          "pali": "Dīghaṃ",
+          "ancla": "s15"
+        },
+        {
+          "kaccayana": 16,
+          "kanda": 2,
+          "rupasiddhi": 18,
+          "saddaniti_suttamala": [
+            "35"
+          ],
+          "pali": "Pubbo ca",
+          "ancla": "s16"
+        },
+        {
+          "kaccayana": 17,
+          "kanda": 2,
+          "rupasiddhi": 19,
+          "saddaniti_suttamala": [
+            "43"
+          ],
+          "pali": "Yam edantass’ ādeso",
+          "ancla": "s17"
+        },
+        {
+          "kaccayana": 18,
+          "kanda": 2,
+          "rupasiddhi": 20,
+          "saddaniti_suttamala": [
+            "44"
+          ],
+          "pali": "Vam od-udantānaṃ",
+          "ancla": "s18"
+        },
+        {
+          "kaccayana": 19,
+          "kanda": 2,
+          "rupasiddhi": 22,
+          "saddaniti_suttamala": [
+            "46",
+            "47"
+          ],
+          "pali": "Sabbo caṃ ti",
+          "ancla": "s19"
+        },
+        {
+          "kaccayana": 20,
+          "kanda": 2,
+          "rupasiddhi": 27,
+          "saddaniti_suttamala": [
+            "50"
+          ],
+          "pali": "Do dhassa ca",
+          "ancla": "s20"
+        },
+        {
+          "kaccayana": 21,
+          "kanda": 2,
+          "rupasiddhi": 21,
+          "saddaniti_suttamala": [
+            "51"
+          ],
+          "pali": "Ivaṇṇo yaṃ navā",
+          "ancla": "s21"
+        },
+        {
+          "kaccayana": 22,
+          "kanda": 2,
+          "rupasiddhi": 28,
+          "saddaniti_suttamala": [
+            "52"
+          ],
+          "pali": "Evādissa ri pubbo ca rasso",
+          "ancla": "s22"
+        },
+        {
+          "kaccayana": 23,
+          "kanda": 3,
+          "rupasiddhi": 36,
+          "saddaniti_suttamala": [
+            "62"
+          ],
+          "pali": "Sarā pakati byañjane",
+          "ancla": "s23"
+        },
+        {
+          "kaccayana": 24,
+          "kanda": 3,
+          "rupasiddhi": 35,
+          "saddaniti_suttamala": [
+            "63"
+          ],
+          "pali": "Sare kvaci",
+          "ancla": "s24"
+        },
+        {
+          "kaccayana": 25,
+          "kanda": 3,
+          "rupasiddhi": 37,
+          "saddaniti_suttamala": [
+            "64",
+            "71",
+            "165"
+          ],
+          "pali": "Dīghaṃ",
+          "ancla": "s25"
+        },
+        {
+          "kaccayana": 26,
+          "kanda": 3,
+          "rupasiddhi": 38,
+          "saddaniti_suttamala": [
+            "65",
+            "179"
+          ],
+          "pali": "Rassaṃ",
+          "ancla": "s26"
+        },
+        {
+          "kaccayana": 27,
+          "kanda": 3,
+          "rupasiddhi": 39,
+          "saddaniti_suttamala": [
+            "66",
+            "163-4"
+          ],
+          "pali": "Lopañ ca tatrākāro",
+          "ancla": "s27"
+        },
+        {
+          "kaccayana": 28,
+          "kanda": 3,
+          "rupasiddhi": 40,
+          "saddaniti_suttamala": [
+            "67"
+          ],
+          "pali": "Para dvebhāvo ṭhāne",
+          "ancla": "s28"
+        },
+        {
+          "kaccayana": 29,
+          "kanda": 3,
+          "rupasiddhi": 42,
+          "saddaniti_suttamala": [
+            "68"
+          ],
+          "pali": "Vagge ghosāghosānaṃ tatiya-paṭhamā",
+          "ancla": "s29"
+        },
+        {
+          "kaccayana": 30,
+          "kanda": 4,
+          "rupasiddhi": 58,
+          "saddaniti_suttamala": [
+            "153"
+          ],
+          "pali": "Aṃ byañjane niggahitaṃ",
+          "ancla": "s30"
+        },
+        {
+          "kaccayana": 31,
+          "kanda": 4,
+          "rupasiddhi": 49,
+          "saddaniti_suttamala": [
+            "138-9"
+          ],
+          "pali": "Vaggantaṃ vā vagge",
+          "ancla": "s31"
+        },
+        {
+          "kaccayana": 32,
+          "kanda": 4,
+          "rupasiddhi": 50,
+          "saddaniti_suttamala": [
+            "140"
+          ],
+          "pali": "E-he ñaṃ",
+          "ancla": "s32"
+        },
+        {
+          "kaccayana": 33,
+          "kanda": 4,
+          "rupasiddhi": 51,
+          "saddaniti_suttamala": [
+            "141"
+          ],
+          "pali": "Sa ye ca",
+          "ancla": "s33"
+        },
+        {
+          "kaccayana": 34,
+          "kanda": 4,
+          "rupasiddhi": 52,
+          "saddaniti_suttamala": [
+            "142-5"
+          ],
+          "pali": "Ma-dā sare",
+          "ancla": "s34"
+        },
+        {
+          "kaccayana": 35,
+          "kanda": 4,
+          "rupasiddhi": 34,
+          "saddaniti_suttamala": [
+            "56"
+          ],
+          "pali": "Ya-va-ma-da-na-ta-ra-lā c’ āgamā",
+          "ancla": "s35"
+        },
+        {
+          "kaccayana": 36,
+          "kanda": 4,
+          "rupasiddhi": 47,
+          "saddaniti_suttamala": [
+            "130"
+          ],
+          "pali": "Kvaci o byañjane",
+          "ancla": "s36"
+        },
+        {
+          "kaccayana": 37,
+          "kanda": 4,
+          "rupasiddhi": 57,
+          "saddaniti_suttamala": [
+            "146"
+          ],
+          "pali": "Niggahitañ ca",
+          "ancla": "s37"
+        },
+        {
+          "kaccayana": 38,
+          "kanda": 4,
+          "rupasiddhi": 53,
+          "saddaniti_suttamala": [
+            "147"
+          ],
+          "pali": "Kvaci lopaṃ",
+          "ancla": "s38"
+        },
+        {
+          "kaccayana": 39,
+          "kanda": 4,
+          "rupasiddhi": 54,
+          "saddaniti_suttamala": [
+            "147"
+          ],
+          "pali": "Byañjane ca",
+          "ancla": "s39"
+        },
+        {
+          "kaccayana": 40,
+          "kanda": 4,
+          "rupasiddhi": 55,
+          "saddaniti_suttamala": [
+            "148"
+          ],
+          "pali": "Paro vā saro",
+          "ancla": "s40"
+        },
+        {
+          "kaccayana": 41,
+          "kanda": 4,
+          "rupasiddhi": 56,
+          "saddaniti_suttamala": [
+            "135-6",
+            "149"
+          ],
+          "pali": "Byañjano ca visaññogo",
+          "ancla": "s41"
+        },
+        {
+          "kaccayana": 42,
+          "kanda": 5,
+          "rupasiddhi": 32,
+          "saddaniti_suttamala": [
+            "53"
+          ],
+          "pali": "Go sare puthass’ āgamo kvaci",
+          "ancla": "s42"
+        },
+        {
+          "kaccayana": 43,
+          "kanda": 5,
+          "rupasiddhi": 33,
+          "saddaniti_suttamala": [
+            "54"
+          ],
+          "pali": "Pāssa c’ anto rasso",
+          "ancla": "s43"
+        },
+        {
+          "kaccayana": 44,
+          "kanda": 5,
+          "rupasiddhi": 24,
+          "saddaniti_suttamala": [
+            "57"
+          ],
+          "pali": "Abbho abhi",
+          "ancla": "s44"
+        },
+        {
+          "kaccayana": 45,
+          "kanda": 5,
+          "rupasiddhi": 25,
+          "saddaniti_suttamala": [
+            "58"
+          ],
+          "pali": "Ajjho adhi",
+          "ancla": "s45"
+        },
+        {
+          "kaccayana": 46,
+          "kanda": 5,
+          "rupasiddhi": 26,
+          "saddaniti_suttamala": [
+            "59"
+          ],
+          "pali": "Te na vā ivaṇṇe",
+          "ancla": "s46"
+        },
+        {
+          "kaccayana": 47,
+          "kanda": 5,
+          "rupasiddhi": 23,
+          "saddaniti_suttamala": [
+            "60"
+          ],
+          "pali": "Atissa c’ antassa",
+          "ancla": "s47"
+        },
+        {
+          "kaccayana": 48,
+          "kanda": 5,
+          "rupasiddhi": 43,
+          "saddaniti_suttamala": [
+            "137"
+          ],
+          "pali": "Kvaci paṭi patissa",
+          "ancla": "s48"
+        },
+        {
+          "kaccayana": 49,
+          "kanda": 5,
+          "rupasiddhi": 44,
+          "saddaniti_suttamala": [
+            "129"
+          ],
+          "pali": "Puthass u byañjane",
+          "ancla": "s49"
+        },
+        {
+          "kaccayana": 50,
+          "kanda": 5,
+          "rupasiddhi": 45,
+          "saddaniti_suttamala": [
+            "126"
+          ],
+          "pali": "O avassa",
+          "ancla": "s50"
+        },
+        {
+          "kaccayana": 51,
+          "kanda": 5,
+          "rupasiddhi": 59,
+          "saddaniti_suttamala": [
+            "150",
+            "154"
+          ],
+          "pali": "Anupadiṭṭhānaṃ vuttayogato",
+          "ancla": "s51"
+        }
+      ]
+    }
+  }
+}
