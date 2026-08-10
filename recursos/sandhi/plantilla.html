@@ -417,7 +417,7 @@ function renderReglas(rules){
   rules.forEach(r => {
     if(r.sec !== last){
       last = r.sec;
-      html += `<div class="sec"><h2>${esc(r.secName)}</h2><span class="lbl">${esc(r.secSub)}</span><span class="rule"></span></div>`;
+      html += `<div class="sec" data-sec="${r.sec}"><h2>${esc(r.secName)}</h2><span class="lbl">${esc(r.secSub)}</span><span class="rule"></span></div>`;
     }
     const s = r.kac.length ? SUTTA[r.kac[0]] : null;
     const ex = s ? (s.ex.find(e => !e.ce) || s.ex[0]) : null;
@@ -740,9 +740,9 @@ document.getElementById('sbnav').addEventListener('click', e => {
   q = ''; document.getElementById('q').value = '';
   if(kind === 'rule'){
     setTab('reglas'); render();
-    const h = [...document.querySelectorAll('.sec h2')]
-      .find(x => x.textContent.toLowerCase().startsWith(id.slice(0,4)));
-    (h ? h.closest('.sec') : document.body).scrollIntoView({block:'start', behavior:'smooth'});
+    // Por identificador, no por el texto: «byanjana» no casa con «byañjana».
+    const h = document.querySelector(`.sec[data-sec="${id}"]`);
+    (h || document.body).scrollIntoView({block:'start', behavior:'smooth'});
   } else {
     setTab('aforismos'); render();
     const el = document.getElementById('s' + id);
