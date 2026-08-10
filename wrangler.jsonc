@@ -1,0 +1,10 @@
+{
+  // Sitio estático servido por Cloudflare Workers.
+  // Sólo se publica el contenido de site/; el markdown de kaccayana/ y
+  // los documentos de comun/ quedan en el repositorio, fuera del sitio.
+  "name": "gramaticas-pali-es",
+  "compatibility_date": "2026-08-10",
+  "assets": {
+    "directory": "./site"
+  }
+}
