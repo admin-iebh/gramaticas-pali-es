@@ -44,6 +44,7 @@ def separar_portada(txt):
 def inline(t):
     t = html.escape(t, quote=False)
     t = t.replace("&lt;br&gt;", "<br/>")
+    t = t.replace("&lt;sup&gt;", "<sup>").replace("&lt;/sup&gt;", "</sup>")
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
     t = re.sub(r'__(.+?)__', r'<strong>\1</strong>', t)
     t = re.sub(r'(?<!_)_([^_]+)_(?!_)', r'<i>\1</i>', t)
@@ -78,6 +79,7 @@ def es_separador(l):
 
 def render(lineas):
     out, i, indice = [], 0, []
+    ultima_cabecera = [None]
     while i < len(lineas):
         l = lineas[i]
         t = l.strip()
@@ -86,22 +88,36 @@ def render(lineas):
             i += 1
             continue
 
-        # tabla
-        if RE_FILA.match(l) and i + 1 < len(lineas) and es_separador(lineas[i + 1]):
-            cab = celdas(l)
-            i += 2
-            cuerpo = []
-            while i < len(lineas) and RE_FILA.match(lineas[i]):
-                cuerpo.append(celdas(lineas[i]))
-                i += 1
-            th = "".join("<th>{0}</th>".format(inline(c)) for c in cab)
+        # tabla — un tramo seguido de filas.
+        # La conversión del PDF parte las tablas en cada encabezado y sólo la
+        # primera lleva fila de cabecera; las siguientes reutilizan la misma.
+        if RE_FILA.match(l):
+            j = i
+            while j < len(lineas) and RE_FILA.match(lineas[j]):
+                j += 1
+            tramo = lineas[i:j]
+            i = j
+            cab = None
+            if len(tramo) > 1 and es_separador(tramo[1]):
+                cab = celdas(tramo[0])
+                cuerpo = [celdas(x) for x in tramo[2:]]
+                ultima_cabecera[0] = cab
+            else:
+                cuerpo = [celdas(x) for x in tramo]
+                previa = ultima_cabecera[0]
+                if previa and cuerpo and len(cuerpo[0]) == len(previa):
+                    cab = previa
+            if not cuerpo:
+                continue
+            th = ("<thead><tr>{0}</tr></thead>".format(
+                "".join("<th>{0}</th>".format(inline(c)) for c in cab))
+                if cab else "")
             tr = "".join(
                 "<tr>{0}</tr>".format(
                     "".join("<td>{0}</td>".format(inline(c)) for c in fila))
                 for fila in cuerpo)
             out.append('<div class="doc-tabla-wrap"><table class="doc-tabla">'
-                       '<thead><tr>{0}</tr></thead><tbody>{1}</tbody>'
-                       '</table></div>'.format(th, tr))
+                       '{0}<tbody>{1}</tbody></table></div>'.format(th, tr))
             continue
 
         # encabezado
@@ -149,11 +165,21 @@ def render(lineas):
             out.append(render_lista(bloque))
             continue
 
+        # fila de tabla suelta (sin fila separadora): se trata como párrafo
+        if RE_FILA.match(l):
+            out.append("<p>{0}</p>".format(
+                inline(" · ".join(c for c in celdas(l) if c))))
+            i += 1
+            continue
+
         # párrafo
         buf = []
         while i < len(lineas) and lineas[i].strip() \
                 and not RE_H.match(lineas[i].strip()) \
                 and not RE_LI.match(lineas[i]) and not RE_FILA.match(lineas[i]):
+            buf.append(lineas[i].strip())
+            i += 1
+        if not buf:                       # nunca dejar de avanzar
             buf.append(lineas[i].strip())
             i += 1
         out.append("<p>{0}</p>".format(inline(" ".join(buf))))

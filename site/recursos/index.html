@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recursos · Gramáticas Pāḷi en español</title>
+<meta content="Material de apoyo para el estudio de la gramática pāḷi: reglas, tablas y glosarios." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/pali.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="idx">
+
+<a class="idx-back" href="../">← Gramáticas Pāḷi</a>
+
+<p class="idx-eyebrow">Material de apoyo</p>
+<h1>Recursos</h1>
+<p class="idx-lede">
+  Material de referencia para el estudio de la lengua pāḷi, complementario a
+  las traducciones de las gramáticas.
+</p>
+
+<h2>Disponible</h2>
+<ul class="idx-list">
+  <li>
+    <a class="idx-card" href="combinacion-eufonica/">
+      <span class="idx-badge wip">sin verificar</span>
+      <span class="t">Reglas de combinación eufónica (sandhi)</span>
+      <span class="d">Bhikkhu Nandisena. Las operaciones de <i>sandhi</i> ordenadas por tipo,
+      con tablas de ejemplos y referencias al canon. Basado en Kaccāyana,
+      Rūpasiddhi y Saddanīti iii.</span>
+    </a>
+  </li>
+</ul>
+
+<div class="idx-foot">
+  Los textos marcados «sin verificar» proceden de conversiones automáticas de
+  los PDF del IEBH y están pendientes de cotejo con el original.<br/>
+  Fuentes:
+  <a href="https://github.com/admin-iebh/gramaticas-pali-es">github.com/admin-iebh/gramaticas-pali-es</a>.
+</div>
+
+</main>
+
+<script>
+(function () {
+  var b = document.createElement('button');
+  b.id = 'dark-btn'; b.type = 'button';
+  b.setAttribute('aria-label', 'Modo oscuro');
+  b.textContent = '◐';
+  b.onclick = function () {
+    document.body.classList.toggle('dark');
+    try { localStorage.setItem('pali_dark', document.body.classList.contains('dark') ? '1' : '0'); } catch (e) {}
+  };
+  document.body.appendChild(b);
+  try { if (localStorage.getItem('pali_dark') === '1') document.body.classList.add('dark'); } catch (e) {}
+})();
+</script>
+</body>
+</html>
