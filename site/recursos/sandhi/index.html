@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="1.2">
+<meta name="version" content="1.3">
 <meta name="version-date" content="2026-08-10">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,6 +106,8 @@ input[type=search]:focus{outline:2px solid var(--nila);outline-offset:1px}
   text-transform:uppercase;padding:9px 13px;border:0;background:var(--ola-2);
   color:var(--soot);cursor:pointer;border-right:1px solid var(--hair)}
 .tabs button:last-child{border-right:0}
+.tabs button i{font-style:normal;opacity:.65;margin-left:6px;font-size:10px}
+.tabs button[aria-selected=true] i{opacity:.85}
 .tabs button[aria-selected=true]{background:var(--nila);color:var(--ola-2)}
 .tabs button:focus-visible{outline:2px solid var(--haritala);outline-offset:-2px}
 .count{font-family:var(--mono);font-size:11px;color:var(--soot);white-space:nowrap}
@@ -300,9 +302,9 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
   <div class="wrap">
     <input type="search" id="q" placeholder="Buscar regla, aforismo o forma — «tathupamam», «niggahita», «elide»…" aria-label="Buscar">
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-reglas"   aria-selected="true"  data-v="reglas">Reglas</button>
-      <button role="tab" id="t-aforismos" aria-selected="false" data-v="aforismos">Aforismos</button>
-      <button role="tab" id="t-formas"   aria-selected="false" data-v="formas">Formas</button>
+      <button role="tab" id="t-reglas"   aria-selected="true"  data-v="reglas">Reglas<i></i></button>
+      <button role="tab" id="t-aforismos" aria-selected="false" data-v="aforismos">Aforismos<i></i></button>
+      <button role="tab" id="t-formas"   aria-selected="false" data-v="formas">Formas<i></i></button>
       <button role="tab" id="t-conc"     aria-selected="false" data-v="conc">Concordancia</button>
     </div>
     <button class="icon-btn" id="burger" aria-label="Índice">☰</button>
@@ -521,11 +523,11 @@ function render(){
   if(view === 'reglas'){
     const list = DATA.rules.filter(r => !n || r.hay.includes(n));
     total = list.length; html = list.length ? renderReglas(list) : '';
-    cnt.textContent = `${total} / ${DATA.rules.length} reglas`;
+    cnt.textContent = `${total} / ${DATA.rules.length} reglas de combinación eufónica`;
   } else if(view === 'aforismos'){
     const list = DATA.suttas.filter(s => !n || s.hay.includes(n));
     total = list.length; html = list.length ? renderAforismos(list) : '';
-    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos`;
+    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos de Kaccāyana`;
   } else if(view === 'formas'){
     const list = FORMS.filter(f => (src === 'all' || f.src === src) && (!n || f.hay.includes(n)));
     total = list.length; html = list.length ? renderFormas(list) : '';
@@ -534,7 +536,7 @@ function render(){
   } else {
     const list = DATA.suttas.filter(s => !n || s.hay.includes(n));
     total = list.length; html = list.length ? renderConc(list) : '';
-    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos`;
+    cnt.textContent = `${total} / ${DATA.suttas.length} aforismos de Kaccāyana`;
   }
   document.getElementById('filtros').hidden = (view !== 'formas');
   out.innerHTML = html || `<div class="empty"><p>Sin resultados para «${esc(q)}».</p>
@@ -671,8 +673,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '1.2', VERSION_DATE = '2026-08-10';
-const VERSION_NOTE = 'Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las derivaciones de §12, §32, §35 y §40.';
+const VERSION = '1.3', VERSION_DATE = '2026-08-10';
+const VERSION_NOTE = 'Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las derivaciones de §12, §32, §35 y §40.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
@@ -759,6 +761,18 @@ document.getElementById('sbnav').addEventListener('click', e => {
 
 // La barra es pegajosa: sin este margen, saltar a una sección la deja oculta
 // detrás de ella. Se remide al cambiar el tamaño porque los controles envuelven.
+// Reglas y aforismos son conjuntos distintos: 49 reglas de combinación
+// eufónica frente a 51 aforismos de Kaccāyana. El número en la pestaña evita
+// leer el contador de una vista como si fuera el de otra.
+(function(){
+  const total = {reglas: DATA.rules.length, aforismos: DATA.suttas.length,
+                 formas: FORMS.length};
+  document.querySelectorAll('.tabs button i').forEach(i => {
+    const v = i.parentElement.dataset.v;
+    if(total[v] != null) i.textContent = total[v];
+  });
+})();
+
 (function(){
   const barra = document.querySelector('.bar');
   if(!barra) return;
