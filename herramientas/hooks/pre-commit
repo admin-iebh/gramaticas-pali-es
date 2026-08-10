@@ -1,0 +1,31 @@
+#!/bin/sh
+# Regenera el sitio antes de cada commit, para que el HTML publicado nunca
+# se quede atrás del markdown. Instalar con: herramientas/instalar-hooks.sh
+
+RAIZ=$(git rev-parse --show-toplevel)
+
+PY=$(command -v python3 || command -v python)
+if [ -z "$PY" ]; then
+  echo "pre-commit: no encuentro python3; el sitio NO se ha regenerado."
+  echo "            Instálalo o regenera a mano antes de publicar."
+  exit 0
+fi
+
+SALIDA=$("$PY" "$RAIZ/herramientas/generar_todo.py" 2>&1)
+if [ $? -ne 0 ]; then
+  echo "$SALIDA"
+  echo "pre-commit: la generación ha fallado; commit detenido."
+  exit 1
+fi
+
+CAMBIOS=$(cd "$RAIZ" && git diff --name-only -- site/)
+if [ -n "$CAMBIOS" ]; then
+  echo "pre-commit: el sitio se ha regenerado y se añade al commit:"
+  echo "$CAMBIOS" | sed 's/^/    /'
+  (cd "$RAIZ" && echo "$CAMBIOS" | tr '\n' '\0' | xargs -0 git add)
+fi
+
+echo "$SALIDA" | grep -E "aviso|Referencias §N" && \
+  echo "pre-commit: revisa los avisos de arriba."
+
+exit 0

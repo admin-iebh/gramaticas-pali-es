@@ -37,6 +37,16 @@ a mano. Cada `git push` a `main` despliega en
     # documento en prosa (reglas, glosarios, tablas)
     python3 herramientas/generar_recurso.py recursos/<archivo>.md
 
+o todo de una vez, que es lo habitual:
+
+    python3 herramientas/generar_todo.py
+
+Un hook de git lo ejecuta en cada commit y añade el HTML regenerado, de modo
+que no hace falta acordarse. Los hooks no viajan con el clon: en una copia
+nueva del repositorio hay que instalarlo una vez con
+
+    sh herramientas/instalar-hooks.sh
+
 Detalles del formato del markdown y de lo que el generador deduce solo:
 `comun/convenciones.md`, secciones 2, 3, 3 bis y 3 ter.
 
