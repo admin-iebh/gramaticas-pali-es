@@ -10,9 +10,13 @@ Documento normativo. Toda decisión que se repita va aquí.
 
 ## 2. Numeración de suttas
 
-- Edición base: <!-- PENDIENTE -->
+- Edición base: Kaccāyana-vyākaraṇa, ed. y trad. Bhikkhu Nandisena.
+  La numeración de suttas de este repositorio sigue esta edición.
+  <!-- PENDIENTE: precisar año / versión exacta que se está usando -->
 - Formato de ancla: `## Kacc 1.1.1`
 - No renumerar.
+- Registrar en `comun/concordancia.json` el número correspondiente en la
+  numeración tradicional, para quien llegue desde otra edición.
 
 ## 3. Estructura de los archivos
 
