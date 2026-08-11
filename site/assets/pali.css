@@ -23,12 +23,15 @@
   --r:             8px;
   --rl:            12px;
   --toc-w:         240px;
+  --haritala:      #5C4008;   /* oropimente: el amarillo de las correcciones */
+  --display:       "Gentium Book Plus", "Noto Serif", Georgia, serif;
 }
 body.dark {
   --bg: #18181A; --bg2: #222224; --bg3: #2C2C2F;
   --text: #EEECEA; --text2: #B8B6B0; --text3: #8A8880;
   --border: rgba(255,255,255,.09); --border2: rgba(255,255,255,.17);
   --accent-bg: #26224A;
+  --haritala: #EFC14E;
 }
 
 /* ── Progress bar ────────────────────────────────────────────────── */
@@ -107,7 +110,13 @@ body.dark {
 
 /* ── Page header ─────────────────────────────────────────────────── */
 .page-hdr { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: .5px solid var(--border); }
-.hdr-grammar { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--accent); margin-bottom: 4px; }
+.hdr-grammar {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(30px, 6vw, 46px); line-height: .95;
+  letter-spacing: -.02em; color: var(--text); margin-bottom: 6px;
+}
+/* Los diacríticos, en oropimente — como en la portada de Sandhi. */
+.dia { color: var(--haritala); }
 .hdr-sub { font-size: 14px; color: var(--text2); margin-bottom: 1rem; }
 .hdr-chapter { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
 .hdr-meta { font-size: 12px; color: var(--text3); }
@@ -697,4 +706,10 @@ body.dark .doc a { color: var(--accent-mid); }
   .doc { padding: 2rem 1rem 4rem; }
   .doc-tabla { font-size: 12.5px; }
   .doc-tabla th, .doc-tabla td { padding: .35rem .5rem; }
+}
+
+/* Portadas de índice con el mismo tratamiento que las de capítulo. */
+.idx h1.display {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(34px, 7vw, 58px); line-height: .95; letter-spacing: -.02em;
 }

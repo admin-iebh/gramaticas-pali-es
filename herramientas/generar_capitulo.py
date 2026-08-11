@@ -438,6 +438,16 @@ def render_intro(versos, notas):
     ).format("".join(bloques), PIE_TARJETA.format(sid="intro"))
 
 
+DIACRITICOS = "āīūṃṇṭḍñṅḷĀĪŪṂṆṬḌÑṄḶ"
+
+
+def marcar_diacriticos(t):
+    """Envuelve cada letra con diacrítico para poder darle color."""
+    return "".join(
+        '<span class="dia">{0}</span>'.format(c) if c in DIACRITICOS else c
+        for c in t)
+
+
 def render_toc(suttas, meta):
     partes = ['<p class="toc-title">{0}</p>'.format(meta["titulo_pali"])]
     kanda = None
@@ -485,6 +495,7 @@ def render(cap, meta, notas):
 
     return PLANTILLA.format(
         obra=meta["obra"], obra_sub=meta["obra_sub"],
+        obra_display=marcar_diacriticos(escapar_html(meta["obra"])),
         titulo_pali=meta["titulo_pali"], titulo_es=meta["titulo_es"],
         total=total, nk=nk,
         toc=render_toc(suttas, meta),
@@ -517,7 +528,7 @@ PLANTILLA = '''<!DOCTYPE html>
 <title>{obra} · {titulo_pali}</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&amp;family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/pali.css" rel="stylesheet"/>
 </head>
 <body>
@@ -531,7 +542,7 @@ PLANTILLA = '''<!DOCTYPE html>
 <div id="inner">
 <div class="page-hdr">
 <a class="idx-back" href="../">← {obra}</a>
-<div class="hdr-grammar">{obra}</div>
+<div class="hdr-grammar">{obra_display}</div>
 <div class="hdr-sub">{obra_sub}</div>
 <div class="hdr-chapter">{titulo_pali} · {titulo_es}</div>
 <div class="hdr-meta">Edición bilingüe Pāḷi–Español · {total} suttas · {nk} secciones</div>
