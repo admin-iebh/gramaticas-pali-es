@@ -5187,6 +5187,23 @@
    "sin_cambio": true
   },
   {
+   "f": "vedanākkhandho",
+   "comp": "vedanā + khandho",
+   "ref": "D. iii 195",
+   "sec": "pakati",
+   "secName": "PAKATI-SANDHI",
+   "rule": "2",
+   "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
+   "kac": 28,
+   "op": "la vocal anterior permanece sin cambios ante consonante (§23)",
+   "s": [
+    "vedanā khandho",
+    "vedanākkhandho"
+   ],
+   "full": true,
+   "sin_cambio": true
+  },
+  {
    "f": "bhadro kasā-m-iva",
    "comp": "bhadro kasā iva",
    "ref": "Dh. 24",
@@ -5199,23 +5216,6 @@
    "s": [
     "bhadro kasā iva",
     "bhadro kasā-m-iva"
-   ],
-   "full": true,
-   "sin_cambio": true
-  },
-  {
-   "f": "vedanākkhandho",
-   "comp": "vedanā + khandho",
-   "ref": "D. iii 195",
-   "sec": "pakati",
-   "secName": "PAKATI-SANDHI",
-   "rule": "2",
-   "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
-   "kac": 28,
-   "op": "la vocal anterior permanece sin cambios ante consonante (§23)",
-   "s": [
-    "vedanā + khandho",
-    "vedanākkhandho"
    ],
    "full": true,
    "sin_cambio": true
