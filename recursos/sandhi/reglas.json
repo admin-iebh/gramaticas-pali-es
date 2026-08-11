@@ -5195,14 +5195,13 @@
    "rule": "2",
    "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
    "kac": 35,
-   "op": "la vocal anterior permanece sin cambios (§23)",
+   "op": "la vocal anterior permanece sin cambios ante consonante (§23)",
    "s": [
     "bhadro kasā iva",
-    "bhadro kasā m iva (§35, §23)",
-    "bhadro kasāmiva (§11)",
-    "bhadro kasā-m-iva (EM)"
+    "bhadro kasā-m-iva"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "vedanākkhandho",
@@ -5213,13 +5212,13 @@
    "rule": "2",
    "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
    "kac": 28,
-   "op": "la vocal anterior permanece sin cambios (§23)",
+   "op": "la vocal anterior permanece sin cambios ante consonante (§23)",
    "s": [
-    "vedanā khandho",
-    "vedanā kkhandho (§28, §23)",
-    "vedanākkhandho (§11)"
+    "vedanā + khandho",
+    "vedanākkhandho"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "evaṃ vutte",
