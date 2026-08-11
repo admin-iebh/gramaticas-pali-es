@@ -5195,10 +5195,10 @@
    "rule": "2",
    "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
    "kac": 35,
-   "op": "inserción de “m”",
+   "op": "la vocal anterior permanece sin cambios (§23)",
    "s": [
     "bhadro kasā iva",
-    "bhadro kasā miva (§35)",
+    "bhadro kasā m iva (§35, §23)",
     "bhadro kasāmiva (§11)",
     "bhadro kasā-m-iva (EM)"
    ],
@@ -5213,10 +5213,10 @@
    "rule": "2",
    "title": "A veces, la vocal que precede, cuando va seguida por una consonante, permanece sin cambios",
    "kac": 28,
-   "op": "permanece sin cambios",
+   "op": "la vocal anterior permanece sin cambios (§23)",
    "s": [
     "vedanā khandho",
-    "vedanā kkhandho (§28)",
+    "vedanā kkhandho (§28, §23)",
     "vedanākkhandho (§11)"
    ],
    "full": true
