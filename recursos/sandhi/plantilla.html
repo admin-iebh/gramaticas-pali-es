@@ -278,6 +278,7 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
   a{color:#000;text-decoration:none}
   .lad{background:#fafafa}
 }
+.parcial.verif{color:var(--nila)}
 .revision{margin:14px 0 0;max-width:44ch;font-size:13.5px;line-height:1.5;
   color:var(--soot);border-left:2px solid var(--haritala);padding-left:11px}
 </style>
@@ -299,9 +300,10 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
       <h1>Sandh<span class="dia">i</span></h1>
       <p class="tag">Las reglas de combinación eufónica del pāḷi, con su secuencia.</p>
       <span class="version-badge" id="vbadge"></span>
-      <p class="revision">Las reglas y sus formas se han rehecho transcribiéndolas del
-      documento de Bhikkhu Nandisena. La correspondencia de cada regla con su aforismo
-      de Kaccāyana (§N) está pendiente de revisión.</p>
+      <p class="revision">Reglas y formas transcritas del documento de Bhikkhu Nandisena.
+      De las 263 formas, 49 llevan la secuencia de formación tomada de la traducción del
+      Sandhi-kappa; las otras 214 no la llevan porque no consta en ninguna fuente.
+      La correspondencia de cada regla con su aforismo §N está pendiente de revisión.</p>
     </div>
     <div class="hero" id="hero" aria-hidden="true"></div>
   </div>
@@ -512,8 +514,9 @@ function renderFormas(list){
       <div class="fbody">
         ${head}
         ${ladder(f.s, f.ce)}
+        ${f.verificada ? `<p class="parcial verif">Secuencia tomada de la traducción del Sandhi-kappa, <a class="xref" href="../../kaccayana/sandhi/#s${f.kac_seq}">§${f.kac_seq}</a>.</p>` : ''}
         ${f.sin_cambio ? '<p class="parcial">Pakati: la vocal o la niggahīta permanece sin cambios —no se elide, ni se sustituye, ni se modifica—. El documento da la entrada y el resultado, sin secuencia intermedia.</p>' : ''}
-        ${(!isKac && !f.full && !f.sin_cambio) ? '<p class="parcial">Transcrito del documento: componentes y resultado. Los pasos intermedios no constan en la fuente.</p>' : ''}
+        ${(!isKac && !f.full && !f.sin_cambio) ? '<p class="parcial">El documento da componentes y resultado. La secuencia de formación no consta en ninguna fuente y no se reconstruye aquí.</p>' : ''}
       </div></details>`;
   });
   return html + '</div>';

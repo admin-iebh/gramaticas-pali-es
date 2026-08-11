@@ -196,6 +196,30 @@ def emparejar_aforismos(reglas):
     return mapa
 
 
+def clave_forma(t):
+    t = unicodedata.normalize("NFC", t.lower())
+    t = t.replace("\u2019", "").replace("'", "").replace("-", "")
+    t = re.sub(r'\s*\([^)]*\)\s*', '', t)
+    return re.sub(r'[\s+]', '', t)
+
+
+def secuencias_verificadas():
+    """Las secuencias del markdown del capítulo: obra de Angel, ya revisadas.
+
+    Son las únicas secuencias con procedencia. Se adjuntan a la forma del
+    documento cuando coinciden; para las demás no se inventa ninguna.
+    """
+    sys.path.insert(0, os.path.join(RAIZ, "herramientas"))
+    from generar_sandhi import suttas_desde_markdown
+    mapa = {}
+    for s in suttas_desde_markdown():
+        for e in s["ex"]:
+            final = re.sub(r'\s*\([^)]*\)\s*$', '', e["s"][-1])
+            for k in (e["f"], final):
+                mapa.setdefault(clave_forma(k), (e["s"], s["kac"]))
+    return mapa
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -204,6 +228,8 @@ def main():
 
     reglas = parsear_documento()
     mapa = emparejar_aforismos(reglas)
+    verificadas = secuencias_verificadas()
+    n_verif = 0
 
     salida_reglas, salida_formas = [], []
     for r in reglas:
@@ -224,6 +250,15 @@ def main():
                       if f["comp"] != f["res"] else [f["res"]]),
                 "full": False, "transcrito": True,
             })
+            v = (verificadas.get(clave_forma(f["res"]))
+                 or verificadas.get(clave_forma(f["comp"])))
+            if v:
+                salida_formas[-1]["s"] = list(v[0])
+                salida_formas[-1]["kac_seq"] = v[1]
+                salida_formas[-1]["full"] = True
+                salida_formas[-1]["verificada"] = True
+                salida_formas[-1].pop("transcrito", None)
+                n_verif += 1
 
     from collections import Counter
     print("RECONSTRUCCIÓN DESDE EL DOCUMENTO\n")
@@ -249,6 +284,10 @@ def main():
         print("\nEscrito {0}".format(os.path.relpath(DESTINO, RAIZ)))
     else:
         print("\n(sin escribir — usa --escribir)")
+
+    print("\n  formas con secuencia verificada del markdown: {0}".format(n_verif))
+    print("  formas sin secuencia (el documento sólo da componentes y resultado): {0}"
+          .format(len(salida_formas) - n_verif))
     return 0
 
 
