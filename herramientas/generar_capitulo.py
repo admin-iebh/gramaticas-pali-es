@@ -31,6 +31,14 @@ CAPITULOS = {
         "titulo_es": "1-Capítulo de Sandhi",
         "anterior": None,
         "siguiente": "2-Nāma-Kappa",
+        "version": "1.2",
+        "version_fecha": "2026-08-11",
+        "version_nota": "La página se genera ahora desde el markdown; glosas "
+                        "emergentes y referencias §N derivadas del texto. "
+                        "Restituidos el pie con el aviso de copyright, el "
+                        "cierre del capítulo, la navegación entre capítulos y "
+                        "esta insignia, que la primera generación había "
+                        "perdido. Portada en Gentium Book Plus.",
     },
     "02-nama-kappa": {
         "slug": "nama",
@@ -42,8 +50,18 @@ CAPITULOS = {
         "titulo_es": "2-Capítulo del Nombre",
         "anterior": "1-Sandhi-Kappa",
         "siguiente": "3-Kāraka-Kappa",
+        "version": "0.1",
+        "version_fecha": "",
+        "version_nota": "Traducción en curso.",
     },
 }
+
+COPYRIGHT = (
+    "Edición del texto en pāḷi y traducción al español por Bhikkhu Nandisena. "
+    "Este material puede ser reproducido para uso personal y distribuido de "
+    "forma gratuita. Copyright © 2026 Instituto de Estudios Buddhistas "
+    "Hispano (IEBH)."
+)
 
 KANDAS_PALI = ["Paṭhama-Kaṇḍa", "Dutiya-Kaṇḍa", "Tatiya-Kaṇḍa",
                "Catuttha-Kaṇḍa", "Pañcama-Kaṇḍa", "Chaṭṭha-Kaṇḍa",
@@ -73,6 +91,7 @@ def escapar_html(t):
 RE_OTRA_OBRA = re.compile(r'[A-ZĀĪŪÑṄ][a-zāīūṃṇṭḍñṅḷ]{0,4}\.\s*$')
 
 SUTTAS_VALIDOS = set()
+FIN_CAPITULO = {}
 NO_ENLAZADOS = []
 
 
@@ -138,6 +157,8 @@ def leer_notas(lineas):
 
 
 RE_CIERRE_PALI = re.compile(r'^\*\*(Iti\s+.+?kaṇḍo)\.?\*\*$')
+RE_FIN_PALI = re.compile(r'^\*\*(.+?niṭṭhito)\.?\*\*$')
+RE_FIN_ES = re.compile(r'^\*\*(Fin del capítulo.+?)\.?\*\*$')
 RE_CIERRE_ES = re.compile(r'^\*\*(Así termina la .+?)\.?\*\*$')
 
 
@@ -147,16 +168,23 @@ def separar_cierre(cuerpo):
     En el markdown la fórmula va en un bloque propio detrás del último sutta
     de la sección; en el HTML es un elemento aparte, no parte del sutta.
     """
-    pali = es = None
+    pali = es = fin_pali = fin_es = None
     limpio = []
     for l in cuerpo:
         t = l.strip()
         mp, me = RE_CIERRE_PALI.match(t), RE_CIERRE_ES.match(t)
+        mfp, mfe = RE_FIN_PALI.match(t), RE_FIN_ES.match(t)
         if mp:
             pali = mp.group(1); continue
         if me:
             es = me.group(1); continue
+        if mfp:
+            fin_pali = mfp.group(1); continue
+        if mfe:
+            fin_es = mfe.group(1); continue
         limpio.append(l)
+    FIN_CAPITULO.update({k: v for k, v in
+                         (("pali", fin_pali), ("es", fin_es)) if v})
     if pali or es:
         # quitar el separador --- que quedaba justo antes de la fórmula
         while limpio and limpio[-1].strip() in ("", "---"):
@@ -438,6 +466,24 @@ def render_intro(versos, notas):
     ).format("".join(bloques), PIE_TARJETA.format(sid="intro"))
 
 
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+         "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+
+def insignia_version(meta):
+    """Insignia de versión en la cabecera, con la nota como título emergente."""
+    v, f = meta.get("version"), meta.get("version_fecha")
+    if not v or not f:
+        return ""
+    a, m, d = (int(x) for x in f.split("-"))
+    largo = "{0} de {1} de {2}".format(d, MESES[m - 1], a)
+    titulo = "Versión {0} · {1}{2}".format(
+        v, largo, " · " + meta["version_nota"] if meta.get("version_nota") else "")
+    return ('<span aria-label="{0}" class="version-badge" title="{0}">'
+            'v{1}<time datetime="{2}">{2}</time></span>').format(
+        escapar_html(titulo), v, f)
+
+
 DIACRITICOS = "āīūṃṇṭḍñṅḷĀĪŪṂṆṬḌÑṄḶ"
 
 
@@ -446,6 +492,69 @@ def marcar_diacriticos(t):
     return "".join(
         '<span class="dia">{0}</span>'.format(c) if c in DIACRITICOS else c
         for c in t)
+
+
+def glosa_breve(s):
+    """La primera línea de traducción, para la ayuda de las pastillas."""
+    bloques = partir_bloques(s["cuerpo"])
+    if len(bloques) < 2:
+        return ""
+    for l in bloques[1]:
+        if l.strip():
+            t = re.sub(r'\[\^\d+\]', '', l.strip())
+            t = re.sub(r'\{([^|{}]+)\|[^{}]*\}', r'\1', t)
+            return desescapar(t)
+    return ""
+
+
+def barra_capitulos(meta):
+    """Navegación entre capítulos; enlaza sólo los que ya existen."""
+    def buscar(titulo):
+        for clave, m in CAPITULOS.items():
+            if m["titulo_pali"] == titulo:
+                destino = os.path.join(RAIZ, "site", m["obra_slug"], m["slug"],
+                                       "index.html")
+                return m, os.path.exists(destino)
+        return None, False
+
+    def boton(titulo, etiqueta, flecha, lado):
+        if not titulo:
+            cuerpo = ('<span><span class="chapter-nav-label">{0}</span>'
+                      'Introducción</span>').format(etiqueta)
+            return '<button class="chapter-nav-btn disabled">{0}</button>'.format(
+                flecha + cuerpo if lado == "izq" else cuerpo + flecha)
+        m, existe = buscar(titulo)
+        cuerpo = ('<span><span class="chapter-nav-label">{0}</span>{1}</span>'
+                  ).format(etiqueta, escapar_html(titulo))
+        interior = flecha + cuerpo if lado == "izq" else cuerpo + flecha
+        if m and existe:
+            return '<a class="chapter-nav-btn" href="../{0}/">{1}</a>'.format(
+                m["slug"], interior)
+        return '<button class="chapter-nav-btn disabled">{0}</button>'.format(interior)
+
+    izq = ('<svg fill="none" stroke="currentColor" stroke-width="1.5" '
+           'viewbox="0 0 20 20"><path d="M12 5l-5 5 5 5"></path></svg>')
+    der = ('<svg fill="none" stroke="currentColor" stroke-width="1.5" '
+           'viewbox="0 0 20 20"><path d="M8 5l5 5-5 5"></path></svg>')
+    total = len(CAPITULOS)
+    return (
+        '<div class="chapter-nav">\n{0}\n'
+        '<div class="chapter-nav-title"><strong>{1}</strong><br/>'
+        '<span style="font-size:11px">Capítulo {2} de 8</span></div>\n{3}\n</div>\n'
+    ).format(boton(meta.get("anterior"), "Capítulo anterior", izq, "izq"),
+             escapar_html(meta["titulo_pali"]), meta["num"],
+             boton(meta.get("siguiente"), "Capítulo siguiente", der, "der"))
+
+
+def version_pie(meta):
+    v, f = meta.get("version"), meta.get("version_fecha")
+    if not v or not f:
+        return ""
+    a, m, d = (int(x) for x in f.split("-"))
+    largo = "{0} de {1} de {2}".format(d, MESES[m - 1], a)
+    nota = " " + meta["version_nota"] if meta.get("version_nota") else ""
+    return ('<p class="version-foot">Versión {0} — <time datetime="{1}">{2}'
+            '</time>.{3}</p>').format(v, f, largo, escapar_html(nota))
 
 
 def render_toc(suttas, meta):
@@ -489,13 +598,22 @@ def render(cap, meta, notas):
 
     pastillas = "".join(
         '<span class="nav-tip-wrap"><button class="nav-btn" onclick="jumpOpen(\'s{0}\')">'
-        '§{0}</button><span class="nav-tip-box">{1}. {2}. {3}</span></span>'
-        .format(s["n"], s["n"], s["rup"], escapar_html(s["pali"]))
+        '§{0}</button><span class="nav-tip-box">{1}. {2}. {3}'
+        '<br/><span class="nav-tip-es">{4}</span></span></span>'
+        .format(s["n"], s["n"], s["rup"], escapar_html(s["pali"]),
+                escapar_html(glosa_breve(s)))
         for s in suttas)
 
     return PLANTILLA.format(
         obra=meta["obra"], obra_sub=meta["obra_sub"],
         obra_display=marcar_diacriticos(escapar_html(meta["obra"])),
+        insignia=insignia_version(meta),
+        fin_capitulo=cierre_capitulo(),
+        barra_capitulos=barra_capitulos(meta),
+        copyright=COPYRIGHT,
+        version_pie=version_pie(meta),
+        primero=min(s["n"] for s in suttas), ultimo=max(s["n"] for s in suttas),
+        version=meta.get("version", ""), version_fecha=meta.get("version_fecha", ""),
         titulo_pali=meta["titulo_pali"], titulo_es=meta["titulo_es"],
         total=total, nk=nk,
         toc=render_toc(suttas, meta),
@@ -505,6 +623,21 @@ def render(cap, meta, notas):
         cap_id="{0}-{1}".format(meta["obra_slug"], meta["slug"]),
         epub="{0}-{1}.epub".format(meta["obra"].split("-")[0], meta["titulo_pali"]),
     )
+
+
+def cierre_capitulo():
+    """El «Sandhi-kappo niṭṭhito» final, tomado literal del markdown."""
+    if not FIN_CAPITULO:
+        return ""
+    partes = ['<div class="chapter-end">']
+    if FIN_CAPITULO.get("pali"):
+        partes.append('<div class="chapter-end-pali">{0}</div>'.format(
+            escapar_html(desescapar(FIN_CAPITULO["pali"]))))
+    if FIN_CAPITULO.get("es"):
+        partes.append('<div class="chapter-end-es">{0}</div>'.format(
+            escapar_html(desescapar(FIN_CAPITULO["es"]))))
+    partes.append('</div>\n')
+    return "".join(partes)
 
 
 def cierre_kanda(c):
@@ -526,6 +659,8 @@ PLANTILLA = '''<!DOCTYPE html>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>{obra} · {titulo_pali}</title>
+<meta content="{version}" name="version"/>
+<meta content="{version_fecha}" name="version-date"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&amp;family=Noto+Serif:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
@@ -545,13 +680,14 @@ PLANTILLA = '''<!DOCTYPE html>
 <div class="hdr-grammar">{obra_display}</div>
 <div class="hdr-sub">{obra_sub}</div>
 <div class="hdr-chapter">{titulo_pali} · {titulo_es}</div>
-<div class="hdr-meta">Edición bilingüe Pāḷi–Español · {total} suttas · {nk} secciones</div>
+<div class="hdr-meta">Edición bilingüe Pāḷi–Español · {total} suttas · {nk} secciones{insignia}</div>
 </div>
 <div class="search-wrap">
 <input class="search-input" id="search-box" oninput="doSearch(this.value)" placeholder="Buscar sutta (pāḷi o español)…" type="search"/>
 <svg class="search-icon" fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewbox="0 0 20 20" width="14"><circle cx="8" cy="8" r="5"></circle><path d="M13 13l4 4"></path></svg>
 <div id="search-count"></div>
 </div>
+{barra_capitulos}
 <div class="controls">
 <button class="ctrl-btn" onclick="window.print()">Imprimir / PDF</button>
 <div class="ctrl-sep"></div>
@@ -565,7 +701,17 @@ PLANTILLA = '''<!DOCTYPE html>
 <button class="epub-btn" onclick="exportEpub()">EPUB</button>
 </div>
 <div class="nav-pills"><span class="nav-pill-label">Ir a:</span>{pastillas}</div>
-{cuerpo}
+{cuerpo}{fin_capitulo}
+<div class="footer-box">
+<div class="footer-box-main">
+<strong>{obra}</strong> — {titulo_pali} · {total} suttas (§{primero}–§{ultimo}).
+Pasa el cursor sobre los términos pāḷi o los superíndices numéricos para ver
+su significado. Expande «Ver notas» para leer las notas completas.
+</div>
+<div class="footer-box-copy">
+{copyright}
+{version_pie}</div>
+</div>
 </div>
 </div>
 <script>
