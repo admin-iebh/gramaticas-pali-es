@@ -629,11 +629,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "loka + aggo",
-    "lokaggo"
+    "loka aggo",
+    "lok a aggo (§10)",
+    "lok aggo (§12)",
+    "lokaggo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bhavāsavo",
@@ -645,11 +647,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "bhava + āsavo",
-    "bhavāsavo"
+    "bhava āsavo",
+    "bhav a āsavo (§10)",
+    "bhav āsavo (§12)",
+    "bhavāsavo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "yass’ indriyāni",
@@ -682,10 +686,13 @@
    "kac": 12,
    "s": [
     "yassa īdisā",
-    "yass’ īdisā"
+    "yass a īdisā (§10)",
+    "yass īdisā (§12)",
+    "yassīdisā (§11)",
+    "yass’ īdisā (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ajj’ uposatho",
@@ -698,10 +705,13 @@
    "kac": 12,
    "s": [
     "ajja uposatho",
-    "ajj’ uposatho"
+    "ajj a uposatho (§10)",
+    "ajj uposatho (§12)",
+    "ajjuposatho (§11)",
+    "ajj’ uposatho (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ekenūnāni",
@@ -713,11 +723,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "ekena + ūnāni",
-    "ekenūnāni"
+    "ekena ūnāni",
+    "eken a ūnāni (§10)",
+    "eken ūnāni (§12)",
+    "ekenūnāni (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bhavesanā",
@@ -729,11 +741,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "bhava + esanā",
-    "bhavesanā"
+    "bhava esanā",
+    "bhav a esanā (§10)",
+    "bhav esanā (§12)",
+    "bhavesanā (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bhavogho",
@@ -745,11 +759,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "bhava + ogho",
-    "bhavogho"
+    "bhava ogho",
+    "bhav a ogho (§10)",
+    "bhav ogho (§12)",
+    "bhavogho (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tadāhaṃ",
@@ -777,11 +793,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "avijjā + āsavo",
-    "avijjāsavo"
+    "avijjā āsavo",
+    "avijj ā āsavo (§10)",
+    "avijj āsavo (§12)",
+    "avijjāsavo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "paññindriya",
@@ -793,11 +811,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "paññā + indriya",
-    "paññindriya"
+    "paññā indriya",
+    "paññ ā indriya (§10)",
+    "paññ indriya (§12)",
+    "paññindriya (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "sabb’ ītiyo",
@@ -810,10 +830,13 @@
    "kac": 12,
    "s": [
     "sabbā ītiyo",
-    "sabb’ ītiyo"
+    "sabb ā ītiyo (§10)",
+    "sabb ītiyo (§12)",
+    "sabbītiyo (§11)",
+    "sabb’ ītiyo (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tad’ uṭṭhahi",
@@ -826,10 +849,13 @@
    "kac": 12,
    "s": [
     "tadā uṭṭhahi",
-    "tad’ uṭṭhahi"
+    "tad ā uṭṭhahi (§10)",
+    "tad uṭṭhahi (§12)",
+    "taduṭṭhahi (§11)",
+    "tad’ uṭṭhahi (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "nāganāsūrū",
@@ -841,11 +867,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "nāganāsā + ūrū",
-    "nāganāsūrū"
+    "nāganāsā ūrū",
+    "nāganās ā ūrū (§10)",
+    "nāganās ūrū (§12)",
+    "nāganāsūrū (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tass’ evaṃ",
@@ -858,10 +886,13 @@
    "kac": 12,
    "s": [
     "tassā evaṃ",
-    "tass’ evaṃ"
+    "tass ā evaṃ (§10)",
+    "tass evaṃ (§12)",
+    "tassevaṃ (§11)",
+    "tass’ evaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "avijjogho",
@@ -873,11 +904,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "avijjā + ogho",
-    "avijjogho"
+    "avijjā ogho",
+    "avijj ā ogho (§10)",
+    "avijj ogho (§12)",
+    "avijjogho (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "labhant’ atthe",
@@ -890,10 +923,13 @@
    "kac": 12,
    "s": [
     "labhanti atthe",
-    "labhant’ atthe"
+    "labhant i atthe (§10)",
+    "labhant atthe (§12)",
+    "labhantatthe (§11)",
+    "labhant’ atthe (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "agg’ āhito",
@@ -906,10 +942,13 @@
    "kac": 12,
    "s": [
     "aggi āhito",
-    "agg’ āhito"
+    "agg i āhito (§10)",
+    "agg āhito (§12)",
+    "aggāhito (§11)",
+    "agg’ āhito (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tīṇ’ imāni",
@@ -922,10 +961,13 @@
    "kac": 12,
    "s": [
     "tīṇi imāni",
-    "tīṇ’ imāni"
+    "tīṇ i imāni (§10)",
+    "tīṇ imāni (§12)",
+    "tīṇimāni (§11)",
+    "tīṇ’ imāni (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "adhīritaṃ",
@@ -956,11 +998,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "isi + uttamo",
-    "isuttamo"
+    "isi uttamo",
+    "is i uttamo (§10)",
+    "is uttamo (§12)",
+    "isuttamo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "udadhūmiyo",
@@ -972,11 +1016,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "udadhi + ūmiyo",
-    "udadhūmiyo"
+    "udadhi ūmiyo",
+    "udadh i ūmiyo (§10)",
+    "udadh ūmiyo (§12)",
+    "udadhūmiyo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "no h’ etaṃ",
@@ -1008,11 +1054,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "aggi + obhāso",
-    "aggobhāso"
+    "aggi obhāso",
+    "agg i obhāso (§10)",
+    "agg obhāso (§12)",
+    "aggobhāso (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tuṇh’ assa",
@@ -1025,10 +1073,13 @@
    "kac": 12,
    "s": [
     "tuṇhī assa",
-    "tuṇh’ assa"
+    "tuṇh ī assa (§10)",
+    "tuṇh assa (§12)",
+    "tuṇhassa (§11)",
+    "tuṇh’ assa (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "khaṇant’ ālukalambāni",
@@ -1073,10 +1124,13 @@
    "kac": 12,
    "s": [
     "bhikkhunī īritaṃ",
-    "bhikkhun’ īritaṃ"
+    "bhikkhun ī īritaṃ (§10)",
+    "bhikkhun īritaṃ (§12)",
+    "bhikkhunīritaṃ (§11)",
+    "bhikkhun’ īritaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "pivaṃ bhāgirath’ odakaṃ",
@@ -1104,11 +1158,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "rājinī + ūrū",
-    "rājinūrū"
+    "rājinī ūrū",
+    "rājin ī ūrū (§10)",
+    "rājin ūrū (§12)",
+    "rājinūrū (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "kāmuk’ esā",
@@ -1121,10 +1177,13 @@
    "kac": 12,
    "s": [
     "kāmukī esā",
-    "kāmuk’ esā"
+    "kāmuk ī esā (§10)",
+    "kāmuk esā (§12)",
+    "kāmukesā (§11)",
+    "kāmuk’ esā (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bhikkhunovādo",
@@ -1136,11 +1195,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "bhikkhunī + ovādo",
-    "bhikkhunovādo"
+    "bhikkhunī ovādo",
+    "bhikkhun ī ovādo (§10)",
+    "bhikkhun ovādo (§12)",
+    "bhikkhunovādo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ucchaggaṃ",
@@ -1152,11 +1213,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "ucchu + aggaṃ",
-    "ucchaggaṃ"
+    "ucchu aggaṃ",
+    "ucch u aggaṃ (§10)",
+    "ucch aggaṃ (§12)",
+    "ucchaggaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dhātāyatanāni",
@@ -1168,11 +1231,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "dhātu + āyatanāni",
-    "dhātāyatanāni"
+    "dhātu āyatanāni",
+    "dhāt u āyatanāni (§10)",
+    "dhāt āyatanāni (§12)",
+    "dhātāyatanāni (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dhātindriyāni",
@@ -1184,11 +1249,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "dhātu + indriyāni",
-    "dhātindriyāni"
+    "dhātu indriyāni",
+    "dhāt u indriyāni (§10)",
+    "dhāt indriyāni (§12)",
+    "dhātindriyāni (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dhātīritā",
@@ -1200,11 +1267,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "dhātu + īritā",
-    "dhātīritā"
+    "dhātu īritā",
+    "dhāt u īritā (§10)",
+    "dhāt īritā (§12)",
+    "dhātīritā (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "māt’ upaṭṭhānaṃ",
@@ -1217,10 +1286,13 @@
    "kac": 12,
    "s": [
     "mātu upaṭṭhānaṃ",
-    "māt’ upaṭṭhānaṃ"
+    "māt u upaṭṭhānaṃ (§10)",
+    "māt upaṭṭhānaṃ (§12)",
+    "mātupaṭṭhānaṃ (§11)",
+    "māt’ upaṭṭhānaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dhītūrū",
@@ -1232,11 +1304,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "dhītu + ūrū",
-    "dhītūrū"
+    "dhītu ūrū",
+    "dhīt u ūrū (§10)",
+    "dhīt ūrū (§12)",
+    "dhītūrū (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ānent’ etaṃ pabhāvatiṃ",
@@ -1264,11 +1338,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "vijju + obhāso",
-    "vijjobhāso"
+    "vijju obhāso",
+    "vijj u obhāso (§10)",
+    "vijj obhāso (§12)",
+    "vijjobhāso (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vāmūr’ addasa sāmikaṃ",
@@ -1296,11 +1372,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "jambū + ādīni",
-    "jambādīni"
+    "jambū ādīni",
+    "jamb ū ādīni (§10)",
+    "jamb ādīni (§12)",
+    "jambādīni (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "jambissaro",
@@ -1312,11 +1390,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "jambū + issaro",
-    "jambissaro"
+    "jambū issaro",
+    "jamb ū issaro (§10)",
+    "jamb issaro (§12)",
+    "jambissaro (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "jamb’ īritā vatena",
@@ -1360,11 +1440,13 @@
    "title": "Una vocal que precede a otra vocal se elide",
    "kac": 12,
    "s": [
-    "sarabhū + ūmivego",
-    "sarabhūmivego"
+    "sarabhū ūmivego",
+    "sarabh ū ūmivego (§10)",
+    "sarabh ūmivego (§12)",
+    "sarabhūmivego (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "nāganāsūr’ esā",
@@ -1377,10 +1459,13 @@
    "kac": 12,
    "s": [
     "nāganāsūrū esā",
-    "nāganāsūr’ esā"
+    "nāganāsūr ū esā (§10)",
+    "nāganāsūr esā (§12)",
+    "nāganāsūresā (§11)",
+    "nāganāsūr’ esā (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "jamb’ onatā vātena",
@@ -1553,10 +1638,13 @@
    "kac": 12,
    "s": [
     "eso āvuso",
-    "es’ āvuso"
+    "es o āvuso (§10)",
+    "es āvuso (§12)",
+    "esāvuso (§11)",
+    "es’ āvuso (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tiss’ itthiyo",
@@ -1569,10 +1657,13 @@
    "kac": 12,
    "s": [
     "tisso itthiyo",
-    "tiss’ itthiyo"
+    "tiss o itthiyo (§10)",
+    "tiss itthiyo (§12)",
+    "tissitthiyo (§11)",
+    "tiss’ itthiyo (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "catass’ ītiyo",
@@ -1585,10 +1676,13 @@
    "kac": 12,
    "s": [
     "catasso ītiyo",
-    "catass’ ītiyo"
+    "catass o ītiyo (§10)",
+    "catass ītiyo (§12)",
+    "catassītiyo (§11)",
+    "catass’ ītiyo (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "na-y-idha satt’ upalabbhati",
@@ -1617,10 +1711,13 @@
    "kac": 12,
    "s": [
     "catasso ūmiyo",
-    "catass’ ūmiyo"
+    "catass o ūmiyo (§10)",
+    "catass ūmiyo (§12)",
+    "catassūmiyo (§11)",
+    "catass’ ūmiyo (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "taṃ kut’ ettha labbhā",
@@ -1665,10 +1762,13 @@
    "kac": 13,
    "s": [
     "yassa idāni",
-    "yassa ’dāni"
+    "yass a idāni (§10)",
+    "yass a dāni (§13)",
+    "yassadāni (§11)",
+    "yassa ’dāni (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "chayā ’va",
@@ -1681,10 +1781,13 @@
    "kac": 13,
    "s": [
     "chayā iva",
-    "chayā ’va"
+    "chay ā iva (§10)",
+    "chay ā va (§13)",
+    "chayāva (§11)",
+    "chayā ’va (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "kathā ’va kā",
@@ -1733,10 +1836,13 @@
    "kac": 13,
    "s": [
     "assamaṇī asi",
-    "assamaṇī ’si"
+    "assamaṇ ī asi (§10)",
+    "assamaṇ ī si (§13)",
+    "assamaṇīsi (§11)",
+    "assamaṇī ’si (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "cakkhundriyaṃ",
@@ -1748,11 +1854,13 @@
    "title": "Cuando dos vocales contiguas son disímiles, la segunda a veces se elide",
    "kac": 13,
    "s": [
-    "cakkhu + indriyaṃ",
-    "cakkhundriyaṃ"
+    "cakkhu indriyaṃ",
+    "cakkh u indriyaṃ (§10)",
+    "cakkh u ndriyaṃ (§13)",
+    "cakkhundriyaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "akataññū ’si",
@@ -1765,10 +1873,13 @@
    "kac": 13,
    "s": [
     "akataññū asi",
-    "akataññū ’si"
+    "akataññ ū asi (§10)",
+    "akataññ ū si (§13)",
+    "akataññūsi (§11)",
+    "akataññū ’si (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vande ’haṃ",
@@ -1781,10 +1892,13 @@
    "kac": 13,
    "s": [
     "vande ahaṃ",
-    "vande ’haṃ"
+    "vand e ahaṃ (§10)",
+    "vand e haṃ (§13)",
+    "vandehaṃ (§11)",
+    "vande ’haṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "so ’haṃ",
@@ -1797,10 +1911,13 @@
    "kac": 13,
    "s": [
     "so ahaṃ",
-    "so ’haṃ"
+    "s o ahaṃ (§10)",
+    "s o haṃ (§13)",
+    "sohaṃ (§11)",
+    "so ’haṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "Moggallāno ’si",
@@ -1813,10 +1930,13 @@
    "kac": 13,
    "s": [
     "Moggallāno āsi",
-    "Moggallāno ’si"
+    "Moggallān o āsi (§10)",
+    "Moggallān o si (§13)",
+    "Moggallānosi (§11)",
+    "Moggallāno ’si (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "cattāro ’me",
@@ -1849,10 +1969,13 @@
    "kac": 13,
    "s": [
     "pāto eva",
-    "pāto ’va"
+    "pāt o eva (§10)",
+    "pāt o va (§13)",
+    "pātova (§11)",
+    "pāto ’va (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bandhusseva",
@@ -2002,10 +2125,13 @@
    "kac": 15,
    "s": [
     "tatra ayaṃ",
-    "tatrāyaṃ"
+    "tatr a ayaṃ (§10)",
+    "tatr ayaṃ (§12)",
+    "tatr āyaṃ (§15)",
+    "tatrāyaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "itarītarena",
@@ -2017,11 +2143,14 @@
    "title": "A veces cuando la vocal precedente ha sido elidida, la vocal siguiente se alarga",
    "kac": 15,
    "s": [
-    "itara + itarena",
-    "itarītarena"
+    "itara itarena",
+    "itar a itarena (§10)",
+    "itar itarena (§12)",
+    "itar ītarena (§15)",
+    "itarītarena (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "cūbhayaṃ",
@@ -2055,10 +2184,13 @@
    "kac": 15,
    "s": [
     "tadā ahaṃ",
-    "tadāhaṃ"
+    "tad ā ahaṃ (§10)",
+    "tad ahaṃ (§12)",
+    "tad āhaṃ (§15)",
+    "tadāhaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "saddhīdha",
@@ -2112,10 +2244,13 @@
    "kac": 15,
    "s": [
     "idāni ahaṃ",
-    "idānāhaṃ"
+    "idān i ahaṃ (§10)",
+    "idān ahaṃ (§12)",
+    "idān āhaṃ (§15)",
+    "idānāhaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "gacchāmīti",
@@ -2128,10 +2263,13 @@
    "kac": 15,
    "s": [
     "gacchāmi iti",
-    "gacchāmīti"
+    "gacchām i iti (§10)",
+    "gacchām iti (§12)",
+    "gacchām īti (§15)",
+    "gacchāmīti (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vūpasamo",
@@ -2143,11 +2281,14 @@
    "title": "A veces cuando la vocal precedente ha sido elidida, la vocal siguiente se alarga",
    "kac": 15,
    "s": [
-    "vi + upasamo",
-    "vūpasamo"
+    "vi upasamo",
+    "v i upasamo (§10)",
+    "v upasamo (§12)",
+    "v ūpasamo (§15)",
+    "vūpasamo (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bahūpakāraṃ",
@@ -2159,11 +2300,14 @@
    "title": "A veces cuando la vocal precedente ha sido elidida, la vocal siguiente se alarga",
    "kac": 15,
    "s": [
-    "bahu + upakāraṃ",
-    "bahūpakāraṃ"
+    "bahu upakāraṃ",
+    "bah u upakāraṃ (§10)",
+    "bah upakāraṃ (§12)",
+    "bah ūpakāraṃ (§15)",
+    "bahūpakāraṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "sacāyaṃ",
@@ -2176,10 +2320,13 @@
    "kac": 15,
    "s": [
     "sace ayaṃ",
-    "sacāyaṃ"
+    "sac e ayaṃ (§10)",
+    "sac ayaṃ (§12)",
+    "sac āyaṃ (§15)",
+    "sacāyaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "appassutāyaṃ",
@@ -2213,10 +2360,13 @@
    "kac": 16,
    "s": [
     "lokassa iti",
-    "lokassāti"
+    "lokass a iti (§10)",
+    "lokass a ti (§13)",
+    "lokass ā ti (§16)",
+    "lokassāti (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vītipatanti",
@@ -2228,11 +2378,14 @@
    "title": "A veces cuando la vocal siguiente ha sido elidida, la vocal precedente se alarga",
    "kac": 16,
    "s": [
-    "vi + atipatanti",
-    "vītipatanti"
+    "vi atipatanti",
+    "v i atipatanti (§10)",
+    "v i tipatanti (§13)",
+    "v ī tipatanti (§16)",
+    "vītipatanti (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "jīvitahetūpi",
@@ -2245,10 +2398,13 @@
    "kac": 16,
    "s": [
     "jīvitahetu api",
-    "jīvitahetūpi"
+    "jīvitahet u api (§10)",
+    "jīvitahet u pi (§13)",
+    "jīvitahet ū pi (§16)",
+    "jīvitahetūpi (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vijjūva",
@@ -2261,10 +2417,13 @@
    "kac": 16,
    "s": [
     "vijju iva",
-    "vijjūva"
+    "vijj u iva (§10)",
+    "vijj u va (§13)",
+    "vijj ū va (§16)",
+    "vijjūva (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "myāyaṃ",
@@ -2319,10 +2478,13 @@
    "kac": 17,
    "s": [
     "te assa",
-    "ty assa"
+    "t e assa (§10)",
+    "t y assa (§17)",
+    "tyassa (§11)",
+    "ty assa (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tyāssa",
@@ -2367,10 +2529,12 @@
    "kac": 17,
    "s": [
     "ke assa",
-    "kyassa"
+    "k e assa (§10)",
+    "k y assa (§17)",
+    "kyassa (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "kyāssa",
@@ -2415,10 +2579,13 @@
    "kac": 18,
    "s": [
     "ko attho",
-    "kv attho"
+    "k o attho (§10)",
+    "k v attho (§18)",
+    "kvattho (§11)",
+    "kv attho (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "kv idha",
@@ -2431,10 +2598,13 @@
    "kac": 18,
    "s": [
     "ko idha",
-    "kv idha"
+    "k o idha (§10)",
+    "k v idha (§18)",
+    "kvidha (§11)",
+    "kv idha (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "khv assa",
@@ -2447,10 +2617,13 @@
    "kac": 18,
    "s": [
     "kho assa",
-    "khv assa"
+    "kh o assa (§10)",
+    "kh v assa (§18)",
+    "khvassa (§11)",
+    "khv assa (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "khv idha",
@@ -2463,10 +2636,13 @@
    "kac": 18,
    "s": [
     "kho idha",
-    "khv idha"
+    "kh o idha (§10)",
+    "kh v idha (§18)",
+    "khvidha (§11)",
+    "khv idha (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "yvāyaṃ",
@@ -2531,10 +2707,13 @@
    "kac": 18,
    "s": [
     "so eva",
-    "sv eva"
+    "s o eva (§10)",
+    "s v eva (§18)",
+    "sveva (§11)",
+    "sv eva (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "anv addhamāsaṃ",
@@ -2547,10 +2726,13 @@
    "kac": 18,
    "s": [
     "anu addhamāsaṃ",
-    "anv addhamāsaṃ"
+    "an u addhamāsaṃ (§10)",
+    "an v addhamāsaṃ (§18)",
+    "anvaddhamāsaṃ (§11)",
+    "anv addhamāsaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "anveti",
@@ -2580,11 +2762,13 @@
    "title": "A veces cuando una vocal sigue, “o” y “u” se convierten en “v”",
    "kac": 18,
    "s": [
-    "su + āgataṃ",
-    "svāgataṃ"
+    "su āgataṃ",
+    "s u āgataṃ (§10)",
+    "s v āgataṃ (§18)",
+    "svāgataṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dvākāro",
@@ -2596,11 +2780,13 @@
    "title": "A veces cuando una vocal sigue, “o” y “u” se convierten en “v”",
    "kac": 18,
    "s": [
-    "du + ākāro",
-    "dvākāro"
+    "du ākāro",
+    "d u ākāro (§10)",
+    "d v ākāro (§18)",
+    "dvākāro (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "cakkhvāpāthaṃ",
@@ -2612,11 +2798,13 @@
    "title": "A veces cuando una vocal sigue, “o” y “u” se convierten en “v”",
    "kac": 18,
    "s": [
-    "cakkhu + āpāthaṃ",
-    "cakkhvāpāthaṃ"
+    "cakkhu āpāthaṃ",
+    "cakkh u āpāthaṃ (§10)",
+    "cakkh v āpāthaṃ (§18)",
+    "cakkhvāpāthaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bahvābādho",
@@ -2701,11 +2889,13 @@
    "title": "A veces cuando una vocal sigue, “i”, “ī” se convierten en “y”",
    "kac": 21,
    "s": [
-    "nadī + āsanno",
-    "nadyāsanno"
+    "nadī āsanno",
+    "nad ī āsanno (§10)",
+    "nad y āsanno (§21)",
+    "nadyāsanno (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "icc antaṃ",
@@ -2974,10 +3164,12 @@
    "kac": 35,
    "s": [
     "na idaṃ",
-    "na-y-idaṃ"
+    "na y idaṃ (§35)",
+    "nayidaṃ (§11)",
+    "na-y-idaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "sati-y-eva",
@@ -2990,10 +3182,12 @@
    "kac": 35,
    "s": [
     "sati eva",
-    "sati-y-eva"
+    "sati y eva (§35)",
+    "satiyeva (§11)",
+    "sati-y-eva (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "so-y-eva",
@@ -3006,10 +3200,12 @@
    "kac": 35,
    "s": [
     "so eva",
-    "so-y-eva"
+    "so y eva (§35)",
+    "soyeva (§11)",
+    "so-y-eva (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "vi-y-ākāsi",
@@ -3021,11 +3217,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "vi + ākāsi",
-    "vi-y-ākāsi"
+    "vi ākāsi",
+    "vi y ākāsi (§35)",
+    "viyākāsi (§11)",
+    "vi-y-ākāsi (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "pari-y-anto",
@@ -3037,11 +3235,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "pari + anto",
-    "pari-y-anto"
+    "pari anto",
+    "pari y anto (§35)",
+    "pariyanto (§11)",
+    "pari-y-anto (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ti-v-aṅgikaṃ",
@@ -3053,11 +3253,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "ti + aṅgikaṃ",
-    "ti-v-aṅgikaṃ"
+    "ti aṅgikaṃ",
+    "ti v aṅgikaṃ (§35)",
+    "tivaṅgikaṃ (§11)",
+    "ti-v-aṅgikaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "pavuccati",
@@ -3069,11 +3271,12 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "pa + uccati",
-    "pavuccati"
+    "pa uccati",
+    "pa v uccati (§35)",
+    "pavuccati (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "lahu-m-essati",
@@ -3086,10 +3289,12 @@
    "kac": 35,
    "s": [
     "lahu essati",
-    "lahu-m-essati"
+    "lahu m essati (§35)",
+    "lahumessati (§11)",
+    "lahu-m-essati (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "bhadro kasā-m-iva",
@@ -3117,11 +3322,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "u + aggo",
-    "u-d-aggo"
+    "u aggo",
+    "u d aggo (§35)",
+    "udaggo (§11)",
+    "u-d-aggo (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "saki-d-eva",
@@ -3134,10 +3341,12 @@
    "kac": 35,
    "s": [
     "saki eva",
-    "saki-d-eva"
+    "saki d eva (§35)",
+    "sakideva (§11)",
+    "saki-d-eva (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ito-n-āyati",
@@ -3150,10 +3359,12 @@
    "kac": 35,
    "s": [
     "ito āyati",
-    "ito-n-āyati"
+    "ito n āyati (§35)",
+    "itonāyati (§11)",
+    "ito-n-āyati (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "tasmā-t-iha",
@@ -3166,10 +3377,12 @@
    "kac": 35,
    "s": [
     "tasmā iha",
-    "tasmā-t-iha"
+    "tasmā t iha (§35)",
+    "tasmātiha (§11)",
+    "tasmā-t-iha (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "puna-r-eva",
@@ -3182,10 +3395,12 @@
    "kac": 35,
    "s": [
     "puna eva",
-    "puna-r-eva"
+    "puna r eva (§35)",
+    "punareva (§11)",
+    "puna-r-eva (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "du-r-āgataṃ",
@@ -3197,11 +3412,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "du + āgataṃ",
-    "du-r-āgataṃ"
+    "du āgataṃ",
+    "du r āgataṃ (§35)",
+    "durāgataṃ (§11)",
+    "du-r-āgataṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "catu-r-aṅgikaṃ",
@@ -3213,11 +3430,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "catu + aṅgikaṃ",
-    "catu-r-aṅgikaṃ"
+    "catu aṅgikaṃ",
+    "catu r aṅgikaṃ (§35)",
+    "caturaṅgikaṃ (§11)",
+    "catu-r-aṅgikaṃ (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "cha-ḷ-abhiññā",
@@ -3245,11 +3464,13 @@
    "title": "A veces, cuando una vocal sigue, se inserta alguna de las siguientes consonantes: “y”, “v”, “m”, “d”, “n”, “t”, “r”, “l”, “h”, “g”",
    "kac": 35,
    "s": [
-    "su + ujū",
-    "su-h-ujū"
+    "su ujū",
+    "su h ujū (§35)",
+    "suhujū (§11)",
+    "su-h-ujū (EM)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "puthag eva",
@@ -3538,11 +3759,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "su + pasanno",
-    "suppasanno"
+    "su pasanno",
+    "su ppasanno (§28)",
+    "suppasanno (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "suppatiṭṭho",
@@ -3554,11 +3776,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "su + patiṭṭho",
-    "suppatiṭṭho"
+    "su patiṭṭho",
+    "su ppatiṭṭho (§28)",
+    "suppatiṭṭho (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "suppaṭipanno",
@@ -3570,11 +3793,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "su + paṭipanno",
-    "suppaṭipanno"
+    "su paṭipanno",
+    "su ppaṭipanno (§28)",
+    "suppaṭipanno (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "paṭikkamati",
@@ -3618,11 +3842,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "kusala + tikaṃ",
-    "kusalattikaṃ"
+    "kusala tikaṃ",
+    "kusala ttikaṃ (§28)",
+    "kusalattikaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ratanattayaṃ",
@@ -3634,11 +3859,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "ratana + tayaṃ",
-    "ratanattayaṃ"
+    "ratana tayaṃ",
+    "ratana ttayaṃ (§28)",
+    "ratanattayaṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "ekattiṃsa",
@@ -3650,11 +3876,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "eka + tiṃsa",
-    "ekattiṃsa"
+    "eka tiṃsa",
+    "eka ttiṃsa (§28)",
+    "ekattiṃsa (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "dukkaraṃ",
@@ -3666,11 +3893,12 @@
    "title": "A veces, después de una vocal, la consonante siguiente se duplica",
    "kac": 28,
    "s": [
-    "du + karaṃ",
-    "dukkaraṃ"
+    "du karaṃ",
+    "du kkaraṃ (§28)",
+    "dukkaraṃ (§11)"
    ],
-   "full": false,
-   "transcrito": true
+   "full": true,
+   "derivada": true
   },
   {
    "f": "suyyati",

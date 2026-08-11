@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="3.0">
+<meta name="version" content="3.1">
 <meta name="version-date" content="2026-08-11">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -301,8 +301,9 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
       <p class="tag">Las reglas de combinación eufónica del pāḷi, con su secuencia.</p>
       <span class="version-badge" id="vbadge"></span>
       <p class="revision">Reglas y formas transcritas del documento de Bhikkhu Nandisena.
-      De las 263 formas, 49 llevan la secuencia de formación tomada de la traducción del
-      Sandhi-kappa; las otras 214 no la llevan porque no consta en ninguna fuente.
+      De las 263 formas, 49 llevan la secuencia tal como está en la traducción del
+      Sandhi-kappa y 96 la llevan calculada según el patrón del aforismo y comprobada
+      contra la forma atestiguada. Las 118 restantes se quedan sin secuencia.
       La correspondencia de cada regla con su aforismo §N está pendiente de revisión.</p>
     </div>
     <div class="hero" id="hero" aria-hidden="true"></div>
@@ -515,6 +516,7 @@ function renderFormas(list){
         ${head}
         ${ladder(f.s, f.ce)}
         ${f.verificada ? `<p class="parcial verif">Secuencia tomada de la traducción del Sandhi-kappa, <a class="xref" href="../../kaccayana/sandhi/#s${f.kac_seq}">§${f.kac_seq}</a>.</p>` : ''}
+        ${f.derivada ? '<p class="parcial verif">Secuencia calculada según el patrón del aforismo en la traducción del Sandhi-kappa, y comprobada: los pasos llegan exactamente a la forma que da el documento.</p>' : ''}
         ${f.sin_cambio ? '<p class="parcial">Pakati: la vocal o la niggahīta permanece sin cambios —no se elide, ni se sustituye, ni se modifica—. El documento da la entrada y el resultado, sin secuencia intermedia.</p>' : ''}
         ${(!isKac && !f.full && !f.sin_cambio) ? '<p class="parcial">El documento da componentes y resultado. La secuencia de formación no consta en ninguna fuente y no se reconstruye aquí.</p>' : ''}
       </div></details>`;
@@ -728,8 +730,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '3.0', VERSION_DATE = '2026-08-11';
-const VERSION_NOTE = 'Reglas y formas rehechas por transcripción del documento de Nandisena: numeración del propio documento, cada forma bajo su regla, y sin los pasos intermedios que no constan en ninguna fuente. La búsqueda sólo mira la pestaña activa; ahora cada pestaña muestra cuántas coincidencias tiene y el aviso de «sin resultados» lleva a la que sí las tiene. La regla 2 de pakati ilustra con «vedanā khandho → vedanākkhandho», donde la ā va seguida de consonante desde el principio. En pakati no se construye secuencia: se da la entrada y el resultado, como en el documento. Cada regla muestra ahora su propia forma en vez de la del aforismo: las cuatro fichas de pakati 1 enseñaban «Appassut’ āyaṃ», donde la vocal se elide y se alarga, justo lo contrario de lo que la regla dice. En pakati 2 el paso cita ahora también §23, el aforismo de la propia regla, junto al que inserta o duplica la consonante. Corregidas las formas de pakati-sandhi: llevaban un §11 que no procede —§11 une letras, y en pakati justamente no se une nada— y las dos formas de 1.3 estaban archivadas bajo 1.2. En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
+const VERSION = '3.1', VERSION_DATE = '2026-08-11';
+const VERSION_NOTE = '145 de las 263 formas llevan ya su secuencia: 49 tomadas de la traducción y 96 calculadas según el patrón del aforismo y comprobadas contra la forma atestiguada. Reglas y formas rehechas por transcripción del documento de Nandisena: numeración del propio documento, cada forma bajo su regla, y sin los pasos intermedios que no constan en ninguna fuente. La búsqueda sólo mira la pestaña activa; ahora cada pestaña muestra cuántas coincidencias tiene y el aviso de «sin resultados» lleva a la que sí las tiene. La regla 2 de pakati ilustra con «vedanā khandho → vedanākkhandho», donde la ā va seguida de consonante desde el principio. En pakati no se construye secuencia: se da la entrada y el resultado, como en el documento. Cada regla muestra ahora su propia forma en vez de la del aforismo: las cuatro fichas de pakati 1 enseñaban «Appassut’ āyaṃ», donde la vocal se elide y se alarga, justo lo contrario de lo que la regla dice. En pakati 2 el paso cita ahora también §23, el aforismo de la propia regla, junto al que inserta o duplica la consonante. Corregidas las formas de pakati-sandhi: llevaban un §11 que no procede —§11 une letras, y en pakati justamente no se une nada— y las dos formas de 1.3 estaban archivadas bajo 1.2. En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
