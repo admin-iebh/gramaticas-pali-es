@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="1.3">
+<meta name="version" content="1.4">
 <meta name="version-date" content="2026-08-10">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -302,7 +302,7 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
   <div class="wrap">
     <input type="search" id="q" placeholder="Buscar regla, aforismo o forma — «tathupamam», «niggahita», «elide»…" aria-label="Buscar">
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-reglas"   aria-selected="true"  data-v="reglas">Reglas<i></i></button>
+      <button role="tab" id="t-reglas"   aria-selected="true"  data-v="reglas">Clases<i></i></button>
       <button role="tab" id="t-aforismos" aria-selected="false" data-v="aforismos">Aforismos<i></i></button>
       <button role="tab" id="t-formas"   aria-selected="false" data-v="formas">Formas<i></i></button>
       <button role="tab" id="t-conc"     aria-selected="false" data-v="conc">Concordancia</button>
@@ -442,7 +442,7 @@ function renderReglas(rules){
     else if(alt)  cuerpo = `<p class="lbl" style="margin:13px 0 0">Ejemplo · ${esc(alt.f)}</p>` + ladder(alt.s, false);
     else if(r.ex) cuerpo = `<div class="lad"><div><span class="s">${esc(r.ex)}</span></div></div>`;
     else if(propias.length === 0 && !r.sub)
-                  cuerpo = `<p class="lbl" style="margin:13px 0 0">Los ejemplos van en las subreglas siguientes</p>`;
+                  cuerpo = `<p class="lbl" style="margin:13px 0 0">Los ejemplos van en las subclases siguientes</p>`;
     else          cuerpo = '';
     html += `<article class="card${r.sub ? ' subregla' : ''}">
       <div class="num">${r.n}${r.kac.length ? `<em>KAC §${r.kac.join(' · §')}</em>` : ''}</div>
@@ -523,7 +523,7 @@ function render(){
   if(view === 'reglas'){
     const list = DATA.rules.filter(r => !n || r.hay.includes(n));
     total = list.length; html = list.length ? renderReglas(list) : '';
-    cnt.textContent = `${total} / ${DATA.rules.length} reglas de combinación eufónica`;
+    cnt.textContent = `${total} / ${DATA.rules.length} clases de combinación eufónica`;
   } else if(view === 'aforismos'){
     const list = DATA.suttas.filter(s => !n || s.hay.includes(n));
     total = list.length; html = list.length ? renderAforismos(list) : '';
@@ -653,7 +653,7 @@ addEventListener('keydown', e => { if(e.key === 'Escape') hideTip(); });
 /* ---------- volver al punto de partida ---------- */
 const volver = document.getElementById('volver');
 let marca = null;
-const NOMBRE = {reglas:'Reglas', aforismos:'Aforismos', formas:'Formas', conc:'Concordancia'};
+const NOMBRE = {reglas:'Clases', aforismos:'Aforismos', formas:'Formas', conc:'Concordancia'};
 function marcar(){
   marca = {view, q, y: scrollY, src};
   volver.textContent = '\u2190 Volver a ' + NOMBRE[view];
@@ -673,8 +673,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '1.3', VERSION_DATE = '2026-08-10';
-const VERSION_NOTE = 'Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las derivaciones de §12, §32, §35 y §40.';
+const VERSION = '1.4', VERSION_DATE = '2026-08-10';
+const VERSION_NOTE = 'La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las derivaciones de §12, §32, §35 y §40.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
@@ -710,7 +710,7 @@ const KANDA = [[1,11,'Paṭhama-kaṇḍa'],[12,22,'Dutiya-kaṇḍa'],[23,29,'T
 const CATS = [['sara','Sara-sandhi'],['byanjana','Byañjana-sandhi'],
               ['niggahita','Niggahīta-sandhi'],['pakati','Pakati-sandhi']];
 (function(){
-  let h = '<h3>Reglas</h3>';
+  let h = '<h3>Clases</h3>';
   CATS.forEach(([id,name]) => {
     const n = DATA.rules.filter(r => r.sec === id).length;
     h += `<a href="#" data-go="rule:${id}"><b>${n}</b>${name}</a>`;
