@@ -170,6 +170,34 @@ def main():
     os.makedirs(os.path.dirname(DESTINO), exist_ok=True)
     open(DESTINO, "w", encoding="utf-8").write(html)
 
+    # ── auditoría de las secuencias ──────────────────────────────────
+    # §10 separa la consonante de su vocal, §11 vuelve a unirlas. Si un paso
+    # cita §10 y no separa, o §11 y no une, la anotación está mal. Y en
+    # pakati-sandhi, donde por definición no ocurre nada, un paso único no
+    # puede llevar referencia a ningún aforismo.
+    def _texto(paso):
+        return re.sub(r'\s*\(([^)]*)\)\s*$', '', paso).strip()
+
+    def _refs(paso):
+        m = re.search(r'\(([^)]*)\)\s*$', paso)
+        return m.group(1) if m else ""
+
+    fallos = []
+    for c in reglas["ce"]:
+        etiqueta = "{0} {1} · {2}".format(c["sec"], c["rule"], c["f"])
+        if c["sec"] == "pakati" and len(c["s"]) == 1 and "§" in c["s"][0]:
+            fallos.append("{0}: paso único con referencia en pakati".format(etiqueta))
+        for a, b in zip(c["s"], c["s"][1:]):
+            ta, tb, r = _texto(a), _texto(b), _refs(b)
+            if not r:
+                continue
+            if ta == tb:
+                fallos.append("{0}: «{1}» no cambia pero cita {2}".format(etiqueta, tb, r))
+            if "§10" in r and tb.count(" ") <= ta.count(" "):
+                fallos.append("{0}: cita §10 pero no separa".format(etiqueta))
+            if "§11" in r and tb.count(" ") >= ta.count(" "):
+                fallos.append("{0}: cita §11 pero no une".format(etiqueta))
+
     # avisos útiles
     sin_glosa = [s["kac"] for s in suttas if not s["es"]]
     sin_split = [s["kac"] for s in suttas if not s["split"]]
@@ -186,6 +214,13 @@ def main():
         len(suttas), sum(1 for s in suttas if s["ex"]),
         len(reglas["rules"]), len(reglas["ce"]),
         os.path.relpath(DESTINO, RAIZ)))
+    if fallos:
+        print("\n  SECUENCIAS SOSPECHOSAS:")
+        for f in fallos[:12]:
+            print("    ✗", f)
+        if len(fallos) > 12:
+            print("    … y {0} más".format(len(fallos) - 12))
+
     for etiqueta, lista in (("sin glosa española", sin_glosa),
                             ("sin desglose", sin_split),
                             ("formas huérfanas", huerf),

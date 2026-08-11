@@ -270,7 +270,9 @@
    "secSub": "Vocal + consonante",
    "n": "2.3",
    "rule": "Cuando se duplica una consonante.",
-   "kac": [],
+   "kac": [
+    26
+   ],
    "ru": [],
    "ex": "",
    "sub": true,
@@ -556,7 +558,9 @@
    "secSub": "Sin combinación",
    "n": "1.1",
    "rule": "Voces en vocativo cuando no están seguidas por “iti”.",
-   "kac": [],
+   "kac": [
+    24
+   ],
    "ru": [],
    "ex": "",
    "sub": true,
@@ -568,7 +572,9 @@
    "secSub": "Sin combinación",
    "n": "1.2",
    "rule": "Cuando no hay un compuesto, las voces que terminan en vocales largas.",
-   "kac": [],
+   "kac": [
+    24
+   ],
    "ru": [],
    "ex": "",
    "sub": true,
@@ -580,7 +586,9 @@
    "secSub": "Sin combinación",
    "n": "1.3",
    "rule": "Las vocales ‘i’ y ‘u’ que pertenecen a nombres y están seguidas por verbos en el tiempo pasado.",
-   "kac": [],
+   "kac": [
+    24
+   ],
    "ru": [],
    "ex": "",
    "sub": true,
@@ -5077,9 +5085,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "bhikkhave evaṃ vadāmi (§11)"
+    "bhikkhave evaṃ vadāmi"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "Sāriputta idha",
@@ -5092,9 +5101,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "Sāriputta idha (§11)"
+    "Sāriputta idha"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "āyasmā Ānando",
@@ -5107,9 +5117,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "āyasmā Ānando (§11)"
+    "āyasmā Ānando"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "eko ekāya",
@@ -5122,9 +5133,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "eko ekāya (§11)"
+    "eko ekāya"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "no abhikkamo",
@@ -5137,9 +5149,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "no abhikkamo (§11)"
+    "no abhikkamo"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "gāthāhi ajjhabhāsi",
@@ -5147,14 +5160,15 @@
    "ref": "Sn. 335",
    "sec": "pakati",
    "secName": "PAKATI-SANDHI",
-   "rule": "1.2",
-   "title": "Cuando no hay un compuesto, la voces que terminan en vocales largas",
+   "rule": "1.3",
+   "title": "Las vocales ‘i’ y ‘u’ que pertenecen a nombres y están seguidas por verbos en el tiempo pasado",
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "gāthāhi ajjhabhāsi (§11)"
+    "gāthāhi ajjhabhāsi"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "satthu adāsi",
@@ -5162,14 +5176,15 @@
    "ref": "ApA. I 285",
    "sec": "pakati",
    "secName": "PAKATI-SANDHI",
-   "rule": "1.2",
-   "title": "Cuando no hay un compuesto, la voces que terminan en vocales largas",
+   "rule": "1.3",
+   "title": "Las vocales ‘i’ y ‘u’ que pertenecen a nombres y están seguidas por verbos en el tiempo pasado",
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "satthu adāsi (§11)"
+    "satthu adāsi"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "bhadro kasā-m-iva",
@@ -5217,9 +5232,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "evaṃ vutte (§11)"
+    "evaṃ vutte"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "taṃ sādhu",
@@ -5232,9 +5248,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "taṃ sādhu (§11)"
+    "taṃ sādhu"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   },
   {
    "f": "ekaṃ samayaṃ",
@@ -5247,9 +5264,10 @@
    "kac": 0,
    "op": "permanece sin cambios",
    "s": [
-    "ekaṃ samayaṃ (§11)"
+    "ekaṃ samayaṃ"
    ],
-   "full": true
+   "full": true,
+   "sin_cambio": true
   }
  ]
 }
