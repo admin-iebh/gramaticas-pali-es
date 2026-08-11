@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="2.1">
+<meta name="version" content="2.2">
 <meta name="version-date" content="2026-08-11">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +108,10 @@ input[type=search]:focus{outline:2px solid var(--nila);outline-offset:1px}
 .tabs button:last-child{border-right:0}
 .tabs button i{font-style:normal;opacity:.65;margin-left:6px;font-size:10px}
 .tabs button[aria-selected=true] i{opacity:.85}
+.tabs button.vacia i{opacity:.3}
+.ir-a{font:inherit;color:var(--nila);background:none;border:0;border-bottom:1px solid currentColor;
+  padding:0;margin:0 .5em 0 0;cursor:pointer}
+.ir-a:hover{color:var(--haritala)}
 .tabs button[aria-selected=true]{background:var(--nila);color:var(--ola-2)}
 .tabs button:focus-visible{outline:2px solid var(--haritala);outline-offset:-2px}
 .count{font-family:var(--mono);font-size:11px;color:var(--soot);white-space:nowrap}
@@ -548,7 +552,34 @@ function render(){
     cnt.textContent = `${total} / ${DATA.suttas.length} aforismos de Kaccāyana`;
   }
   document.getElementById('filtros').hidden = (view !== 'formas');
-  out.innerHTML = html || `<div class="empty"><p>Sin resultados para «${esc(q)}».</p>
+
+  // La búsqueda sólo mira la vista activa. Para que no parezca que una voz no
+  // está cuando lo que pasa es que está en otra pestaña, cada pestaña muestra
+  // cuántas coincidencias tiene, y el aviso de «sin resultados» dice dónde
+  // buscarla.
+  const cuenta = {
+    reglas:    DATA.rules.filter(r => !n || r.hay.includes(n)).length,
+    aforismos: DATA.suttas.filter(x => !n || x.hay.includes(n)).length,
+    formas:    FORMS.filter(f => !n || f.hay.includes(n)).length,
+  };
+  const totales = {reglas: DATA.rules.length, aforismos: DATA.suttas.length,
+                   formas: FORMS.length};
+  document.querySelectorAll('.tabs button i').forEach(i => {
+    const v = i.parentElement.dataset.v;
+    if(totales[v] == null) return;
+    i.textContent = n ? cuenta[v] : totales[v];
+    i.parentElement.classList.toggle('vacia', !!n && cuenta[v] === 0);
+  });
+
+  let pista = '';
+  if(n){
+    const otras = Object.keys(cuenta)
+      .filter(v => v !== view && cuenta[v] > 0)
+      .map(v => `<button class="ir-a" data-v="${v}">${cuenta[v]} en ${NOMBRE[v]}</button>`);
+    if(otras.length) pista = `<p class="lbl">Sí aparece en: ${otras.join(' ')}</p>`;
+  }
+  out.innerHTML = html || `<div class="empty"><p>Sin resultados para «${esc(q)}» en ${NOMBRE[view]}.</p>
+    ${pista}
     <p class="lbl">Los diacríticos son opcionales: «tathupamam» encuentra «tathūpamaṃ».</p></div>`;
 }
 
@@ -562,6 +593,13 @@ document.querySelectorAll('#filtros button').forEach(b => {
   });
 });
 document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
+document.getElementById('out').addEventListener('click', e => {
+  const b = e.target.closest('button.ir-a');
+  if(!b) return;
+  setTab(b.dataset.v);
+  render();
+  scrollTo({top: 0, behavior: 'smooth'});
+});
 document.querySelectorAll('.tabs button').forEach(b => {
   b.addEventListener('click', () => {
     view = b.dataset.v;
@@ -682,8 +720,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '2.1', VERSION_DATE = '2026-08-11';
-const VERSION_NOTE = 'La regla 2 de pakati ilustra con «vedanā khandho → vedanākkhandho», donde la ā va seguida de consonante desde el principio. En pakati no se construye secuencia: se da la entrada y el resultado, como en el documento. Cada regla muestra ahora su propia forma en vez de la del aforismo: las cuatro fichas de pakati 1 enseñaban «Appassut’ āyaṃ», donde la vocal se elide y se alarga, justo lo contrario de lo que la regla dice. En pakati 2 el paso cita ahora también §23, el aforismo de la propia regla, junto al que inserta o duplica la consonante. Corregidas las formas de pakati-sandhi: llevaban un §11 que no procede —§11 une letras, y en pakati justamente no se une nada— y las dos formas de 1.3 estaban archivadas bajo 1.2. En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
+const VERSION = '2.2', VERSION_DATE = '2026-08-11';
+const VERSION_NOTE = 'La búsqueda sólo mira la pestaña activa; ahora cada pestaña muestra cuántas coincidencias tiene y el aviso de «sin resultados» lleva a la que sí las tiene. La regla 2 de pakati ilustra con «vedanā khandho → vedanākkhandho», donde la ā va seguida de consonante desde el principio. En pakati no se construye secuencia: se da la entrada y el resultado, como en el documento. Cada regla muestra ahora su propia forma en vez de la del aforismo: las cuatro fichas de pakati 1 enseñaban «Appassut’ āyaṃ», donde la vocal se elide y se alarga, justo lo contrario de lo que la regla dice. En pakati 2 el paso cita ahora también §23, el aforismo de la propia regla, junto al que inserta o duplica la consonante. Corregidas las formas de pakati-sandhi: llevaban un §11 que no procede —§11 une letras, y en pakati justamente no se une nada— y las dos formas de 1.3 estaban archivadas bajo 1.2. En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
