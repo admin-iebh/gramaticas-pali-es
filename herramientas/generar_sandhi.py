@@ -70,8 +70,13 @@ def secuencia_en_linea(t):
     return limpiar(titulo), [limpiar(x) for x in partes]
 
 
-def derivaciones(bloques):
-    """Extrae las secuencias de formación en cualquiera de las dos formas."""
+def secuencias(bloques):
+    """Extrae las secuencias de formación en cualquiera de las dos formas.
+
+    «Secuencia», no «derivación»: en gramática pāḷi la derivación es la
+    formación de palabras (taddhita, kita), no la cadena de operaciones
+    de sandhi que estas escaleras muestran.
+    """
     salida, contra = [], False
     for bloque in bloques:
         titulo, pasos, ultima_negrita = None, [], None
@@ -143,7 +148,7 @@ def suttas_desde_markdown():
             "split": split,
             "es": es,
             "gloss": glosa,
-            "ex": derivaciones(bloques[2:]),
+            "ex": secuencias(bloques[2:]),
         })
     return fuera
 
@@ -177,7 +182,7 @@ def main():
               and not any(x.get("parent") == str(r["n"]) and x["sec"] == r["sec"]
                           for x in reglas["rules"])]
 
-    print("{0} aforismos · {1} con derivación · {2} reglas · {3} formas → {4}".format(
+    print("{0} aforismos · {1} con secuencia · {2} reglas · {3} formas → {4}".format(
         len(suttas), sum(1 for s in suttas if s["ex"]),
         len(reglas["rules"]), len(reglas["ce"]),
         os.path.relpath(DESTINO, RAIZ)))

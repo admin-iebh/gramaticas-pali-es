@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="1.5">
-<meta name="version-date" content="2026-08-10">
+<meta name="version" content="1.6">
+<meta name="version-date" content="2026-08-11">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,7 +144,7 @@ input[type=search]:focus{outline:2px solid var(--nila);outline-offset:1px}
   padding:2.5px 7px;border:1px solid var(--hair);border-radius:2px;color:var(--soot);background:var(--ola-2)}
 .chip.k{border-color:var(--nila);color:var(--nila)}
 
-/* ---------- derivation ladder (signature) ---------- */
+/* ---------- escalera de secuencia (elemento distintivo) ---------- */
 .lad{margin:12px 0 0;font-family:var(--mono);font-size:13.5px;line-height:1.9;
      border-left:2px solid var(--haritala);padding-left:13px}
 .lad.ce{border-left-color:var(--rakta)}
@@ -324,12 +324,12 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
 
 <footer class="wrap">
   <p class="version-foot" id="vfoot"></p>
-  <p><strong>Fuentes.</strong> Las formas marcadas <span class="src ce">C. eufónica</span> proceden de las <em>Reglas de combinación eufónica</em> de Bhikkhu Nandisena, con su referencia canónica; su secuencia de formación ha sido generada y comprobada contra la forma atestiguada. Las marcadas <span class="src kac">Kaccāyana</span> vienen con su derivación del propio Sandhi-kappa (51 aforismos, §1–§51), con la numeración concordante de Rūpasiddhi (RŪ) y Saddanīti Suttamālā (SAD). Las cuatro categorías y los enunciados en español siguen las <em>Reglas de combinación eufónica</em> preparadas por Bhikkhu Nandisena, Instituto de Estudios Buddhistas Hispano.</p>
+  <p><strong>Fuentes.</strong> Las formas marcadas <span class="src ce">C. eufónica</span> proceden de las <em>Reglas de combinación eufónica</em> de Bhikkhu Nandisena, con su referencia canónica; su secuencia de formación ha sido generada y comprobada contra la forma atestiguada. Las marcadas <span class="src kac">Kaccāyana</span> vienen con su secuencia tomada del propio Sandhi-kappa (51 aforismos, §1–§51), con la numeración concordante de Rūpasiddhi (RŪ) y Saddanīti Suttamālā (SAD). Las cuatro categorías y los enunciados en español siguen las <em>Reglas de combinación eufónica</em> preparadas por Bhikkhu Nandisena, Instituto de Estudios Buddhistas Hispano.</p>
   <p><strong>Véase también.</strong> El capítulo completo, con el vutti, las notas del traductor y la
   pregunta <em>kimatthaṃ</em> de cada aforismo, en <a href="../../kaccayana/sandhi/">1-Sandhi-Kappa</a>.
   El documento de Nandisena del que proceden las reglas y las formas, en
   <a href="../combinacion-eufonica/">Reglas de combinación eufónica</a>.</p>
-  <p><strong>Cómo leer una derivación.</strong> §10 separa la consonante de su vocal; §11 vuelve a unirlas. Entre esos dos pasos ocurre la operación propiamente dicha. «EM» es la forma de la edición moderna, con apóstrofo. En amarillo, lo que cambia en cada paso; en rojo, los contraejemplos, que muestran dónde la regla <em>no</em> se aplica.</p>
+  <p><strong>Cómo leer una secuencia.</strong> §10 separa la consonante de su vocal; §11 vuelve a unirlas. Entre esos dos pasos ocurre la operación propiamente dicha. «EM» es la forma de la edición moderna, con apóstrofo. En amarillo, lo que cambia en cada paso; en rojo, los contraejemplos, que muestran dónde la regla <em>no</em> se aplica.</p>
 </footer>
 
 <script>
@@ -429,7 +429,7 @@ function renderReglas(rules){
     }
     const s = r.kac.length ? SUTTA[r.kac[0]] : null;
     const ex = s ? (s.ex.find(e => !e.ce) || s.ex[0]) : null;
-    // Las formas de la propia regla, por si el aforismo no trae derivación.
+    // Las formas de la propia regla, por si el aforismo no trae secuencia.
     const propias = (DATA.ce || []).filter(c => c.sec === r.sec && String(c.rule) === String(r.n) && c.full);
     const alt = (!ex && propias.length) ? propias[0] : null;
     let cabecera;
@@ -468,7 +468,7 @@ function renderAforismos(list){
         ${s.ex.slice(0,3).map(e =>
             `<p class="lbl" style="margin:14px 0 0">${e.ce?'Contraejemplo':'Ejemplo'} · ${esc(e.f)}</p>`
           + ladder(e.s, e.ce)).join('')}
-        ${s.ex.length > 3 ? `<p class="lbl" style="margin-top:12px">+ ${s.ex.length-3} derivaciones más en «Formas»</p>` : ''}
+        ${s.ex.length > 3 ? `<p class="lbl" style="margin-top:12px">+ ${s.ex.length-3} secuencias más en «Formas»</p>` : ''}
       </div></article>`;
   });
   return html;
@@ -574,7 +574,7 @@ document.addEventListener('click', e => {
   if(el) el.scrollIntoView({block:'center', behavior:'smooth'});
 });
 
-/* ---------- hero: one derivation, revealed ---------- */
+/* ---------- portada: una secuencia, revelada ---------- */
 (function(){
   const steps = ['yassa indriyāni','yass a indriyāni (§10)','yass indriyāni (§12)',
                  'yassindriyāni (§11)','yass’ indriyāni (EM)'];
@@ -600,7 +600,7 @@ function tipHTML(n){
     <p class="tp">${esc(s.pali)}</p>
     <p class="te">${esc(s.es)}</p>
     <p class="ts">[ ${esc(s.split)} ]</p>
-    ${nEx ? `<p class="tk">${nEx} forma${nEx>1?'s':''} derivada${nEx>1?'s':''} · clic para abrir</p>`
+    ${nEx ? `<p class="tk">${nEx} secuencia${nEx>1?'s':''} · clic para abrir</p>`
           : '<p class="tk">clic para abrir el aforismo</p>'}`;
 }
 
@@ -673,8 +673,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '1.5', VERSION_DATE = '2026-08-10';
-const VERSION_NOTE = 'Subtítulo: «con su secuencia». La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las derivaciones de §12, §32, §35 y §40.';
+const VERSION = '1.6', VERSION_DATE = '2026-08-11';
+const VERSION_NOTE = 'En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
