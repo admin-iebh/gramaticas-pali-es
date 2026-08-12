@@ -169,8 +169,8 @@ sofisticar el motor de reglas, que es la mitad fácil.
 
 - **No inventar pasos** para completar una secuencia que no verifica.
 - **No elegir una derivación** entre varias válidas sin decir que hay más.
-- **No editar nada dentro de `site/`**: se regenera en cada commit y el cambio
-  desaparece sin avisar.
+- **No editar nada dentro de `site/`**: es salida generada, se reconstruye
+  entera y cualquier cambio hecho ahí desaparece sin avisar.
 - **No dar por buenos los datos heredados** sin cotejarlos con el documento
   fuente. Ese fue el error que costó una tarde entera.
 
