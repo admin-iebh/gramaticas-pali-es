@@ -2,11 +2,11 @@
 
 Documento para entregar a quien vaya a construirlo.
 
-## Antes de nada: comprueba que tienes todo
+## Antes de nada: compruebe que lo tiene todo
 
 **No todo está en el repositorio.** Los PDF y sus conversiones están excluidos
-por `.gitignore` y viven en el material del proyecto, aparte. Comprueba que
-tienes las dos listas:
+por `.gitignore` y viven en el material del proyecto, aparte. Compruebe que
+tiene las dos listas:
 
 *En el repositorio* (32 archivos): `recursos/sandhi/reglas.json`,
 `kaccayana/01-sandhi-kappa.md`, `recursos/combinacion-eufonica.md`,
@@ -15,12 +15,12 @@ tienes las dos listas:
 *Fuera del repositorio, imprescindibles*:
 
 - **Kaccāyana Volume 2 (Ven. A. Thitzana)**, en markdown. Sin este archivo no
-  puedes seguir las referencias por número de línea que da este encargo, y te
-  quedas sin los 101 métodos `[SM]`, que son la fuente más rica.
+  podrá seguir las referencias por número de línea que da este encargo, y se
+  quedará sin los 101 métodos `[SM]`, que son la fuente más rica.
 - **Kaccāyana 2 – Nāma-Kappa (U Nandisena)** y la edición PTS
   (*Kaccāyana-Kaccāyanavutti*, Pind), para cotejos.
 
-Si te falta el volumen de Thitzana, pídelo antes de empezar.
+Si le falta el volumen de Thitzana, pídalo antes de empezar.
 
 ## Qué se pide
 
@@ -30,7 +30,7 @@ Una herramienta que reciba texto pāḷi y responda, para cada punto de sandhi:
 - cuáles son los componentes antes de la combinación;
 - qué secuencia de suttas de Kaccāyana explica la forma resultante.
 
-**Empieza por una sola voz, no por un párrafo.** Dada `lokaggo`, devolver
+**Empiece por una sola voz, no por un párrafo.** Dada `lokaggo`, devolver
 `loka + aggo` con la secuencia. El párrafo exige además detectar *dónde* hubo
 sandhi, que es un problema distinto y más difícil (ver «El cuello de botella»).
 Una herramienta que resuelva una voz ya es útil para un estudiante.
@@ -106,17 +106,17 @@ paréntesis al final. `(§10)` cita un aforismo; `(«ca» en §20)` cita el «ca
 uno; `(EM)` marca la forma de la edición moderna, con apóstrofo. Un paso puede
 citar dos aforismos: `(§35, §23)`.
 
-Al comparar formas, normaliza: los apóstrofos (`’`), los espacios y los
+Al comparar formas, normalice: los apóstrofos (`’`), los espacios y los
 guiones no cuentan. `yassindriyāni` y `yass’ indriyāni` son la misma forma.
 
-### Aprovecha lo que ya está escrito
+### Aproveche lo que ya está escrito
 
 `herramientas/derivar_secuencias.py` ya tiene un derivador por aforismo —§12,
 §13, §15, §16, §17/§18/§21, §28, §35—, cada uno escrito a partir de una
 secuencia verificada del capítulo, y todos con la comprobación por
 recomposición ya montada. **El solucionador es en buena medida ese archivo del
 revés**: donde aquél va de componentes a forma, éste va de forma a componentes.
-Empieza por leerlo antes que por escribir nada.
+Conviene leerlo antes de escribir nada.
 
 `herramientas/auditar_secuencias.py` tiene además la tabla `OPERACIONES`, que
 dice qué clase de operación hace cada aforismo —elisión, alargamiento,
@@ -148,7 +148,7 @@ documenta el mecanismo —*yogavibhāga*, la división del sutta— y enumera
 catorce sub-suttas de §20 en las páginas 138-140. Está resumido en `CLAUDE.md`.
 
 **§51 es el sutta comodín** y por eso el más rico en patrones: reúne 41
-secuencias ya traducidas. Mirar ahí antes de dar una forma por inexplicable.
+secuencias ya traducidas. Conviene mirar ahí antes de dar una forma por inexplicable.
 
 **Pakati-sandhi es la ausencia de operación.** Sus formas no llevan secuencia
 porque no ocurre nada; no son datos incompletos y no hay que «arreglarlas».
@@ -172,7 +172,7 @@ sofisticar el motor de reglas, que es la mitad fácil.
 
 ## Qué no es sandhi
 
-Cuidado con contar de más. El sandhi es la combinación eufónica de letras al
+Conviene no contar de más. El sandhi es la combinación eufónica de letras al
 juntarse dos voces. **No** es sandhi la formación de palabras —*taddhita*,
 *kita*—, aunque el resultado se le parezca. El propio Thitzana lo advierte al
 presentar las funciones por *yogavibhāga*: «these examples are not Sandhi but a
