@@ -4,23 +4,27 @@ Documento para entregar a quien vaya a construirlo.
 
 ## Antes de nada: compruebe que lo tiene todo
 
-**No todo está en el repositorio.** Los PDF y sus conversiones están excluidos
-por `.gitignore` y viven en el material del proyecto, aparte. Compruebe que
-tiene las dos listas:
+Este encargo da por supuesto que tiene a mano, en su proyecto, los archivos
+del trabajo sobre el Sandhi-kappa. Compruebe que están éstos:
 
-*En el repositorio* (32 archivos): `recursos/sandhi/reglas.json`,
-`kaccayana/01-sandhi-kappa.md`, `recursos/combinacion-eufonica.md`,
-`comun/concordancia.json`, las herramientas de `herramientas/` y `CLAUDE.md`.
+**Datos y herramientas**
 
-*Fuera del repositorio, imprescindibles*:
+- `recursos/sandhi/reglas.json` — 49 reglas y 266 formas
+- `kaccayana/01-sandhi-kappa.md` — los 51 aforismos traducidos
+- `recursos/combinacion-eufonica.md` — el documento de Bhikkhu Nandisena
+- `comun/concordancia.json` — numeración Kaccāyana / Rūpasiddhi / Saddanīti
+- la carpeta `herramientas/` y el archivo `CLAUDE.md`
 
-- **Kaccāyana Volume 2 (Ven. A. Thitzana)**, en markdown. Sin este archivo no
-  podrá seguir las referencias por número de línea que da este encargo, y se
-  quedará sin los 101 métodos `[SM]`, que son la fuente más rica.
+**Fuentes de consulta**
+
+- **Kaccāyana Volume 2 (Ven. A. Thitzana)**, en markdown. Es imprescindible:
+  sin él no podrá seguir las referencias por número de línea que da este
+  encargo, y se quedará sin los 101 métodos `[SM]`, que son la fuente más rica.
 - **Kaccāyana 2 – Nāma-Kappa (U Nandisena)** y la edición PTS
   (*Kaccāyana-Kaccāyanavutti*, Pind), para cotejos.
 
-Si le falta el volumen de Thitzana, pídalo antes de empezar.
+Si le falta alguno, y en particular el volumen de Thitzana, pídalo antes de
+empezar.
 
 ## Qué se pide
 
@@ -156,9 +160,9 @@ porque no ocurre nada; no son datos incompletos y no hay que «arreglarlas».
 ## El cuello de botella
 
 No son las reglas: es la segmentación. Sin saber que `lokaggo` es
-`loka + aggo`, ningún motor de reglas sirve. Hace falta un léxico —el DPD
-(Digital Pāḷi Dictionary) o el corpus propio del OSBCT, en
-`github.com/admin-iebh/OSBCT`—. Conviene resolver esto antes de invertir en
+`loka + aggo`, ningún motor de reglas sirve. Hace falta un léxico: el DPD
+(Digital Pāḷi Dictionary) o el corpus del Sexto Concilio que mantiene el IEBH.
+Conviene pedir acceso a uno de los dos y resolver esto antes de invertir en
 sofisticar el motor de reglas, que es la mitad fácil.
 
 ## Lo que no se debe hacer
