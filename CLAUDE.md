@@ -157,8 +157,64 @@ La lista se cierra con *Icceva’mādī yojetabbā* —«y así los demás casos
 semejantes»—, que es lo que ampara las sustituciones que §51 cita sin figurar
 en la tabla, como v → b y n → ṇ.
 
+### El capítulo de Sandhi de Thitzana entero, no sólo esas páginas
+
+En la conversión de *Kaccāyana Volume 2 (Ven. A. Thitzana)* el capítulo de
+Sandhi ocupa aproximadamente las líneas 4029-5890, y ahí están **101 de los
+102 bloques `[SM]` de todo el volumen**. Cada ejemplo viene con cuatro
+etiquetas:
+
+| Etiqueta | Qué contiene |
+| -------- | ------------ |
+| `[V]`    | el vutti en pāḷi |
+| `[CS]`   | la frase atestiguada, con su referencia y traducción |
+| `[SS]`   | la separación en componentes (*sandhi separation*) |
+| `[SM]`   | **el método**: qué suttas se aplican y en qué orden, en prosa |
+
+`[SM]` es lo que llevábamos toda la tarde echando en falta: la secuencia
+explicada, no la forma sola. Está en inglés y en prosa —«elide the front
+vowel a by Sutta 12, then attach…»— pero nombra los suttas.
+
+Dos cosas más que salen de ahí:
+
+- **El «ca» no es exclusivo de §20.** En la línea 5273 aparece «change "m"
+  into "p" by means of "ca" in this Sutta». El mecanismo es general; §20 sólo
+  es el caso más frecuente.
+- **Las formas de §51 están resueltas una a una** en las líneas 5787-5887
+  —Pāpanaṃ, Nyāyogo, Nirupadhi, Byaggaṃ, Dubbhikkhaṃ, Sandiṭṭhaṃ…—, de modo
+  que sirven para **cotejar** las secuencias del capítulo con una fuente
+  independiente, no sólo para rellenar huecos.
+
 Recordatorio de siempre: lo tomado de Thitzana se señala como suyo antes de
 incorporarlo, para que Angel decida y se le dé el crédito al Venerable.
+
+## Hacia dónde va esto: un resolvedor de sandhi
+
+El objetivo a plazo es una herramienta a la que se le pegue un párrafo en
+pāḷi y responda cuántos sandhis hay, cuáles son, y qué secuencia se aplica a
+cada uno.
+
+El principio de diseño, que es el mismo que salvó las secuencias: **proponer
+y verificar, nunca afirmar**. Descomponer una forma es un problema de
+búsqueda —proponer un corte y una cadena de reglas—, y toda propuesta se
+comprueba recomponiéndola: si no reproduce exactamente la forma de entrada,
+se descarta. Un resolvedor que sólo enseña lo que sabe rehacer es fiable; uno
+que rellena huecos con lo verosímil repite el error de las 217 escaleras.
+
+Dos consecuencias prácticas:
+
+- **Devolver todas las derivaciones válidas, no una.** El sandhi es
+  genuinamente ambiguo: varias cadenas de reglas producen la misma superficie,
+  y las reglas opcionales (*kvaci*, *vā*, *navā*) permiten sin obligar. Elegir
+  una en silencio sería mentir por omisión.
+- **El cuello de botella es la segmentación, no las reglas.** Sin saber que
+  «lokaggo» es loka + aggo no hay motor de reglas que valga. Eso pide un
+  léxico; el DPD o el propio corpus del OSBCT son los candidatos.
+
+Para medirlo ya hay banco de pruebas: las 266 formas atestiguadas con sus
+componentes, las 164 secuencias del capítulo y los 101 `[SM]` de Thitzana.
+La pregunta con la que se evalúa cualquier versión es «¿recupera la respuesta
+conocida?», y se puede responder con números.
 
 ## Capítulo nuevo: qué hace falta
 
