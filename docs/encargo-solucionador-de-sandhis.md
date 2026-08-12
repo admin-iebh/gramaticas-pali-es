@@ -1,7 +1,26 @@
 # Encargo: solucionador de sandhis
 
-Documento para entregar a quien vaya a construirlo. Supone que tiene este
-repositorio completo y los PDF del proyecto.
+Documento para entregar a quien vaya a construirlo.
+
+## Antes de nada: comprueba que tienes todo
+
+**No todo está en el repositorio.** Los PDF y sus conversiones están excluidos
+por `.gitignore` y viven en el material del proyecto, aparte. Comprueba que
+tienes las dos listas:
+
+*En el repositorio* (32 archivos): `recursos/sandhi/reglas.json`,
+`kaccayana/01-sandhi-kappa.md`, `recursos/combinacion-eufonica.md`,
+`comun/concordancia.json`, las herramientas de `herramientas/` y `CLAUDE.md`.
+
+*Fuera del repositorio, imprescindibles*:
+
+- **Kaccāyana Volume 2 (Ven. A. Thitzana)**, en markdown. Sin este archivo no
+  puedes seguir las referencias por número de línea que da este encargo, y te
+  quedas sin los 101 métodos `[SM]`, que son la fuente más rica.
+- **Kaccāyana 2 – Nāma-Kappa (U Nandisena)** y la edición PTS
+  (*Kaccāyana-Kaccāyanavutti*, Pind), para cotejos.
+
+Si te falta el volumen de Thitzana, pídelo antes de empezar.
 
 ## Qué se pide
 
@@ -59,6 +78,50 @@ atestiguada, `[SS]` la separación en componentes y **`[SM]` el método**: qué
 suttas se aplican y en qué orden, en prosa inglesa. Es la fuente más rica para
 saber qué secuencia corresponde a qué forma.
 
+### La forma de los datos
+
+Una forma de `reglas.json`, con todos sus campos:
+
+```json
+{
+ "f": "lokaggo",              // la forma atestiguada
+ "comp": "loka + aggo",       // componentes, como los da el documento
+ "ref": "Ap. i 166",          // referencia canónica
+ "sec": "sara",               // sara | byanjana | niggahita | pakati
+ "rule": "1",                 // número de regla DENTRO de esa sección
+ "title": "Una vocal que precede a otra vocal se elide",
+ "kac": 12,                   // aforismo de Kaccāyana de esa regla
+ "s": ["loka aggo",
+       "lok a aggo (§10)",
+       "lok aggo (§12)",
+       "lokaggo (§11)"],      // la secuencia
+ "full": true,
+ "derivada": true             // procedencia: verificada | derivada | aforismo
+}
+```
+
+**Convención de los pasos**, que es el contrato de análisis: el texto va
+primero, con los segmentos separados por espacios, y la anotación entre
+paréntesis al final. `(§10)` cita un aforismo; `(«ca» en §20)` cita el «ca» de
+uno; `(EM)` marca la forma de la edición moderna, con apóstrofo. Un paso puede
+citar dos aforismos: `(§35, §23)`.
+
+Al comparar formas, normaliza: los apóstrofos (`’`), los espacios y los
+guiones no cuentan. `yassindriyāni` y `yass’ indriyāni` son la misma forma.
+
+### Aprovecha lo que ya está escrito
+
+`herramientas/derivar_secuencias.py` ya tiene un derivador por aforismo —§12,
+§13, §15, §16, §17/§18/§21, §28, §35—, cada uno escrito a partir de una
+secuencia verificada del capítulo, y todos con la comprobación por
+recomposición ya montada. **El solucionador es en buena medida ese archivo del
+revés**: donde aquél va de componentes a forma, éste va de forma a componentes.
+Empieza por leerlo antes que por escribir nada.
+
+`herramientas/auditar_secuencias.py` tiene además la tabla `OPERACIONES`, que
+dice qué clase de operación hace cada aforismo —elisión, alargamiento,
+sustitución…—. Sirve para podar el árbol de búsqueda.
+
 ## El banco de pruebas
 
 Existe, y es lo que hace medible el proyecto: **266 formas atestiguadas con
@@ -107,6 +170,19 @@ sofisticar el motor de reglas, que es la mitad fácil.
 - **No dar por buenos los datos heredados** sin cotejarlos con el documento
   fuente. Ese fue el error que costó una tarde entera.
 
+## Qué no es sandhi
+
+Cuidado con contar de más. El sandhi es la combinación eufónica de letras al
+juntarse dos voces. **No** es sandhi la formación de palabras —*taddhita*,
+*kita*—, aunque el resultado se le parezca. El propio Thitzana lo advierte al
+presentar las funciones por *yogavibhāga*: «these examples are not Sandhi but a
+kind of word-form changes only».
+
+Por la misma razón, en este proyecto la cadena de pasos se llama **secuencia**
+y nunca «derivación»: en gramática pāḷi la derivación es la formación de
+palabras, y usar la misma palabra para las dos cosas confunde al lector. Está
+fijado en `comun/glosario.md`, que es normativo.
+
 ## Entregables sugeridos
 
 1. `herramientas/solucionar_sandhis.py` — dada una voz, devuelve las derivaciones
@@ -114,3 +190,12 @@ sofisticar el motor de reglas, que es la mitad fácil.
 2. Un informe de cobertura contra el banco de pruebas: cuántas de las 266
    recupera, cuántas falla, y por qué.
 3. Sólo después: segmentación y modo párrafo.
+
+### Cuándo está terminada la primera etapa
+
+Cuando, dada cualquiera de las 266 formas atestiguadas, la herramienta
+devuelva sus componentes y al menos una cadena de suttas que los recomponga
+exactamente; cuando informe con un número de cuántas recupera y cuántas no; y
+cuando de las que no, diga por qué falló en lugar de callarlo.
+
+No hace falta que acierte las 266. Hace falta que se sepa cuántas acierta.
