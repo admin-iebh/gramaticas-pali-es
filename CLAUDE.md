@@ -101,6 +101,65 @@ Nunca se inventa un paso para rellenar un hueco.
 La auditoría sólo comprueba que el aforismo citado haga esa *clase* de
 operación. Que un paso la pase no demuestra que la cita sea la correcta.
 
+## Cómo averiguar qué sutta explica una operación
+
+Antes de dar por imposible la secuencia de una forma, hay dos fuentes que
+suelen tener la respuesta. Consultarlas **siempre** antes de decir que un paso
+no se puede explicar, y nunca inventar una regla para tapar el hueco.
+
+### §51, el sutta comodín
+
+«Anupadiṭṭhānaṃ vuttayogato» —de las formas no mostradas, según las reglas ya
+mencionadas— es el cajón de sastre del capítulo, y por eso es la fuente más
+rica de patrones: contiene **41 secuencias de formación** ya traducidas, más
+que ningún otro sutta. Cuando una forma no encaje en ningún patrón conocido,
+mirar ahí primero.
+
+### La partícula «ca»: un sutta hace más de lo que dice
+
+El «ca» de un sutta arrastra funciones que su enunciado no menciona. En las
+secuencias se cita como «"ca" en §20», y así aparece en §51:
+
+    Parāyaṇaṃ    … par āyanaṃ (§15); par āyaṇaṃ («ca» en §20)      n → ṇ
+    Byaggaṃ      … v y aggaṃ (§21); b y aggaṃ («ca» en §20)        v → b
+    Dubbuttaṃ    … du vv uttaṃ (§28); du bb uttaṃ («ca» en §20)    vv → bb
+
+De modo que cuando un paso hace una sustitución que ningún enunciado cubre,
+lo probable no es que falte una regla: es que sea el «ca» de alguna, y §20 es
+la candidata habitual.
+
+### Las 14 funciones de §20 por yogavibhāga
+
+Thitzana, vol. 2, pp. 138-140, documenta el mecanismo: *yogavibhāga*, el
+procedimiento de dividir el sutta —*Suttavibhāgena bahudhā siyā*—. Enumera
+catorce sub-suttas de «Do dhassa ca» (§20):
+
+| Sub-sutta   | Cambio  | Ejemplo |
+| ----------- | ------- | ------- |
+| To dassa    | d → t   | sugado → sugato |
+| Ṭo tassa    | t → ṭ   | dukkataṃ → dukkaṭaṃ |
+| Dho tassa   | t → dh  | gantabbo → gandhabbo |
+| Tro ttassa  | tt → tr | attajo → atrajo |
+| Ko gassa    | g → k   | kulūpago → kulūpako |
+| Lo rassa    | r → l   | mahāsāro → mahāsālo |
+| Jo yassa    | y → j   | gavayo → gavajo |
+| Bbo vvassa  | vv → bb | kuvvato → kubbato |
+| Ko yassa    | y → k   | saye → sake |
+| Yo jassa    | j → y   | nijaṃputtaṃ → niyaṃputtaṃ |
+| Ko tassa    | t → k   | niyato → niyako |
+| Cco ttassa  | tt → cc | bhatto → bhacco |
+| Pho passa   | p → ph  | nipatti → nipphatti |
+| Kho kassa   | k → kh  | nikkamati → nikkhamati |
+
+Aparte de éstas, el propio «ca» de §20 da **dha → ha** (sādhu → sāhu).
+
+La lista se cierra con *Icceva’mādī yojetabbā* —«y así los demás casos
+semejantes»—, que es lo que ampara las sustituciones que §51 cita sin figurar
+en la tabla, como v → b y n → ṇ.
+
+Recordatorio de siempre: lo tomado de Thitzana se señala como suyo antes de
+incorporarlo, para que Angel decida y se le dé el crédito al Venerable.
+
 ## Capítulo nuevo: qué hace falta
 
 1. El markdown en `kaccayana/NN-nombre-kappa.md`, con el mismo formato que
