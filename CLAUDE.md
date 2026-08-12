@@ -26,8 +26,12 @@ estudiantes hispanohablantes de pāḷi con formación budista.
 
 ## Cómo se publica
 
-El markdown es la fuente; el HTML de `site/` es salida generada y no se edita
-a mano. Cada `git push` a `main` despliega en
+El markdown es la fuente; el HTML de `site/` es salida generada. **Nunca se
+edita nada dentro de `site/`.** El hook de pre-commit lo reconstruye entero en
+cada commit, así que un cambio hecho ahí desaparece sin avisar y sin dejar
+rastro. Lo que se edita está en `kaccayana/`, `recursos/` y `comun/`.
+
+Cada `git push` a `main` despliega en
 <https://gramaticas.buddha-dhamma.net> (Cloudflare Workers, ver
 `wrangler.jsonc`).
 
@@ -49,6 +53,53 @@ nueva del repositorio hay que instalarlo una vez con
 
 Detalles del formato del markdown y de lo que el generador deduce solo:
 `comun/convenciones.md`, secciones 2, 3, 3 bis y 3 ter.
+
+## Estado de recursos/sandhi
+
+La referencia interactiva de sandhi (`/recursos/sandhi/`, v3.5) se arma con
+`herramientas/generar_sandhi.py` a partir de tres piezas:
+`recursos/sandhi/plantilla.html` (maquetado y lógica),
+`recursos/sandhi/reglas.json` (49 reglas y 266 formas) y
+`kaccayana/01-sandhi-kappa.md` (los 51 aforismos).
+
+### Procedencia de cada secuencia
+
+Las 266 formas salen del documento de Bhikkhu Nandisena, que da componentes,
+resultado y referencia canónica, pero **no** los pasos intermedios. Cada forma
+lleva un campo que dice de dónde sale su secuencia:
+
+| Campo        | Formas | De dónde viene |
+| ------------ | -----: | -------------- |
+| `verificada` |     49 | Copiada de la traducción del Sandhi-kappa |
+| `derivada`   |    175 | Calculada y comprobada contra la forma atestiguada |
+| `aforismo`   |     42 | Construida a partir del propio aforismo |
+
+La regla que hace fiable lo calculado: se genera una secuencia candidata, se
+aplica, y sólo se conserva si reproduce **exactamente** la forma atestiguada
+—ignorando apóstrofos, espacios y guiones—. Lo que no cuadra no se publica.
+Nunca se inventa un paso para rellenar un hueco.
+
+### Lo que conviene saber antes de tocarlo
+
+- **El Sandhi-kappa está agotado.** Contiene 164 secuencias y las aprovechables
+  ya están puestas: son las 49 `verificada`. No vale la pena volver a buscar
+  ahí. El resto de las formas de Nandisena son ejemplos canónicos suyos, no de
+  Kaccāyana.
+- **13 formas tienen un solo paso**, todas de pakati-sandhi. No es que les
+  falte la secuencia: es que en pakati no ocurre nada, y ése es el sentido de
+  la sección. No hay que «arreglarlas».
+- **9 formas llevan `nota`.** Cinco explican qué ilustra la forma; las otras
+  cuatro avisan de que los datos de la fuente parecen erróneos —`icc antaṃ`,
+  `nicchayo`, `esa ābhogho` y `jamb’ īritā vatena`—. Ésas son para cotejar con
+  el PDF, no para corregir a ojo.
+
+### Comprobaciones
+
+    python3 herramientas/auditar_secuencias.py     # coherencia paso ↔ aforismo
+    python3 herramientas/reconstruir_sandhi.py     # rehace reglas.json desde el documento
+
+La auditoría sólo comprueba que el aforismo citado haga esa *clase* de
+operación. Que un paso la pase no demuestra que la cita sea la correcta.
 
 ## Capítulo nuevo: qué hace falta
 
