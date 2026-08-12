@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sandhi · Combinación eufónica en pāḷi</title>
-<meta name="version" content="3.1">
-<meta name="version-date" content="2026-08-11">
+<meta name="version" content="3.5">
+<meta name="version-date" content="2026-08-12">
 <meta name="description" content="Referencia interactiva de las reglas de sandhi del pāḷi, según Kaccāyana, Rūpasiddhi y Saddanīti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,7 +222,9 @@ tbody tr:hover{background:var(--hover)}
 .src.ce{background:var(--chip-c);color:var(--haritala)}
 .cita{font-family:var(--mono);font-size:11.5px;color:var(--soot)}
 .cita b{color:var(--nila);font-weight:600}
-.parcial{font-family:var(--mono);font-size:10px;color:var(--rakta);letter-spacing:.04em}
+.parcial{font-family:var(--mono);font-size:10.5px;color:var(--rakta);letter-spacing:.04em}
+.parcial.verif{color:var(--soot)}
+.parcial.revisar{color:var(--rakta);border-left:2px solid var(--rakta);padding-left:8px}
 .filtros{display:flex;gap:0;border:1px solid var(--hair);border-radius:2px;overflow:hidden}
 .filtros button{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
   text-transform:uppercase;padding:8px 10px;border:0;background:var(--ola-2);color:var(--soot);
@@ -279,8 +281,15 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
   .lad{background:#fafafa}
 }
 .parcial.verif{color:var(--nila)}
-.revision{margin:14px 0 0;max-width:44ch;font-size:13.5px;line-height:1.5;
-  color:var(--soot);border-left:2px solid var(--haritala);padding-left:11px}
+.revision{margin:20px 0 0;max-width:104ch;font-size:13.5px;line-height:1.55;
+  color:var(--soot);border-left:2px solid var(--haritala);padding-left:13px}
+.revision>summary{cursor:pointer;list-style:none}
+.revision>summary::-webkit-details-marker{display:none}
+.revision>summary::after{content:' ▸';font-size:11px;color:var(--haritala)}
+.revision[open]>summary::after{content:' ▾'}
+.revision>summary:hover{color:var(--ink)}
+.revision>summary:focus-visible{outline:2px solid var(--nila);outline-offset:2px}
+.revision>p{margin:9px 0 0}
 </style>
 </head>
 <body>
@@ -300,13 +309,19 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
       <h1>Sandh<span class="dia">i</span></h1>
       <p class="tag">Las reglas de combinación eufónica del pāḷi, con su secuencia.</p>
       <span class="version-badge" id="vbadge"></span>
-      <p class="revision">Reglas y formas transcritas del documento de Bhikkhu Nandisena.
-      De las 263 formas, 49 llevan la secuencia tal como está en la traducción del
-      Sandhi-kappa y 96 la llevan calculada según el patrón del aforismo y comprobada
-      contra la forma atestiguada. Las 118 restantes se quedan sin secuencia.
-      La correspondencia de cada regla con su aforismo §N está pendiente de revisión.</p>
     </div>
     <div class="hero" id="hero" aria-hidden="true"></div>
+  </div>
+  <div class="wrap">
+    <details class="revision">
+      <summary>Reglas y formas transcritas del documento de Bhikkhu Nandisena · las 266
+      formas llevan ya su secuencia · la correspondencia regla ↔ aforismo §N está pendiente
+      de revisión</summary>
+      <p>De las 266 formas, 49 llevan la secuencia tal como está en la traducción del
+      Sandhi-kappa, 175 la llevan calculada según el patrón del aforismo y 42 construida
+      paso a paso con los aforismos del capítulo. Todas se comprueban contra la forma
+      atestiguada: si los pasos no la reproducen, la forma se queda sin secuencia.</p>
+    </details>
   </div>
 </header>
 
@@ -336,7 +351,7 @@ mark{background:var(--hl);color:inherit;border-radius:2px;
 
 <footer class="wrap">
   <p class="version-foot" id="vfoot"></p>
-  <p><strong>Fuentes.</strong> Las formas marcadas <span class="src ce">C. eufónica</span> proceden de las <em>Reglas de combinación eufónica</em> de Bhikkhu Nandisena, con su referencia canónica, tal como él las da: componentes y resultado. El documento no contiene los pasos intermedios, y esta página tampoco los inventa. Las marcadas <span class="src kac">Kaccāyana</span> vienen con su secuencia tomada del propio Sandhi-kappa (51 aforismos, §1–§51), con la numeración concordante de Rūpasiddhi (RŪ) y Saddanīti Suttamālā (SAD). Las cuatro categorías y los enunciados en español siguen las <em>Reglas de combinación eufónica</em> preparadas por Bhikkhu Nandisena, Instituto de Estudios Buddhistas Hispano.</p>
+  <p><strong>Fuentes.</strong> Las formas marcadas <span class="src ce">C. eufónica</span> proceden de las <em>Reglas de combinación eufónica</em> de Bhikkhu Nandisena, con su referencia canónica, tal como él las da: componentes y resultado. El documento no da los pasos intermedios. Los que aquí aparecen se calculan según el patrón del aforismo y se comprueban contra la forma atestiguada: si los pasos no la reproducen exactamente, la forma se queda sin secuencia. Nada se da por bueno sin comprobar. Las marcadas <span class="src kac">Kaccāyana</span> vienen con su secuencia tomada del propio Sandhi-kappa (51 aforismos, §1–§51), con la numeración concordante de Rūpasiddhi (RŪ) y Saddanīti Suttamālā (SAD). Las cuatro categorías y los enunciados en español siguen las <em>Reglas de combinación eufónica</em> preparadas por Bhikkhu Nandisena, Instituto de Estudios Buddhistas Hispano.</p>
   <p><strong>Véase también.</strong> El capítulo completo, con el vutti, las notas del traductor y la
   pregunta <em>kimatthaṃ</em> de cada aforismo, en <a href="../../kaccayana/sandhi/">1-Sandhi-Kappa</a>.
   El documento de Nandisena del que proceden las reglas y las formas, en
@@ -516,6 +531,10 @@ function renderFormas(list){
         ${head}
         ${ladder(f.s, f.ce)}
         ${f.verificada ? `<p class="parcial verif">Secuencia tomada de la traducción del Sandhi-kappa, <a class="xref" href="../../kaccayana/sandhi/#s${f.kac_seq}">§${f.kac_seq}</a>.</p>` : ''}
+        ${f.aforismo ? `<p class="parcial verif">Secuencia construida con los aforismos del capítulo${
+            f.kac_seq_refs ? ' (' + f.kac_seq_refs.join(', ') + ')' : ''}, y comprobada contra la forma atestiguada.</p>` : ''}
+        ${f.comp_doc ? `<p class="parcial revisar">El documento da los componentes como «${esc(f.comp_doc)}».</p>` : ''}
+        ${f.nota ? `<p class="parcial revisar">${esc(f.nota)}</p>` : ''}
         ${f.derivada ? '<p class="parcial verif">Secuencia calculada según el patrón del aforismo en la traducción del Sandhi-kappa, y comprobada: los pasos llegan exactamente a la forma que da el documento.</p>' : ''}
         ${f.sin_cambio ? '<p class="parcial">Pakati: la vocal o la niggahīta permanece sin cambios —no se elide, ni se sustituye, ni se modifica—. El documento da la entrada y el resultado, sin secuencia intermedia.</p>' : ''}
         ${(!isKac && !f.full && !f.sin_cambio) ? '<p class="parcial">El documento da componentes y resultado. La secuencia de formación no consta en ninguna fuente y no se reconstruye aquí.</p>' : ''}
@@ -730,8 +749,8 @@ volver.addEventListener('click', () => {
 });
 
 /* ---------- versión ---------- */
-const VERSION = '3.1', VERSION_DATE = '2026-08-11';
-const VERSION_NOTE = '145 de las 263 formas llevan ya su secuencia: 49 tomadas de la traducción y 96 calculadas según el patrón del aforismo y comprobadas contra la forma atestiguada. Reglas y formas rehechas por transcripción del documento de Nandisena: numeración del propio documento, cada forma bajo su regla, y sin los pasos intermedios que no constan en ninguna fuente. La búsqueda sólo mira la pestaña activa; ahora cada pestaña muestra cuántas coincidencias tiene y el aviso de «sin resultados» lleva a la que sí las tiene. La regla 2 de pakati ilustra con «vedanā khandho → vedanākkhandho», donde la ā va seguida de consonante desde el principio. En pakati no se construye secuencia: se da la entrada y el resultado, como en el documento. Cada regla muestra ahora su propia forma en vez de la del aforismo: las cuatro fichas de pakati 1 enseñaban «Appassut’ āyaṃ», donde la vocal se elide y se alarga, justo lo contrario de lo que la regla dice. En pakati 2 el paso cita ahora también §23, el aforismo de la propia regla, junto al que inserta o duplica la consonante. Corregidas las formas de pakati-sandhi: llevaban un §11 que no procede —§11 une letras, y en pakati justamente no se une nada— y las dos formas de 1.3 estaban archivadas bajo 1.2. En pāḷi «derivación» es la formación de palabras (taddhita, kita); lo que muestran estas escaleras es la secuencia de operaciones de sandhi. Se emplea «secuencia» en todo el texto. La vista de reglas pasa a llamarse «Clases». Cada pestaña muestra su número, para no confundir las 49 reglas con los 51 aforismos. Corregido el salto a las secciones desde el índice lateral. Los aforismos se generan ahora desde el markdown del capítulo. Añadidas las ocho subreglas que faltaban (byañjana 1.1–2.3, pakati 1.1–1.3) y recuperadas las secuencias de §12, §32, §35 y §40.';
+const VERSION = '3.5', VERSION_DATE = '2026-08-12';
+const VERSION_NOTE = 'Pakati 2 ilustraba la clase con «bhadro kasā-m-iva», donde lo que se ve es la ‘m’ que §35 inserta, no la vocal que persiste: en la entrada, la ‘ā’ de «kasā» va seguida de vocal, y sólo queda ante consonante después de la inserción. La clase encabeza ahora con «Manopubbaṅgamā dhammā» (Dh. 13), el ejemplo que el propio §23 da en el Sandhi-kappa, donde la vocal simplemente permanece. Se añaden también «pamādo maccuno padaṃ» (Dh. 16) y «tiṇṇo pāraṅgato ahu» (Dh. 72), los otros dos de §23. Las dos formas de Nandisena se conservan, con nota que explica en qué sentido ilustran la clase. De 263 formas se pasa a 266.';
 (function(){
   const M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
            'septiembre','octubre','noviembre','diciembre'];
