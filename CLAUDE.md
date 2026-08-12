@@ -188,7 +188,7 @@ Dos cosas más que salen de ahí:
 Recordatorio de siempre: lo tomado de Thitzana se señala como suyo antes de
 incorporarlo, para que Angel decida y se le dé el crédito al Venerable.
 
-## Hacia dónde va esto: un resolvedor de sandhi
+## Hacia dónde va esto: un solucionador de sandhis
 
 El objetivo a plazo es una herramienta a la que se le pegue un párrafo en
 pāḷi y responda cuántos sandhis hay, cuáles son, y qué secuencia se aplica a
@@ -198,7 +198,7 @@ El principio de diseño, que es el mismo que salvó las secuencias: **proponer
 y verificar, nunca afirmar**. Descomponer una forma es un problema de
 búsqueda —proponer un corte y una cadena de reglas—, y toda propuesta se
 comprueba recomponiéndola: si no reproduce exactamente la forma de entrada,
-se descarta. Un resolvedor que sólo enseña lo que sabe rehacer es fiable; uno
+se descarta. Un solucionador que sólo enseña lo que sabe rehacer es fiable; uno
 que rellena huecos con lo verosímil repite el error de las 217 escaleras.
 
 Dos consecuencias prácticas:

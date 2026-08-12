@@ -1,4 +1,4 @@
-# Encargo: resolvedor de sandhi
+# Encargo: solucionador de sandhis
 
 Documento para entregar a quien vaya a construirlo. Supone que tiene este
 repositorio completo y los PDF del proyecto.
@@ -65,7 +65,7 @@ Existe, y es lo que hace medible el proyecto: **266 formas atestiguadas con
 sus componentes, 164 secuencias del capítulo y ~101 métodos `[SM]`**.
 
 La pregunta con la que se evalúa cualquier versión es: *dada la forma
-atestiguada, ¿recupera el resolvedor los componentes y la secuencia conocidos?*
+atestiguada, ¿recupera el solucionador los componentes y la secuencia conocidos?*
 Se responde con un número. Cualquier cambio en el motor debe informar de si ese
 número sube o baja.
 
@@ -109,7 +109,7 @@ sofisticar el motor de reglas, que es la mitad fácil.
 
 ## Entregables sugeridos
 
-1. `herramientas/resolver_sandhi.py` — dada una voz, devuelve las derivaciones
+1. `herramientas/solucionar_sandhis.py` — dada una voz, devuelve las derivaciones
    válidas con su cadena de suttas.
 2. Un informe de cobertura contra el banco de pruebas: cuántas de las 266
    recupera, cuántas falla, y por qué.
