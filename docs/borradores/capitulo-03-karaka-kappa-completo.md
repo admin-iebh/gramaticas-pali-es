@@ -1,12 +1,15 @@
-# Borrador sesión 11 — Kāraka-Kappa, §271–§285 (primera tanda de tres)
+# Kāraka-Kappa (capítulo 3) — documento de trabajo completo, §271–§315
 
-*Base: Bhikkhu Nandisena, «3 - Kāraka-Kappa–Kaccāyana». Pāḷi cotejado con
-Pind (sus 273–287) y Thitzana (271–285, líneas 11995 ss.); desgloses según
-Thitzana. Referencias bibliográficas retiradas y registradas al final
-(briefing-05 §7.9). Las erratas se presentan con la lectura literal en el
-cuerpo y la propuesta en las NOTAS DE TRABAJO (briefing-05 §3.1). El kāraka
-de cada ejemplo va en **negrita** (decisión de Angel, sesión 11; si se
-prefiere subrayado real en el sitio, habrá que añadirlo al generador).*
+*Montaje de los tres borradores de las sesiones 11–12 para la revisión del
+español por Angel: §271–§285 (tanda 1), §286–§300 (tanda 2) y §301–§315
+(tanda 3). Base: Bhikkhu Nandisena; pāḷi cotejado con Pind (sus 273–317) y
+desgloses con Thitzana. Formato de trabajo: bloque «Ejemplos:» con el
+kāraka en **negrita** y traducción entre paréntesis; lecturas literales en
+el cuerpo; erratas, DUDAs, variantes y referencias retiradas en las NOTAS
+DE TRABAJO consolidadas al final. **Notas al pie renumeradas para evitar
+choques entre tandas** (mapeo en las notas de trabajo, §0): las notas 34–41
+de la tanda 1 conservan sus números; las 34 y 35 de la tanda 2 pasan a 42 y
+43; las 36–39 de la tanda 3 pasan a 44–47.*
 
 ---
 
@@ -987,12 +990,722 @@ Ejemplos:
 [^40]: Nota al pie: Paṭivīso ca koṭṭhāso (Abhidhā. 485-gāthā). (“Paṭivīsa” es una porción.)
 
 [^41]: Nota del traductor: La traducción inglesa de Nandisena dice «In the property of the stem» (en la propiedad de la base). Traducimos “attha” por «significado», como en el resto del proyecto; Angel decide si se prefiere calcar «propiedad».
+---
+
+**286. 291. Karaṇe tatiyā (591).** [Karaṇe + tatiyā = 2 voces]
+
+Karaṇakārake tatiyāvibhatti hoti.
+
+Agginā kuṭiṃ jhāpeti; manasā ce paduṭṭhena; manasā ce pasannena; kāyena kammaṃ karoti.
 
 ---
 
-## NOTAS DE TRABAJO (no forman parte del texto)
+En el instrumento, la tercera [inflexión].
 
-### 1. Erratas propuestas (lectura literal conservada en el cuerpo)
+En el kāraka karaṇa hay la tercera inflexión.
+
+Ejemplos:
+
+* **Agginā** kuṭiṃ jhāpeti ([él] quema la cabaña con el fuego).
+* **Manasā** ce paduṭṭhena (si con mente corrompida).
+* **Manasā** ce pasannena (si con mente pura).
+* **Kāyena** kammaṃ karoti (hace el trabajo con el cuerpo).
+
+---
+
+**287. 296. Sahādiyoge ca (592).** [Saha-ādiyoge + ca = 2 voces]
+
+Sahādiyogatthe[^42] ca tatiyāvibhatti hoti.
+
+Sahā ’pi Gaggena saṃgho uposathaṃ kareyya, vinā pi gaggena, mahatā bhikkhusaṃghena saddhiṃ; sahassena samaṃ mitā.
+
+---
+
+También con “saha” y otros.
+
+También en conexión con [palabras] que tienen el significado de “saha” y otros hay la tercera inflexión.
+
+Ejemplos:
+
+* Sahā ’pi **Gaggena** saṃgho uposathaṃ kareyya, vinā pi **gaggena** (el Saṃgha debería hacer el uposatha con Gagga o sin Gagga).
+* Mahatā **bhikkhusaṃghena** saddhiṃ (junto con la gran Comunidad de bhikkhus).
+* **Sahassena** samaṃ mitā (medidas por igual con mil).
+
+---
+
+**288. 293. Kattari ca (594).** [Kattari + ca = 2 voces]
+
+Kattari ca tatiyāvibhatti hoti.
+
+Raññā hato poso; yakkhena dinno varo; ahinā daṭṭho naro.
+
+---
+
+También en el sujeto.
+
+También en el sujeto hay la tercera inflexión.
+
+Ejemplos:
+
+* **Raññā** hato poso (el hombre fue matado por el rey).
+* **Yakkhena** dinno varo (un don fue dado por el yakkha).
+* **Ahinā** daṭṭho naro (el hombre fue mordido por la serpiente).
+
+---
+
+**289. 297. Hetvatthe ca (601).** [Hetu-atthe + ca = 2 voces]
+
+Hetvatthe ca tatiyāvibhatti hoti.
+
+Annena vasati; dhammena vasati; vijjāya vasati; sakkārena vasati.
+
+---
+
+También en el significado de causa.
+
+En el significado de causa hay también la tercera inflexión.
+
+Ejemplos:
+
+* **Annena** vasati (vive por causa de la comida).
+* **Dhammena** vasati (vive por causa del Dhamma [porque quiere estudiar el Dhamma]).
+* **Vijjāya** vasati (vive por causa del conocimiento [porque quiere aprender]).
+* **Sakkārena** vasati (vive por causa del honor [porque espera honores]).
+
+---
+
+**290. 298. Sattamyatthe ca (602).** [Sattamī-atthe + ca = 2 voces]
+
+Sattamyatthe ca tatiyāvibhatti hoti.
+
+Tena kālena, tena samayena. (Yena kālena, yena samayena)[^43] tena kho pana samyena.
+
+---
+
+También en el significado de la séptima [inflexión].
+
+En el significado de la séptima [inflexión] hay también la tercera inflexión.
+
+Ejemplos:
+
+* **Tena kālena** (en aquel tiempo).
+* **Tena samayena** (en aquella ocasión).
+* (Yena kālena, yena samayena) **tena** kho pana **samyena** (y en aquella ocasión).
+
+---
+
+**291. 299. Yen’ aṅgavikāro (603).** [Yena + aṅgavikāro = 2 voces]
+
+Yena byādhimatā aṅgena aṅgino vikāro lakkhīyate, tattha tatiyāvibhatti hoti.
+
+Akkhinā kāṇo; hatthena kuṇī; kāṇaṃ passati nettena; pādena khañjo; piṭṭhiyā khujjo.
+
+---
+
+Deformación de un miembro por aquella [parte].
+
+La deformación del cuerpo se caracteriza por el miembro que está enfermo; en ese [miembro] hay la tercera inflexión.
+
+Ejemplos:
+
+* **Akkhinā** kāṇo (ciego de un ojo).
+* **Hatthena** kuṇī (manco de una mano).
+* Kāṇaṃ passati **nettena** (ve a uno que es ciego de un ojo).
+* **Pādena** khañjo (cojo de un pie).
+* **Piṭṭhiyā** khujjo (jorobado de espalda).
+
+---
+
+**292. 300. Visesane ca (604).** [Visesane + ca = 2 voces]
+
+Visesanatthe ca tatiyāvibhatti hoti.
+
+Gottena Gotamo nātho; suvaṇṇena abhirūpo; tapasā uttamo.
+
+---
+
+También al calificar.
+
+En el significado de calificar hay también la tercera inflexión.
+
+Ejemplos:
+
+* **Gottena** Gotamo nātho (el Señor Gotama por el clan).
+* **Suvaṇṇena** abhirūpo (hermoso por su color dorado).
+* **Tapasā** uttamo (excelente por las prácticas ascéticas).
+
+---
+
+**293. 301. Sampadāne catutthī (605).** [Sampadāne + catutthī = 2 voces]
+
+Sampadānakārake catutthīvibhatti hoti.
+
+Buddhassa vā Dhammassa vā Saṃghassa vā dānaṃ deti; dātā hoti samaṇassa vā brāhmaṇassa vā.
+
+---
+
+En el sampadāna (dativo), la cuarta [inflexión].
+
+En el kāraka sampadāna hay la cuarta inflexión.
+
+Ejemplos:
+
+* **Buddhassa** vā **Dhammassa** vā **Saṃghassa** vā dānaṃ deti ([él] da una dádiva al Buddha, al Dhamma o al Saṃgha).
+* Dātā hoti **samaṇassa** vā **brāhmaṇassa** vā (es dador al asceta o al brahmín).
+
+---
+
+**294. 305. Namoyogādīsv api ca (606).** [Namo-yoga-ādīsu + api + ca = 3 voces]
+
+Namoyogādīsv api ca catutthīvibhatti hoti.
+
+Namo te Buddhavīr’ atthu; sotthi pajānaṃ; namo karohi nāgassa; svāgataṃ te mahārāja.
+
+---
+
+También en conexión con “namo”, homenaje, etc.
+
+En conexión con “namo”, homenaje, etc., hay también la cuarta inflexión.
+
+Ejemplos:
+
+* Namo **te** Buddhavīr’ atthu (Buddha poderoso, que haya homenaje para ti).
+* Sotthi **pajānaṃ** (bienestar para la gente).
+* Namo karohi **nāgassa** (rinde homenaje al Arahant [nāga]).
+* Svāgataṃ **te** mahārāja (bienvenida a ti, gran rey).
+
+---
+
+**295. 307. Apādāne pañcamī (607).** [Apādāne + pañcamī = 2 voces]
+
+Apādānakārake pañcamīvibhatti hoti.
+
+Pāpā cittaṃ nivāraye; abbhā mutto va candimā, bhayā muccati so naro.
+
+---
+
+En el apādāna (ablativo), la quinta [inflexión].
+
+En el kāraka apādāna hay la quinta inflexión.
+
+Ejemplos:
+
+* **Pāpā** cittaṃ nivāraye (uno debería refrenar la mente del mal).
+* **Abbhā** mutto va candimā (como la luna que se libera de las nubes).
+* **Bhayā** muccati so naro (ese hombre se libera del peligro o temor).
+
+---
+
+**296. 314. Kāraṇatthe ca (608).** [Kāraṇa-atthe + ca = 2 voces]
+
+Kāraṇatthe ca pañcamīvibhatti hoti.
+
+Ananubodhā appaṭivedhā catunnaṃ ariyasaccānaṃ yathābhūtaṃ adassanā.
+
+---
+
+También en el significado de causa.
+
+En el significado de causa hay también la quinta inflexión.
+
+Ejemplos:
+
+* **Ananubodhā appaṭivedhā** catunnaṃ ariyasaccānaṃ yathābhūtaṃ **adassanā** (por no ver, por no penetrar, por no conocer las Cuatro Nobles Verdades conforme a la realidad).
+
+---
+
+**297. 284. Kammatthe dutiyā (580).** [Kamma-atthe + dutiyā = 2 voces]
+
+Kammatthe dutiyāvibhatti hoti.
+
+Gāvaṃ hanati; vīhayo lunāti; satthaṃ karoti; ghaṭaṃ karoti; rathaṃ karoti; dhammaṃ suṇāti; Buddhaṃ pūjeti; vācaṃ bhāsati; taṇḍulaṃ pacati; coraṃ ghāteti.
+
+---
+
+En el significado de kamma (objeto), la segunda [inflexión].
+
+En el significado de kamma hay la segunda inflexión.
+
+Ejemplos:
+
+* **Gāvaṃ** hanati ([él] mata la vaca).
+* **Vīhayo** lunāti (corta el arroz).
+* **Satthaṃ** karoti (hace un libro [también: un cuchillo]).
+* **Ghaṭaṃ** karoti (hace una vasija).
+* **Rathaṃ** karoti (hace un carro).
+* **Dhammaṃ** suṇāti (escucha el Dhamma).
+* **Buddhaṃ** pūjeti (honra al Buddha).
+* **Vācaṃ** bhāsati (dice una palabra).
+* **Taṇḍulaṃ** pacati (cocina el arroz).
+* **Coraṃ** ghāteti (mata al ladrón).
+
+---
+
+**298. 287. Kāladdhānam accantasaṃyoge (581).** [Kāla-addhānaṃ + accanta-saṃyoge = 2 voces]
+
+Kāladdhānaṃ accantasaṃyoge dutiyāvibhatti hoti.
+
+Māsaṃ maṃsodanaṃ bhuñjati; saradaṃ ramaṇīyā nadī; māsaṃ sajjhāyati. Yojanaṃ vanarāji; yojanaṃ dīgho pabbato; kosaṃ sajjhāyati.
+
+Accantasaṃyoge ti kimatthaṃ? Saṃvacchare bhojanaṃ bhuñjati.
+
+---
+
+En la conjunción constante de tiempo y espacio.
+
+Cuando hay conjunción constante de tiempo y de espacio, hay la segunda inflexión.
+
+Ejemplos:
+
+* **Māsaṃ** maṃsodanaṃ bhuñjati (come arroz con carne durante un mes [cada día durante un mes]).
+* **Saradaṃ** ramaṇīyā nadī (el río es hermoso durante el otoño).
+* **Māsaṃ** sajjhāyati (recita durante un mes).
+* **Yojanaṃ** vanarāji (la línea del bosque tiene un yojana de largo).
+* **Yojanaṃ** dīgho pabbato (la montaña tiene un yojana de largo).
+* **Kosaṃ** sajjhāyati (recita durante un kosa [un cuarto de yojana]).
+
+¿Cuál es la finalidad de decir “accantasaṃyoge” (conjunción constante)? [Este sutta no se aplica cuando no la hay, como en:] Saṃvacchare bhojanaṃ bhuñjati (come alimento durante el año).
+
+---
+
+**299. 288. Kammappavacanīyayutte (582-586).** [Kammappavacanīyayutte = 1 voz]
+
+Kammappavacanīyayutte dutiyāvibhatti hoti.
+
+Taṃ kho pana bhavantaṃ gotamaṃ evaṃ kalyāṇo kittissaddo abbhuggato. Pabbajitam anu pabbajiṃsu.
+
+---
+
+En conexión con los que han indicado la acción (kammappavacanīya).
+
+En conexión con los que han indicado la acción hay la segunda inflexión.
+
+Ejemplos:
+
+* **Taṃ** kho pana **bhavantaṃ gotamaṃ** evaṃ kalyāṇo kittissaddo abbhuggato (así se eleva [se difunde] la buena reputación de ese honorable Gotama).
+* **Pabbajitam** anu pabbajiṃsu (abandonaron el hogar siguiendo el ejemplo del renunciante [el Bodhisatta]).
+
+---
+
+**300. 286. Gati-buddhi-bhuja-paṭha-hara-kara-sayādīnaṃ kārite vā (587).** [Gati-buddhi-bhuja-paṭha-hara-kara-saya-ādīnaṃ + kārite + vā = 3 voces]
+
+Gati-buddhi-bhuja-paṭha-hara-kara-sayādinaṃ payoge kārite dutiyāvibhatti hoti vā.
+
+Puriso purisaṃ (gāmaṃ) gāmayati, puriso purisena vā, puriso purisassa vā. Evaṃ bodhayati, bhojayati, pāṭhayati, hārayati, kārayati, sayāpayati. Evaṃ sabbattha kārite.
+
+---
+
+O en el causativo de ‘gati’, ‘buddhi’, ‘bhuja’, ‘paṭha’, ‘hara’, ‘kara’, ‘si’, etc.
+
+En conexión con el causativo de ‘gati’, ir; ‘buddhi’, conocer; ‘bhuja’, comer; ‘paṭha’, recitar; ‘hara’, llevar; ‘kara’, hacer; ‘saya’, yacer, etc., hay opcionalmente la segunda inflexión.
+
+Ejemplos:
+
+* Puriso **purisaṃ** (gāmaṃ) gāmayati (el hombre hace ir al hombre a la aldea); puriso **purisena** vā, puriso **purisassa** vā. (El objeto del causativo puede estar también en la tercera inflexión, “purisena”, o en la sexta inflexión, “purisassa”.)
+* Así con “bodhayati”, hace conocer; “bhojayati”, hace comer; “pāṭhayati”, hace leer; “hārayati”, hace llevar; “kārayati”, hace hacer; “sayāpayati”, hace acostarse. Así en todas partes con el causativo.
+
+---
+
+[^42]: Nota al pie: Sahādīnaṃ yoge sati, tadatthe ca tatiyāvibhatti hoti, pa, ayaṃ pan’ ettha padacchedo “sahādiyoge atthe cā” ti (Nyā). (Cuando hay conexión con “saha” y otros, y también en el significado de éstos, hay la tercera inflexión —pa [= abreviatura]—; y aquí el corte de palabras es “sahādiyoge atthe ca” [Nyāsa].)
+
+[^43]: Nota al pie: ( ) Sīhaḷapotthake natthi. (Lo que va entre paréntesis no está en el manuscrito cingalés.)
+---
+
+**301. 315. Sāmismiṃ chaṭṭhī (609).** [Sāmismiṃ + chaṭṭhī = 2 voces]
+
+Sāmismiṃ chaṭṭhīvibhatti hoti.
+
+Tassa bhikkhuno paṭivīso; tassa bhikkhuno patto; tassa bhikkhuno cīvaraṃ; attano mukhaṃ.
+
+---
+
+En el sāmī (poseedor), la sexta [inflexión].
+
+En el sāmī (poseedor) hay la sexta inflexión.
+
+Ejemplos:
+
+* **Tassa bhikkhuno** paṭivīso (la porción de ese bhikkhu).
+* **Tassa bhikkhuno** patto (el cuenco del bhikkhu).
+* **Tassa bhikkhuno** cīvaraṃ (la túnica de ese bhikkhu).
+* **Attano** mukhaṃ (la boca de uno mismo).
+
+---
+
+**302. 319. Okāse sattamī (630).** [Okāse + sattamī = 2 voces]
+
+Okāsakārake sattamīvibhatti hoti.
+
+Gambhīre odakantike; pāpasmiṃ ramati mano; bhagavati brahmacariyaṃ vussati kulaputto.
+
+---
+
+En el okāsa (receptáculo), la séptima [inflexión].
+
+En el kāraka okāsa hay la séptima inflexión.
+
+Ejemplos:
+
+* **Gambhīre odakantike** (en lo profundo, al fondo del agua).
+* **Pāpasmiṃ** ramati mano (la mente se deleita en el mal).
+* **Bhagavati** brahmacariyaṃ vussati kulaputto (el joven de buena familia practica la Vida Santa en el Buddha).
+
+---
+
+**303. 321. Sām’-issar’-ādhipati-dāyāda-sakkhī-patibhū-pasuta-kusalehi ca (631).** [Sāmi-issara-adhipati-dāyāda-sakkhī-patibhū-pasuta-kusalehi + ca = 2 voces]
+
+**Sāmī issara adhipati dāyāda sakkhī patibhū pasuta kusala** icc etehi payoge chaṭṭhīvibhatti hoti, sattamī ca.
+
+Goṇānaṃ sāmī, goṇesu sāmī; goṇānaṃ issaro, goṇesu issaro; goṇānaṃ adhipati, goṇesu adhipati; goṇānaṃ dāyādo, goṇesu dāyādo; goṇānaṃ sakkhī, goṇesu sakkhī; goṇānaṃ patibhū, goṇesu patibhū; goṇānaṃ pasuto, goṇesu pasuto; goṇānaṃ kusalo, goṇesu kusalo.
+
+---
+
+También con “sāmī”, dueño, “issara”, señor, “adhipati”, amo, “dāyāda”, heredero, “sakkhī”, testigo, “patibhū”, garante, “pasuta”, dedicado, “kusala”, hábil.
+
+Cuando hay conexión con “sāmī”, dueño, “issara”, señor, “adhipati”, amo, “dāyāda”, heredero, “sakkhī”, testigo, “patibhū”, garante, “pasuta”, dedicado, y “kusala”, hábil, hay la sexta inflexión y la séptima [inflexión].
+
+Ejemplos:
+
+* **Goṇānaṃ** sāmī, **goṇesu** sāmī (el dueño de los bueyes).
+* **Goṇānaṃ** issaro, **goṇesu** issaro (el señor de los bueyes).
+* **Goṇānaṃ** adhipati, **goṇesu** adhipati (el amo de los bueyes).
+* **Goṇānaṃ** dāyādo, **goṇesu** dāyādo (el heredero de los bueyes).
+* **Goṇānaṃ** sakkhī, **goṇesu** sakkhī (el testigo de los bueyes).
+* **Goṇānaṃ** patibhū, **goṇesu** patibhū (el garante (el que promete) de los bueyes).
+* **Goṇānaṃ** pasuto, **goṇesu** pasuto (dedicado a los bueyes).
+* **Goṇānaṃ** kusalo, **goṇesu** kusalo (hábil en los bueyes).
+
+---
+
+**304. 322. Niddhāraṇe ca (632).** [Niddhāraṇe + ca = 2 voces]
+
+Niddhāraṇatthe ca chaṭṭhīvibhatti hoti, sattamī ca.
+
+Kaṇhā gāvīnaṃ sampannakhīratamā, kaṇhā gāvīsu sampannakhīratamā. Sāmā nārīnaṃ dassanīyatamā, sāmā nārīsu dassanīyatamā. Manussānaṃ khattiyo sūratamo, manussesu khattiyo sūratamo. Pathikānaṃ dhāvanto sīghatamo, pathikesu dhāvanto sīghatamo.
+
+---
+
+También al extraer.
+
+En el significado de extraer (seleccionar) hay la sexta inflexión y la séptima [inflexión].
+
+Ejemplos:
+
+* Kaṇhā **gāvīnaṃ** sampannakhīratamā, kaṇhā **gāvīsu** sampannakhīratamā (entre las vacas, la negra es la que tiene más leche).
+* Sāmā **nārīnaṃ** dassanīyatamā, sāmā **nārīsu** dassanīyatamā (entre las mujeres, la de tez dorada[^44] es la más hermosa).
+* **Manussānaṃ** khattiyo sūratamo, **manussesu** khattiyo sūratamo (entre los humanos, el khattiya es el más valiente).
+* **Pathikānaṃ** dhāvanto sīghatamo, **pathikesu** dhāvanto sīghatamo (entre los viajeros, el que corre es el más rápido).
+
+---
+
+**305. 323. Anādare ca (633).** [Anādare + ca = 2 voces]
+
+Anādare chaṭṭhīvibhatti hoti, sattamī ca.
+
+Rudato dārakassa pabbaji, rudantasmiṃ dārake pabbaji.
+
+---
+
+También en el desprecio.
+
+En el desprecio hay la sexta inflexión y la séptima inflexión.
+
+Ejemplos:
+
+* **Rudato dārakassa** pabbaji, **rudantasmiṃ dārake** pabbaji (a pesar del llanto del hijo, [él] abandonó el hogar).[^45]
+
+---
+
+**306. 289. Kvaci dutiyā chaṭṭhīnam atthe (588).** [Kvaci + dutiyā + chaṭṭhīnaṃ + atthe = 4 voces]
+
+Chaṭṭhīnam atthe kvaci dutiyāvibhatti hoti.
+
+Api ssu maṃ Aggivessana tisso upamā paṭibhaṃsu.
+
+---
+
+A veces hay la segunda [inflexión] en el significado de la sexta [inflexión].
+
+A veces, en el significado de la sexta [inflexión], hay la segunda inflexión.
+
+Ejemplos:
+
+* Api ssu **maṃ** Aggivessana tisso upamā paṭibhaṃsu (en verdad, Aggivessana, mis tres símiles se manifestaron).
+
+---
+
+**307. 290. Tatiyā-sattamīnañ ca (589).** [Tatiyā-sattamīnaṃ + ca = 2 voces]
+
+Tatiyā-sattamīnaṃ atthe ca kvaci dutiyāvibhatti hoti.
+
+Sace maṃ samaṇo Gotamo ālapissati; tvañ ca maṃ n’ ābhibhāsasi. Evaṃ tatiyatthe.
+
+Pubbaṇhasamayaṃ nivāsetvā; ekaṃ samayaṃ Bhagavā. Evaṃ sattamyatthe.
+
+---
+
+También [en el significado] de la tercera y de la séptima [inflexión].
+
+También a veces hay la segunda inflexión en el significado de la tercera y de la séptima [inflexión].
+
+Ejemplos:
+
+* Sace **maṃ** samaṇo Gotamo ālapissati (si el asceta Gotama habla conmigo).
+* Tvañ ca **maṃ** n’ ābhibhāsasi (y tú no hablarás conmigo).
+
+Así en el significado de la tercera [inflexión].
+
+Ejemplos:
+
+* **Pubbaṇhasamayaṃ** nivāsetvā (habiéndose puesto la túnica inferior a la hora de la mañana).
+* **Ekaṃ samayaṃ** Bhagavā (en una ocasión el Bienaventurado).
+
+Así en el significado de la séptima [inflexión].
+
+---
+
+**308. 317. Chaṭṭhī ca (634).** [Chaṭṭhī + ca = 2 voces]
+
+Tatiyā-sattamīnaṃ atthe ca kvaci chaṭṭhīvibhatti hoti.
+
+Kato me kalyāṇo, kataṃ me pāpaṃ. Evaṃ tatiyatthe.
+
+Kusalā naccagītassa sikkhitā cāturitthiyo; kusalo tvaṃ rathassa aṅgapaccaṅgānaṃ. Evaṃ sattamyatthe.
+
+**Kvacī** ti kimatthaṃ? Yo vo Ānanda mayā dhammo ca vinayo ca desito paññato. Ānando atthesu vicakkhaṇo.
+
+---
+
+También la sexta [inflexión].
+
+También a veces hay la sexta inflexión en el significado de la tercera y de la séptima [inflexión].
+
+Ejemplos:
+
+* Kato **me** kalyāṇo, kataṃ **me** pāpaṃ (lo bueno ha sido hecho por mí; lo malo ha sido hecho por mí).
+
+Así en el significado de la tercera [inflexión].
+
+Ejemplos:
+
+* Kusalā **naccagītassa** sikkhitā cāturitthiyo (mujeres gráciles, diestras y entrenadas en la danza y el canto).
+* Kusalo tvaṃ **rathassa aṅgapaccaṅgānaṃ** (¿eres diestro en las diferentes partes del carro?).
+
+Así en el significado de la séptima [inflexión].
+
+¿Cuál es la finalidad de decir “kvaci” (a veces)? [Para mostrar excepciones a este sutta, como en:] Yo vo Ānanda mayā dhammo ca vinayo ca desito paññato (Ānanda, el Dhamma y el Vinaya que os han sido predicados y promulgados por mí). Ānando atthesu vicakkhaṇo (Ānanda es diestro en los significados).
+
+---
+
+**309. 318. Dutiyā-pañcamīnañ ca (640).** [Dutiyā-pañcamīnaṃ + ca = 2 voces]
+
+Dutiyā-pañcamīnañ ca atthe kvaci chaṭṭhīvibhatti hoti.
+
+Tassa bhavanti vattāro; sahasā kammassa kattāro. Evaṃ dutiyatthe.
+
+Assavanatā dhammassa parihāyanti. Kinnu kho ahaṃ tassa sukhassa bhāyāmi. Sabbe tasanti daṇḍassa. Sabbe bhāyanti maccuno. Bhīto catunnaṃ āsīvisānaṃ ghoravisānaṃ. Bhāyāmi ghoravisassa nāgassa. Evaṃ pañcamyatthe.
+
+---
+
+También [en el significado] de la segunda y de la quinta [inflexión].
+
+También a veces hay la sexta inflexión en el significado de la segunda y de la quinta [inflexión].
+
+Ejemplos:
+
+* **Tassa** bhavanti vattāro (son quienes le dicen a él).
+* Sahasā **kammassa** kattāro (los que de repente hacen las acciones).
+
+Así en el significado de la segunda [inflexión].
+
+Ejemplos:
+
+* Assavanatā **dhammassa** parihāyanti (por no escuchar, decaen del Dhamma).
+* Kinnu kho ahaṃ **tassa sukhassa** bhāyāmi (¿por qué habría yo de temer de (a) la felicidad?).
+* Sabbe tasanti **daṇḍassa** (todos tiemblan del castigo).
+* Sabbe bhāyanti **maccuno** (todos temen de la muerte).
+* Bhīto **catunnaṃ āsīvisānaṃ ghoravisānaṃ** (atemorizado de las cuatro serpientes espantosas y venenosas).
+* Bhāyāmi **ghoravisassa nāgassa** (temo de una serpiente espantosa y venenosa).
+
+Así en el significado de la quinta [inflexión].
+
+---
+
+**310. 324. Kamma-karaṇa-nimittatthesu sattamī (641).** [Kamma-karaṇa-nimitta-atthesu + sattamī = 2 voces]
+
+Kamma-karaṇa-nimittatthesu sattamīvibhatti hoti.
+
+Sundar’ āvuso ime ājīvakā bhikkhūsu abhivādenti. Evaṃ kammatthe.
+
+Hatthesu piṇḍāya caranti; pattesu piṇḍāya caranti; pathesu gacchanti. Evaṃ karaṇatthe.
+
+Dīpi cammesu haññate; kuñjaro dantesu haññate. Evaṃ nimittatthe.
+
+---
+
+La séptima [inflexión] en los significados de objeto, instrumento y causa.
+
+Hay la séptima inflexión en el significado de objeto (kamma), de instrumento (karaṇa) y de causa (nimitta).
+
+Ejemplos:
+
+* Sundar’ āvuso ime ājīvakā **bhikkhūsu** abhivādenti (amigo, estos buenos ascetas rinden homenaje a los bhikkhus).
+
+Así en el significado de objeto.
+
+Ejemplos:
+
+* **Hatthesu** piṇḍāya caranti (van por limosna con las manos).
+* **Pattesu** piṇḍāya caranti (van por limosna con los cuencos).
+* **Pathesu** gacchanti (van por los caminos).
+
+Así en el significado de instrumento.
+
+Ejemplos:
+
+* Dīpi **cammesu** haññate (el leopardo es matado a causa de su piel).
+* Kuñjaro **dantesu** haññate (el elefante es matado a causa de sus colmillos).
+
+Así en el significado de causa.
+
+---
+
+**311. 325. Sampadāne ca (642).** [Sampadāne + ca = 2 voces]
+
+Sampadāne ca sattamīvibhatti hoti.
+
+Saṃghe dinnaṃ mahapphalaṃ; saṃghe Gotami dehi; saṃghe te dinne ahañ c’ eva pūjito bhavissāmi.
+
+---
+
+También en el sampadāna (dativo).
+
+También hay la séptima inflexión en el sampadāna (dativo).
+
+Ejemplos:
+
+* **Saṃghe** dinnaṃ mahapphalaṃ (lo que se da al Saṃgha trae gran fruto).
+* **Saṃghe** Gotami dehi (Gotamī, dáselo al Saṃgha).
+* **Saṃghe** te dinne ahañ c’ eva pūjito bhavissāmi (si es dado por ti al Saṃgha, yo también seré honrado).
+
+---
+
+**312. 326. Pañcamyatthe ca (643).** [Pañcamī-atthe + ca = 2 voces]
+
+Pañcamyatthe ca sattamīvibhatti hoti.
+
+Kadalīsu gaje rakkhanti.
+
+---
+
+También en el significado de la quinta [inflexión].
+
+También hay la séptima inflexión en el significado de la quinta [inflexión].
+
+Ejemplos:
+
+* **Kadalīsu** gaje rakkhanti (mantienen a los elefantes alejados de los plátanos).
+
+---
+
+**313. 327. Kāla-bhāvesu ca (644).** [Kāla-bhāvesu + ca = 2 voces]
+
+Kāla-bhāvesu ca kattari payujjamāne sattamīvibhatti hoti.
+
+Pubbaṇhasamaye gato; sāyanhasamaye[^46] āgato. Bhikkhūsu bhojīyamānesu gato; (bhikkhūsu) bhuttesu āgato. Gosu duyhamānesu gato; (gosu) duddhāsu āgato.
+
+---
+
+También en el tiempo y el estado.
+
+Cuando el agente se emplea en el tiempo (kāla) y en el estado (bhāva), hay también la séptima inflexión.
+
+Ejemplos:
+
+* **Pubbaṇhasamaye** gato ([él] fue a la hora de la mañana); **sāyanhasamaye** āgato ([él] vino a la hora de la tarde).
+* **Bhikkhūsu bhojīyamānesu** gato (cuando los bhikkhus estaban siendo alimentados, [él] fue); (bhikkhūsu) **bhuttesu** āgato (cuando los bhikkhus habían comido, [él] vino).
+* **Gosu duyhamānesu** gato (cuando las vacas estaban siendo ordeñadas, [él] fue); (gosu) **duddhāsu** āgato (cuando las vacas habían sido ordeñadas, [él] vino).
+
+---
+
+**314. 328. Upa-’dhyādhik’-issaravacane (645).** [Upa-adhi + adhika-issara-vacane = 2 voces]
+
+**Upa adhi** icc etesaṃ payoge adhika-issaravacane sattamīvibhatti hoti.
+
+Upa khāriyaṃ doṇo; upa nikkhe kahāpaṇaṃ. Adhi Brahmadatte Pañcālā, adhi naccesu Gotamī, adhi devesu Buddho.
+
+---
+
+En la expresión de exceso (“adhika”) y de autoridad (“issara”) en conexión con ‘upa’ y ‘adhi’.[^47]
+
+Hay la séptima inflexión en conexión con ‘upa’ y ‘adhi’ cuando significan “adhika”, exceso, e “issara”, autoridad, superioridad.
+
+Ejemplos:
+
+* Upa **khāriyaṃ** doṇo (un doṇa en exceso de una khāri [una khāri más un doṇa]).
+* Upa **nikkhe** kahāpaṇaṃ (un kahāpaṇa en exceso de un nikkha).
+* Adhi **Brahmadatte** Pañcālā (los Pañcālas son súbditos de Brahmadatta).
+* Adhi **naccesu** Gotamī (Gotamī es superior a las bailarinas).
+* Adhi **devesu** Buddho (el Buddha es superior a los dioses).
+
+---
+
+**315. 329. Maṇḍit’-ussukkesu tatiyā (646).** [Maṇḍita-ussukkesu + tatiyā = 2 voces]
+
+**Maṇḍita ussukka** icc etesv atthesu tatiyāvibhatti hoti, sattamī ca.
+
+Ñāṇena pasīdito, ñāṇasmiṃ vā pasīdito; ñāṇena ussukko, ñāṇasmiṃ vā ussukko Tathāgato vā tathāgatagotto vā.
+
+---
+
+La tercera [inflexión] con “maṇḍita”, claro, y “ussukka”, celo.
+
+En los significados de “maṇḍita”, claro, y de “ussukka”, celo, energía, hay la tercera inflexión y también la séptima [inflexión].
+
+Ejemplos:
+
+* **Ñāṇena** pasīdito, **ñāṇasmiṃ** vā pasīdito (claro por el entendimiento o claro en el entendimiento).
+* **Ñāṇena** ussukko, **ñāṇasmiṃ** vā ussukko Tathāgato vā tathāgatagotto vā (el Tathāgata, o uno que pertenece a su clan, es enérgico por el entendimiento o enérgico en el entendimiento).
+
+---
+
+Iti nāma-kappe kāraka-kappo chaṭṭho kaṇḍo
+
+Así termina el capítulo de los kārakas, sexta sección del capítulo de nombres.
+
+Kāraka-kappo niṭṭhito
+
+Fin del capítulo de los kārakas.
+
+---
+
+[^44]: Nota al pie: “Sāmā” puede significar tanto tez dorada como tez oscura.
+
+[^45]: Nota al pie: Quiere decir que él desatendió el llanto de su hijo y se hizo monje.
+
+[^46]: Nota al pie: Sāyanhasamaye (Rū. iii, 327; Sad. iii, 644); sāyaṇhasamaye (Mog. iii, 110).
+
+[^47]: Nota del traductor: Nandisena imprime en §314 una sola línea inglesa (la traducción de la vutti) y no traduce el título por separado; la glosa española del título es nuestra, construida desde el pāḷi y su traducción de la vutti.
+
+---
+
+## NOTAS DE TRABAJO CONSOLIDADAS (no forman parte del texto)
+
+### 0. Mapeo de notas al pie en este montaje
+
+| Borrador | Número original | Número aquí |
+|---|---|---|
+| Tanda 1 (§271–§285) | 1–28, 34–41 | sin cambio |
+| Tanda 2 (§286–§300) | 34 (Nandisena), 35 (Nandisena) | 42, 43 |
+| Tanda 3 (§301–§315) | 36, 37, 38 (Nandisena), 39 (traductor) | 44, 45, 46, 47 |
+
+En los tres borradores de origen se conserva la numeración original; las
+referencias a «nota 34», «nota 35», etc. dentro de las notas de trabajo de
+cada tanda remiten a esa numeración original.
+
+### TANDA 1 (§271–§285)
+
+### T1.1 Erratas propuestas (lectura literal conservada en el cuerpo)
 
 | Sutta | Nandisena dice | Propuesta | Evidencia |
 |---|---|---|---|
@@ -1008,7 +1721,7 @@ Ejemplos:
 | §282 (kvattho) | «Dhātūhi ���e-ṇaya…» (mojibake) | *ṇe* | Corrupción de codificación del archivo, no lectura suya: su propia línea inglesa imprime «ṇe-ṇaya-ṇāpe-ṇāpayā»; Pind ídem. Restituido ya en el cuerpo |
 | §277 (título) | *tumatthālamattha- maññānādar’* (guion + espacio) | *tumatthālamattha-maññānādar’* | Artefacto de salto de línea del OCR. Unido ya en el cuerpo |
 
-### 2. Pāḷi faltante en la fuente
+### T1.2 Pāḷi faltante en la fuente
 
 - **§277, sección Tadatthe:** el rótulo «**Tadatthe**» está pero su pāḷi falta
   (la traducción inglesa existe). Restauración propuesta desde Pind/Be en la
@@ -1016,7 +1729,7 @@ Ejemplos:
 - **Numeración de notas:** las notas al pie 1–28 conservan la numeración de
   Nandisena; sus 29–33 pasan aquí a 36–40 (las 34, 35 y 41 son del traductor).
 
-### 3. DUDAs abiertas
+### T1.3 DUDAs abiertas
 
 - **§277, Ārādho ’haṃ rañño:** Nandisena traduce «I like the king» («me agrada
   el rey»), pero el sentido más natural de *ārādha* es «yo he complacido al
@@ -1033,7 +1746,7 @@ Ejemplos:
   taking something more»); se tradujo desde el pāḷi con la terminología fijada
   (*vikappana* = alternativa). Verificar que convence.
 
-### 4. Variantes de Pind registradas (no erratas; manda Nandisena)
+### T1.4 Variantes de Pind registradas (no erratas; manda Nandisena)
 
 §271: Pind da Sadd §§555–56 (Nandisena: 555, 557 — se sigue a Nandisena por
 decisión de Angel, sesión 11). §272: Pind *achinnappabhavo*, *kunadiyo*,
@@ -1051,7 +1764,7 @@ varios ejemplos, *gāviṃ* (Nandisena *gāvo*). §279: Pind *vāsiyā rukkhaṃ
 *kudālena pathaviṃ*), *hatthena* (Be y Nandisena *satthena*). §281: Pind
 *Upaguttena baddho Māro* (Nandisena *bandho*, con nota (K) *baddho*).
 
-### 5. Referencias bibliográficas retiradas (restituir en fase HTML)
+### T1.5 Referencias bibliográficas retiradas (restituir en fase HTML)
 
 | Sutta | Pasaje | Referencia |
 |---|---|---|
@@ -1102,7 +1815,7 @@ varios ejemplos, *gāviṃ* (Nandisena *gāvo*). §279: Pind *vāsiyā rukkhaṃ
 | §279 | Cakkhunā rūpaṃ passati / sotena saddaṃ suṇāti | D. ii, 269 (×2) |
 | §280 | rūpaṃ passati / saddaṃ suṇāti | D. ii, 269 (×2) |
 
-### 6. Términos nuevos para el glosario (propuestos)
+### T1.6 Términos nuevos para el glosario (propuestos)
 
 kāraka (sin traducir; ya en CLAUDE.md) · apādāna, sampadāna, karaṇa, kamma,
 kattu/kattā, hetu, sāmī, okāsa (sin traducir; con la glosa inglesa de
@@ -1114,7 +1827,7 @@ samaṇa = «asceta» (Nandisena: «monk») · Dhamma-Vinaya (sin traducir) ·
 Sugata = «el Que ha Ido Rectamente» (según su inglés) · yojana, kosa (sin
 traducir, unidades).
 
-### 7. Decisiones aplicadas de la sesión 11
+### T1.7 Decisiones aplicadas de la sesión 11
 
 bhayaṃ = «peligro o temor» (espejando el orden de Nandisena en cada caso) ·
 sikkhā = «entrenamiento» · kvattho: «Para el uso del nombre… en el sutta
@@ -1125,7 +1838,7 @@ de decidir en fase HTML) · encabezado con los dos números de Rūpasiddhi tal
 como Nandisena los imprime («271. 88, 308.»); exigirá ampliar la regex del
 generador en la fase de publicación.
 
-### 8. Material de Thitzana ofrecido y no incluido
+### T1.8 Material de Thitzana ofrecido y no incluido
 
 - Su nota 25 (vol. 2, pp. 373-4): los seis kārakas, «kāraka» = kara + ṇvu,
   y la **tabla kāraka → vibhatti → sutta**. Serviría de nota del traductor
@@ -1134,3 +1847,220 @@ generador en la fase de publicación.
 - §271: su traducción del kvattho añade «It has the benefit of ease of
   reference» (la utilidad de facilitar la referencia).
 
+### TANDA 2 (§286–§300)
+
+### T2.1 Erratas propuestas (lectura literal conservada en el cuerpo)
+
+| Sutta | Nandisena dice | Propuesta | Evidencia |
+|---|---|---|---|
+| §287 (ejemplos) | *vinā pi **gaggena*** | *Gaggena* | Nombre propio; la primera aparición va con mayúscula; Vin. i, 123 |
+| §290 (ejemplos) | *tena kho pana **samyena*** | *samayena* | Sus propias palabras dos frases antes; Pind; Vin. i, 15 |
+| §299 (ejemplos) | *kalyāṇo **kittissaddo*** | *kittisaddo* | Pind y el canon (Vin. i, 35: *kittisaddo*) |
+| §300 (vutti) | *-kara-**sayādinaṃ** payoge* | *sayādīnaṃ* | Su propio título escribe *sayādīnaṃ* con ī larga; Pind ídem |
+
+### T2.2 DUDAs abiertas
+
+- **§296, Ananubodhā appaṭivedhā … adassanā:** el inglés de Nandisena
+  («Because of not seeing, because of not penetrating; because of not
+  knowing…») no casa término a término con el pāḷi: *ananubodha* es «no
+  comprender» y *adassana* es «no ver». Se siguió su inglés.
+  <!-- DUDA: ¿«por no comprender, por no penetrar, por no ver las Cuatro Nobles Verdades conforme a la realidad»? -->
+- **§291, Kāṇaṃ passati nettena:** Pind imprime el ejemplo entre ⟨ ⟩ y
+  anota que no tiene sentido en este contexto (todos los demás son
+  «deforme por el miembro X»). Nandisena lo traduce sin reparo («he sees a
+  person that is blind by eye») y así se dejó.
+- **§300, vutti con «vā»:** el inglés de Nandisena omite el opcional («there
+  is the second inflection»); el pāḷi dice *hoti vā*. Se tradujo «hay
+  opcionalmente la segunda inflexión» según la terminología fijada.
+- **§293, dāna:** «una dádiva» (Nandisena: «a gift»). Confirmar.
+
+### T2.3 Variantes de Pind registradas (no erratas; manda Nandisena)
+
+§287: Pind sin *vinā pi Gaggena* (lo trae la versión del Saṅgahakāra citada
+en Mmd y la edición birmana). §290: Pind sin *(Yena kālena, yena samayena)*
+— lo añade Be, lo que coincide con la nota 35 de Nandisena. §291: Pind
+*kuṇi* (Nandisena *kuṇī*) y *passatu* (Nandisena *passati*). §292: Pind
+imprime ⟨su⟩vaṇṇena con ⟨su⟩ editorial (el Saṅgaha lee *vaṇṇena*). §297:
+Pind *kaṭaṃ karoti* (Be *ghaṭaṃ*), orden distinto de los ejemplos y sin
+*satthaṃ karoti*. §298: Pind (CeEe) *māsaṃ adhīte, yojanaṃ kalahaṃ karonto
+gacchati*; la serie de Nandisena es la de Be; kimatthaṃ Pind *saṃvacchare
+bhuñjati* (Nandisena añade *bhojanaṃ*). §299: Pind *kittisaddo* y
+*anupabbajiṃsu* junto (Nandisena separa *anu pabbajiṃsu*, coherente con el
+kammappavacanīya). §300: Pind añade *dhātūnaṃ* y *sati* en la vutti;
+*sāyayati* (Nandisena *sayāpayati*).
+
+### T2.4 Referencias bibliográficas retiradas (restituir en fase HTML)
+
+| Sutta | Pasaje | Referencia |
+|---|---|---|
+| §286 | manasā ce paduṭṭhena / pasannena | Khu. i, 13 (×2) |
+| §286 | kāyena kammaṃ karoti | M. ii, 77 |
+| §287 | Sahā ’pi Gaggena… / vinā pi gaggena | Vin. iii, 166 (×2) |
+| §287 | mahatā bhikkhusaṃghena saddhiṃ | Vin. iii, 45; D. i, 1; ii, 81 |
+| §287 | sahassena samaṃ mitā | S. i, 18 |
+| §290 | tena kālena | Khu. iii, 41 |
+| §290 | tena samayena | Vin. i, 1 |
+| §290 | tena kho pana samyena | Vin. i, 7; iii, 1; D. ii, 76 |
+| §292 | Gottena Gotamo nātho | Khu. iii, 25 |
+| §293 | dātā hoti samaṇassa vā… | A. i, 524 |
+| §294 | Namo te Buddhavīr’ atthu | S. i, 48 |
+| §294 | namo karohi nāgassa | M. i, 196 |
+| §294 | svāgataṃ te mahārāja | Khu. v, 329; vi, 156, 331 |
+| §295 | Pāpā cittaṃ nivāraye | Khu. i, 30 |
+| §295 | abbhā mutto va candimā | Khu. i, 39 |
+| §296 | Ananubodhā appaṭivedhā… | D. ii, 77 |
+| §297 | dhammaṃ suṇāti | D. i, 93 |
+| §297 | vācaṃ bhāsati | D. ii, 13 |
+| §299 | Taṃ kho pana bhavantaṃ gotamaṃ… | Vin. i, 1; iii, 45; D. i, 46, 83, 104; M. ii, 376 |
+| §299 | Pabbajitam anu pabbajiṃsu | D. ii, 25 |
+
+### T2.5 Términos nuevos para el glosario (propuestos)
+
+kammappavacanīya = «los que han indicado la acción» (según el inglés de
+Nandisena; término técnico, quizá mejor sin traducir con glosa) · uposatha
+(sin traducir) · yakkha (sin traducir) · visesana = «calificar / el
+calificativo» · accantasaṃyoga = «conjunción constante» · maṃsodana =
+«arroz con carne».
+
+### T2.6 Ajuste retroactivo al borrador §271–§285
+
+- Desglose de §272: «upasaggayogādīsu» → «upasaggayoga-ādīsu» (guion de
+  Thitzana, como §294 aquí y como «rāja-ādito» en Nāma §188). **Aplicado ya
+  en el archivo del borrador 1** para que ambos queden uniformes.
+
+### TANDA 3 (§301–§315)
+
+### T3.1 Erratas propuestas (lectura literal conservada en el cuerpo)
+
+| Sutta | Nandisena dice | Propuesta | Evidencia |
+|---|---|---|---|
+| §308 (kimatthaṃ) | *desito **paññato*** | *paññatto* | El canon (D. ii, 154) lee *paññatto*; la cita de Be registrada en Pind, ídem; participio de *paññāpeti* con geminada |
+| §307 (encabezado) | «( 589)» (espacio tras el paréntesis) | (589) | Artefacto tipográfico; Pind confirma Sadd §589. **Normalizado ya en el cuerpo** |
+
+### T3.2 DUDAs abiertas
+
+- **§301, tassa bhikkhuno patto:** su inglés dice «the bowl of the bhikkhu»
+  (sin «that») aunque el pāḷi repite *tassa*; se tradujo «el cuenco del
+  bhikkhu» siguiendo su inglés. <!-- DUDA: ¿«el cuenco de ese bhikkhu»? -->
+- **§302, glosa del título:** aquí Nandisena glosa okāsa como «locative»
+  (no «receptacle»); se mantuvo «okāsa (receptáculo)» por coherencia con
+  §278 y con el kvattho que cita este sutta. Además, su inglés traduce
+  *bhagavati* como «the Buddha»; se dejó «en el Buddha».
+  <!-- DUDA: ¿«en el Bienaventurado»? -->
+- **§309, Tassa bhavanti vattāro:** su inglés «They are sayers to him» es
+  opaco; Thitzana traduce «there will be people censuring him» («habrá
+  quienes le censuren»). Se siguió el inglés de Nandisena.
+- **§309, serie «temer de»:** «todos temen de la muerte», etc., calca el
+  «from» deliberado de su inglés (él mismo corrige una sola vez con
+  «(of)»). <!-- DUDA: ¿naturalizar «temer a»? -->
+- **§310, ājīvakā:** su inglés dice «these good ascetics»; se tradujo
+  «ascetas» aunque el proyecto reserva «asceta» para *samaṇa*.
+  <!-- DUDA: ¿dejar «ājīvakas» sin traducir? -->
+- **§314, khāri:** su inglés escribe «kāri» donde su pāḷi dice *khāri*; se
+  usó «khāri» conforme al pāḷi.
+- **§315, ussukka/ussuka:** el título y la vutti pāḷi de Nandisena traen
+  *ussukka(-esu)* y los ejemplos *ussukko*, pero su inglés escribe
+  «ussuka» y Pind imprime *ussuka/ussuko*. Se imprimió «ussukka» en la
+  vutti española. También: *ñāṇa* = «entendimiento» (su «understanding»).
+- **§315, desglose:** Thitzana cuenta 3 voces porque su título trae «ca»
+  («Maṇḍitu’ssukkesu tatiyā ca», como Rūpasiddhi/Saddanīti; en Pind, CeEe
+  añaden *ca* y Mmd lo omite). El título de Nandisena no trae «ca», de
+  modo que el desglose impreso es de 2 voces. **Angel decide** si se
+  registra en nota.
+- **Fórmulas de cierre del capítulo (provisionales):** «Así termina el
+  capítulo de los kārakas, sexta sección del capítulo de nombres.» y «Fin
+  del capítulo de los kārakas.» Su inglés dice «the case chapter» («el
+  capítulo de los casos»). Pendiente del briefing-11 §6.3; **Angel
+  decide**.
+
+### T3.3 Variantes de Pind registradas (no erratas; manda Nandisena)
+
+§301 (su 303): ejemplos *paṭiviso*, *tassa bhikkhuno mukhaṃ*, *tassa
+bhikkhuno pattacivaraṃ* (Be = Nandisena: *patto*, *cīvaraṃ*, con *attano
+mukhaṃ*). §302: Pind *vasati* (Nandisena *vussati*, con M. i, 147). §303:
+Pind *sāmi*, *sakkhi*, *pasūta* (Nandisena *sāmī*, *sakkhī*, *pasuta*;
+Thitzana *sāmi*, *sakkhi*, *pasuta*); vutti de Pind *icc etehi yoge sati*
+(Nandisena *icc etehi payoge*); el archivo de Pind imprime la serie con un
+solo miembro para los dos primeros («goṇānaṃ sāmi, goṇesu issaro»), quizá
+artefacto del OCR. §306: Pind *upamāyo* (Be *upamā* = Nandisena). §307:
+Pind *nâlapissati* (Nandisena *ālapissati*, con S. i, 179). §308: Pind
+*kataṃ me kalyāṇaṃ* (Be *kato me kalyāṇo* = Nandisena); *catur’ itthiyo*
+(Nandisena *cāturitthiyo* = Thitzana); en el kimatthaṃ las ediciones
+divergen y Be = Nandisena (salvo *paññatto*); Pind asigna a este sutta
+Sadd §§634 y 639 (Nandisena imprime «(634)»). §309: Pind *sahasā tassa
+kammassa kattāro* (Nandisena sin *tassa*); Pind sin *ghoravisānaṃ* (BeCe
+lo añaden = Nandisena). §310: Pind *bhikkhusu* (Be *bhikkhūsu* =
+Nandisena); *dīpī* (Nandisena y Thitzana *dīpi*). §311: Pind *saṅghe
+dinne* (Nandisena *saṅghe te dinne*, con M. iii, 253). §312: el título de
+Pind sin *ca* (su vutti sí lo lleva; Nandisena y Thitzana con *ca*). §313:
+Pind *bhikkhusaṅghesu bhojiyamānesu* (Nandisena *bhikkhūsu
+bhojīyamānesu*); *duyhamānāsu* (Nandisena y Thitzana *duyhamānesu*); sin
+los paréntesis (bhikkhūsu)/(gosu). §314: Pind ordena *adhi naccesu
+Gotamī* antes de *adhi Brahmadatte Pañcālā* (Nandisena al revés); título
+de Pind *upâdhy adhikissaravacane*. §315: Pind *ussuka/ussuko* (Nandisena
+*ussukka/ussukko*); Pind añade *Tathāgatasāvako vā* (Ee lo omite); CeEe
+añaden *ca* al título (Nandisena sin él; Thitzana con él). Cierre: Pind
+«iti kārakakappe chaṭṭho kaṇḍo» (Nandisena «Iti nāma-kappe kāraka-kappo
+chaṭṭho kaṇḍo»).
+
+### T3.4 Referencias bibliográficas retiradas (restituir en fase HTML)
+
+| Sutta | Pasaje | Referencia |
+|---|---|---|
+| §302 | Gambhīre odakantike | Khu. i, 9 |
+| §302 | pāpasmiṃ ramati mano | Khu. i, 30 |
+| §302 | bhagavati brahmacariyaṃ vussati kulaputto | M. i, 208; ii, 93 |
+| §306 | Api ssu maṃ Aggivessana… | M. i, 307 |
+| §307 | Sace maṃ samaṇo Gotamo ālapissati | S. i, 179 |
+| §307 | tvañ ca maṃ n’ ābhibhāsasi | Khu. vi, 359 |
+| §307 | Pubbaṇhasamayaṃ nivāsetvā | Vin. i, 7; iii, 48; D. ii, 75; M. i, 118 |
+| §307 | ekaṃ samayaṃ Bhagavā | D. i, 1 |
+| §308 | Kusalā naccagītassa sikkhitā cāturitthiyo | Khu. vi, 156, 158 |
+| §308 | kusalo tvaṃ rathassa aṅgapaccaṅgānaṃ | M. ii, 58 |
+| §308 | Yo vo Ānanda mayā dhammo… | D. ii, 126-7 (con la apostilla «Piṭṭhesu passitabbaṃ» en el original) |
+| §309 | Tassa bhavanti vattāro | M. ii, 133-5 |
+| §309 | Assavanatā dhammassa parihāyanti | Vin. iii, 6; D. ii, 32, 40; M. i, 224; ii, 292; S. i, 139 |
+| §309 | Kinnu kho ahaṃ tassa sukhassa bhāyāmi | M. i, 313 |
+| §309 | Sabbe tasanti daṇḍassa | Khu. i, 32 |
+| §309 | Sabbe bhāyanti maccuno | Khu. i, 32 |
+| §309 | Bhīto catunnaṃ āsīvisānaṃ… | S. ii, 381-2 |
+| §310 | Sundar’ āvuso ime ājīvakā… | Vin. i, 313 |
+| §310 | Hatthesu piṇḍāya caranti | Vin. iii, 125 |
+| §310 | Dīpi cammesu haññate / kuñjaro dantesu haññate | Khu. vi, 172 (×2) |
+| §311 | Saṃghe dinnaṃ mahapphalaṃ | Khu. ii, 49 |
+| §311 | saṃghe Gotami dehi / saṃghe te dinne… | M. iii, 296 (×2) |
+
+### T3.5 Términos nuevos para el glosario (propuestos)
+
+niddhāraṇa = «extraer/selección» · nimitta = «causa» (ojo: hetu también es
+«causa»; en la vutti se imprime «causa (nimitta)») · khattiya (sin
+traducir) · ājīvaka (ver DUDA §310) · khāri, doṇa, nikkha, kahāpaṇa (sin
+traducir, unidades) · maṇḍita = «claro» · ussukka = «celo, energía» ·
+kulaputta = «joven de buena familia» · brahmacariya = «Vida Santa» (su
+«Holy Life») · sūratama = «el más valiente» · niddhāraṇa-samudāya y demás
+términos de los catukka de Thitzana, no incluidos (ver §7).
+
+### T3.6 Notas al pie (numeración)
+
+- [^36], [^37] y [^38] conservan la numeración de Nandisena. OJO: el
+  briefing-11 §4 solo preveía la 36 y la 37 para esta tanda; existe además
+  su [^38] (variantes de *sāyanhasamaye*, en §313).
+- [^39] es del traductor (glosa del título de §314).
+- Para el montaje del capítulo completo: los números 34–41 de los tres
+  borradores chocan entre sí (la tanda 1 usa 34–41 con otros contenidos, la
+  tanda 2 usa 34–35). Renumerar al ensamblar y registrar el mapeo.
+
+### T3.7 Material de Thitzana ofrecido y no incluido
+
+- Sus «catukka» didácticos: Niddhāraṇa-catukka (§304), Anādara-catukka
+  (§305) y Lakkhaṇa-catukka (§313), con la explicación de los cuatro
+  componentes y ejemplos adicionales (Ñātīnaṃ pekkhataṃ maccu ādāya
+  gacchati; bhikkhūsu bhojīyamānesu puriso gato). Servirían de notas del
+  traductor.
+- §304: su advertencia de que el niddhāraṇa exige plural (con la rara
+  excepción de un locativo singular en los textos).
+- §305: su aclaración de que el «anādara» describe dos acciones
+  concurrentes más que un desprecio intencional.
+- §308 y §309: sus términos «Katv’attha-chaṭṭhī» y «Kamma’ttha-chaṭṭhī».
+- §314: su nota de que «adhi Brahmadatto Pañcālesu» también es construcción
+  admisible, con la regla nominativo/locativo.
